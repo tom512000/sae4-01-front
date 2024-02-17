@@ -3,24 +3,23 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb',
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: [
-        '.eslintrc.{js,cjs}',
-      ],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    "prettier",
   ],
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  plugins: [
+    'react',
+    "prettier",
+  ],
   rules: {
+    "prettier/prettier": ["error"],
   },
 };
