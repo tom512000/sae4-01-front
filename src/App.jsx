@@ -1,11 +1,11 @@
 import { useState } from "react";
 // eslint-disable-next-line import/no-unresolved
-import viteLogo from "./public/vite.svg";
+import viteLogo from "../public/vite.svg";
 import reactLogo from "./assets/react.svg";
 // eslint-disable-next-line import/no-unresolved
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
