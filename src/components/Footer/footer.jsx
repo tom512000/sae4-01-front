@@ -10,9 +10,7 @@ function Footer() {
       </div>
       <div className="liens">
         <div>
-          <h1>
-            <a href="/">Liens utiles</a>
-          </h1>
+          <h1>Liens utiles</h1>
           <p>
             <a href="/">À propos d&apos;Edutech</a>
           </p>
@@ -25,16 +23,18 @@ function Footer() {
         </div>
       </div>
       <div className="newsletter">
-        <h1>Newsletter</h1>
-        <div className="newsletter_bloc">
-          <div className="newsletter_bloc_1">
-            <p>Email</p>
+        <div>
+          <h1>Newsletter</h1>
+          <div className="newsletter_bloc">
+            <div className="newsletter_bloc_1">
+              <p>Email</p>
+            </div>
+            <div className="newsletter_bloc_2">
+              <p>Je m&apos;abonne</p>
+            </div>
           </div>
-          <div className="newsletter_bloc_2">
-            <p>Je m&apos;abonne</p>
-          </div>
+          <p>Vous pouvez vous désabonner à tout moment.</p>
         </div>
-        <p>Vous pouvez vous désabonner à tout moment.</p>
       </div>
     </div>
   );
