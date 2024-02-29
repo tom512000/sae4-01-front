@@ -1,0 +1,87 @@
+@import url("public/index.css");
+
+/* Navbar */
+div.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: var(--color-white);
+}
+
+/* Logos de la Navbar */
+div.navbar_logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+div.navbar_logos > img {
+    height: 15px;
+    margin-left: 5px;
+}
+
+/* Boutons de la Navbar */
+div.navbar_buttons {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+button.sign_in {
+    height: 25px;
+    margin-right: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-red);
+}
+
+button.sign_in > p {
+    margin: 0;
+    font-family: 'Racing Sans One', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+button.sign_in > p > a {
+    color: var(--color-white);
+}
+
+button.log_in {
+    height: 25px;
+    margin-right: 5px;
+    padding: 5px;
+    border: 1px solid var(--color-light-grey-9);
+    border-radius: 5px;
+    background-color: var(--color-white);
+}
+
+button.log_in > p {
+    margin: 0;
+    font-family: 'Racing Sans One', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+button.log_in > p > a {
+    color: var(--color-red);
+}
+
+button.profile_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-red);
+}
+
+button.profile_menu > :first-child {
+    color: white;
+}
