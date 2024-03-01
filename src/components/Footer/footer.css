@@ -1,0 +1,283 @@
+@import url("public/index.css");
+
+/* Footer */
+div.footer {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    background-color: var(--color-white);
+}
+
+/* Logos du footer */
+div.logos {
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.logos > img {
+    height: 10px;
+    margin-right: 5px;
+}
+
+/* Liens du footer */
+div.liens {
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.liens > div > h1 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    color: var(--color-black);
+}
+
+div.liens > div > p {
+    margin: 0;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 7px;
+}
+
+div.liens > div > p > a {
+    color: var(--color-dark-grey);
+}
+
+div.liens > div > p > a:hover {
+    color: var(--color-light-grey-9);
+}
+
+/* Newsletter du footer */
+div.newsletter {
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.newsletter > div {
+    width: 100px;
+}
+
+div.newsletter > div > h1 {
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    color: var(--color-black);
+}
+
+div.newsletter_bloc {
+    height: 17px;
+    display: flex;
+}
+
+div.newsletter_bloc_1 {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    padding-left: 5px;
+    background-color: var(--color-light-grey-D);
+}
+
+div.newsletter_bloc_1 > p {
+    margin: 0;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 6px;
+    color: var(--color-light-grey-B);
+}
+
+div.newsletter_bloc_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    background-color: var(--color-red);
+}
+
+div.newsletter_bloc_2 > p {
+    margin: 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 5px;
+    color: var(--color-white);
+}
+
+div.newsletter > div > p {
+    margin: 0 0 10px 0;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 5px;
+    color: var(--color-dark-grey);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Footer */
+    div.footer {
+        height: 100px;
+    }
+
+    /* Logos du footer */
+    div.logos > img {
+        height: 13px;
+        margin-right: 7px;
+    }
+
+    /* Liens du footer */
+    div.liens > div > h1 {
+        font-size: 10px;
+    }
+
+    div.liens > div > p {
+        font-size: 8px;
+    }
+
+    /* Newsletter du footer */
+    div.newsletter > div {
+        width: 135px;
+    }
+
+    div.newsletter > div > h1 {
+        font-size: 10px;
+    }
+
+    div.newsletter_bloc_1 {
+        width: 70%;
+    }
+
+    div.newsletter_bloc_1 > p {
+        font-size: 7px;
+    }
+
+    div.newsletter_bloc_2 {
+        width: 30%;
+    }
+
+    div.newsletter_bloc_2 > p {
+        font-size: 6px;
+    }
+
+    div.newsletter > div > p {
+        font-size: 6px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Footer */
+    div.footer {
+        height: 110px;
+    }
+
+    /* Logos du footer */
+    div.logos > img {
+        height: 25px;
+        margin-right: 20px;
+    }
+
+    /* Liens du footer */
+    div.liens > div > h1 {
+        font-size: 13px;
+    }
+
+    div.liens > div > p {
+        font-size: 10px;
+    }
+
+    /* Newsletter du footer */
+    div.newsletter > div {
+        width: 175px;
+    }
+
+    div.newsletter > div > h1 {
+        font-size: 13px;
+    }
+
+    div.newsletter_bloc_1 {
+        width: 70%;
+    }
+
+    div.newsletter_bloc_1 > p {
+        font-size: 8px;
+    }
+
+    div.newsletter_bloc_2 {
+        width: 30%;
+    }
+
+    div.newsletter_bloc_2 > p {
+        font-size: 7px;
+    }
+
+    div.newsletter > div > p {
+        font-size: 7px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Footer */
+    div.footer {
+        height: 130px;
+    }
+
+    /* Logos du footer */
+    div.logos > img {
+        height: 28px;
+        margin-right: 20px;
+    }
+
+    /* Liens du footer */
+    div.liens > div > h1 {
+        font-size: 15px;
+    }
+
+    div.liens > div > p {
+        font-size: 12px;
+    }
+
+    /* Newsletter du footer */
+    div.newsletter > div {
+        width: 210px;
+    }
+
+    div.newsletter > div > h1 {
+        font-size: 15px;
+    }
+
+    div.newsletter_bloc {
+        height: 20px;
+    }
+
+    div.newsletter_bloc_1 {
+        width: 70%;
+    }
+
+    div.newsletter_bloc_1 > p {
+        font-size: 10px;
+    }
+
+    div.newsletter_bloc_2 {
+        width: 30%;
+    }
+
+    div.newsletter_bloc_2 > p {
+        font-size: 9px;
+    }
+
+    div.newsletter > div > p {
+        font-size: 9px;
+    }
+}
