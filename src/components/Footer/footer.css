@@ -33,8 +33,7 @@ div.footer_liens {
 }
 
 div.footer_liens > div > h1 {
-    margin: 0;
-    margin-bottom: 5px;
+    margin: 0 0 5px;
     font-family: 'Palanquin Dark', sans-serif;
     font-weight: 400;
     font-size: 9px;
