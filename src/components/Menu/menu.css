@@ -27,3 +27,54 @@ div.menu > p > a:hover {
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Menu */
+    div.menu {
+        height: 55px;
+    }
+
+    div.menu > p {
+        margin: 0 0 0 30px;
+        font-size: 12px;
+    }
+
+    div.menu > p > a:hover {
+        text-underline-offset: 6px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Menu */
+    div.menu {
+        height: 60px;
+    }
+
+    div.menu > p {
+        margin: 0 0 0 32px;
+        font-size: 14px;
+    }
+
+    div.menu > p > a:hover {
+        text-underline-offset: 8px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Menu */
+    div.menu {
+        height: 65px;
+    }
+
+    div.menu > p {
+        margin: 0 0 0 35px;
+        font-size: 16px;
+    }
+
+    div.menu > p > a:hover {
+        text-underline-offset: 9px;
+    }
+}
