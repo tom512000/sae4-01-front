@@ -52,7 +52,7 @@ function Entreprise({ entreprise }) {
 
 Entreprise.propTypes = {
   entreprise: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     nom_ent: PropTypes.string.isRequired,
     adresse: PropTypes.string.isRequired,
     mail: PropTypes.string.isRequired,
