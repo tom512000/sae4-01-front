@@ -84,7 +84,7 @@ div.entreprise_autres > p {
 }
 
 div.entreprise_autres > div {
-    width: 40.5px;
+    width: 41px;
     height: 100%;
     position: absolute;
     right: 0;
@@ -102,4 +102,103 @@ div.entreprise_autres > div > a {
 
 div.entreprise_autres > div > a > :first-child {
     color: var(--color-black);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Entreprise */
+    div.entreprise {
+        width: 200px;
+        height: 285px;
+    }
+
+    /* Bannière de l'entreprise */
+    div.entreprise_banniere > img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Informations de l'entreprise */
+    div.entreprise_informations > h1 {
+        font-size: 27px;
+    }
+
+    div.entreprise_informations > div > p {
+        font-size: 15px;
+    }
+
+    /* Autres informations de l'entreprise */
+    div.entreprise_autres > p {
+        font-size: 15px;
+    }
+
+    div.entreprise_autres > div {
+        width: 43px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Entreprise */
+    div.entreprise {
+        width: 205px;
+        height: 292px;
+    }
+
+    /* Bannière de l'entreprise */
+    div.entreprise_banniere > img {
+        width: 85px;
+        height: 85px;
+    }
+
+    /* Informations de l'entreprise */
+    div.entreprise_informations > h1 {
+        font-size: 29px;
+    }
+
+    div.entreprise_informations > div > p {
+        font-size: 16px;
+    }
+
+    /* Autres informations de l'entreprise */
+    div.entreprise_autres > p {
+        font-size: 16px;
+    }
+
+    div.entreprise_autres > div {
+        width: 44px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Entreprise */
+    div.entreprise {
+        width: 210px;
+        height: 299px;
+    }
+
+    /* Bannière de l'entreprise */
+    div.entreprise_banniere > img {
+        width: 85px;
+        height: 85px;
+    }
+
+    /* Informations de l'entreprise */
+    div.entreprise_informations > h1 {
+        font-size: 29px;
+    }
+
+    div.entreprise_informations > div > p {
+        font-size: 16px;
+    }
+
+    /* Autres informations de l'entreprise */
+    div.entreprise_autres > p {
+        font-size: 16px;
+    }
+
+    div.entreprise_autres > div {
+        width: 45px;
+    }
 }
