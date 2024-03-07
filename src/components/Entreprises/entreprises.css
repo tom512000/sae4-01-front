@@ -34,3 +34,28 @@ div.entreprises_list {
 div.entreprises_list > div {
     margin-right: 20px;
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Titre */
+    div.entreprises_title > h1 {
+        font-size: 28px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Titre */
+    div.entreprises_title > h1 {
+        font-size: 31px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Titre */
+    div.entreprises_title > h1 {
+        font-size: 33px;
+    }
+}
+
