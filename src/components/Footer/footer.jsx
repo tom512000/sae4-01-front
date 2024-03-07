@@ -4,11 +4,11 @@ import "./footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <div className="logos">
+      <div className="footer_logos">
         <img src="/public/img/logo-edutech.png" alt="Logo Edutech" />
         <img src="/public/img/text-edutech.png" alt="Texte Edutech" />
       </div>
-      <div className="liens">
+      <div className="footer_liens">
         <div>
           <h1>Liens utiles</h1>
           <p>
@@ -22,7 +22,7 @@ function Footer() {
           </p>
         </div>
       </div>
-      <div className="newsletter">
+      <div className="footer_newsletter">
         <div>
           <h1>Newsletter</h1>
           <div className="newsletter_bloc">
