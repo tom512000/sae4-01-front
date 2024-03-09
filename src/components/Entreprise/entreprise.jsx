@@ -36,7 +36,7 @@ function Entreprise({ entreprise }) {
         </div>
       </div>
       <div className="entreprise_autres">
-        <p>x offre(s)</p>
+        <p>x offre(s) d&apos;emploi</p>
         <div>
           <a
             href={`/entreprise/${entreprise.id}`}
