@@ -1,0 +1,39 @@
+@import url("public/index.css");
+
+/* Offres */
+div.offres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-light-grey-E);
+}
+
+/* Titre */
+div.offres_title {
+    width: 80%;
+    text-align: start;
+}
+
+div.offres_title > h1 {
+    margin: 5px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+div.offres > div.offre {
+    margin-bottom: 20px;
+}
+
+/* Nombre d'offres affichées */
+div.offres_number {
+    width: 80%;
+    text-align: start;
+}
+
+div.offres_number > p {
+    margin: 0 0 20px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+}
