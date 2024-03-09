@@ -1,0 +1,60 @@
+@import url("public/index.css");
+
+/* Entreprises */
+div.entreprises {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+}
+
+/* Titre */
+div.entreprises_title {
+    width: 80%;
+}
+
+div.entreprises_title > h1 {
+    margin: 5px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+/* Liste des entreprises */
+div.entreprises_list {
+    display: flex;
+    width: 80%;
+    overflow-x: scroll;
+}
+
+div.entreprises_list > div {
+    margin-right: 20px;
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Titre */
+    div.entreprises_title > h1 {
+        font-size: 28px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Titre */
+    div.entreprises_title > h1 {
+        font-size: 31px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Titre */
+    div.entreprises_title > h1 {
+        font-size: 33px;
+    }
+}

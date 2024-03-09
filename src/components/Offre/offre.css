@@ -1,0 +1,261 @@
+@import url("public/index.css");
+
+/* Offre */
+div.offre {
+    width: 80%;
+    height: 85px;
+    background-color: var(--color-red);
+    border-radius: 13px;
+}
+
+div.offre_bloc {
+    display: flex;
+    width: calc(100% - 4px);
+    height: 100%;
+    margin-left: 4px;
+    background-color: var(--color-white);
+    border-radius: 13px;
+}
+
+/* Logo de l'entreprise */
+div.offre_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+}
+
+div.offre_logo > img {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-red);
+}
+
+/* Informations de l'offre */
+div.offre_informations {
+    width: calc(100% - 80px);
+    height: 100%;
+    position: relative;
+}
+
+div.offre_informations > h1 {
+    margin: 3px 0 0 7px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+div.offre_informations > p {
+    margin: 0 0 0 7px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--color-dark-grey);
+}
+
+/* Données de l'offre */
+div.offre_donnees {
+    display: flex;
+    margin: 5px 0 0 7px;
+}
+
+div.offre_donnees > p {
+    margin: 0 2px 0 0;
+    padding: 0 2px;
+    border: 1px solid var(--color-light-grey-9);
+    border-radius: 10px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-dark-grey);
+    background-color: var(--color-light-grey-E);
+}
+
+/* Bouton de l'offre */
+div.offre_bouton {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+}
+
+div.offre_bouton > p {
+    margin: 0 5px 0 0;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-red);
+}
+
+div.offre_bouton > :last-child {
+    font-size: 8px;
+    color: var(--color-red);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Offre */
+    div.offre {
+        height: 100px;
+    }
+
+    /* Logo de l'entreprise */
+    div.offre_logo {
+        width: 100px;
+    }
+
+    div.offre_logo > img {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Informations de l'offre */
+    div.offre_informations > h1 {
+        margin: 5px 0 0 8px;
+        font-size: 16px;
+    }
+
+    div.offre_informations > p {
+        margin: 0 0 0 8px;
+        font-size: 13px;
+    }
+
+    /* Données de l'offre */
+    div.offre_donnees {
+        margin: 5px 0 0 8px;
+    }
+
+    div.offre_donnees > p {
+        margin: 0 3px 0 0;
+        padding: 0 4px;
+        font-size: 10px;
+    }
+
+    /* Bouton de l'offre */
+    div.offre_bouton {
+        bottom: 1px;
+        right: 11px;
+    }
+
+    div.offre_bouton > p {
+        font-size: 10px;
+    }
+
+    div.offre_bouton > :last-child {
+        font-size: 10px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Offre */
+    div.offre {
+        height: 110px;
+    }
+
+    /* Logo de l'entreprise */
+    div.offre_logo {
+        width: 110px;
+    }
+
+    div.offre_logo > img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Informations de l'offre */
+    div.offre_informations > h1 {
+        margin: 5px 0 0 10px;
+        font-size: 18px;
+    }
+
+    div.offre_informations > p {
+        margin: 0 0 0 10px;
+        font-size: 15px;
+    }
+
+    /* Données de l'offre */
+    div.offre_donnees {
+        margin: 5px 0 0 10px;
+    }
+
+    div.offre_donnees > p {
+        margin: 0 5px 0 0;
+        padding: 0 6px;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    /* Bouton de l'offre */
+    div.offre_bouton {
+        bottom: 5px;
+        right: 15px;
+    }
+
+    div.offre_bouton > p {
+        margin: 0 7px 0 0;
+        font-size: 12px;
+    }
+
+    div.offre_bouton > :last-child {
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Offre */
+    div.offre {
+        height: 120px;
+    }
+
+    /* Logo de l'entreprise */
+    div.offre_logo {
+        width: 120px;
+    }
+
+    div.offre_logo > img {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Informations de l'offre */
+    div.offre_informations > h1 {
+        margin: 5px 0 0 12px;
+        font-size: 20px;
+    }
+
+    div.offre_informations > p {
+        margin: 0 0 0 12px;
+        font-size: 17px;
+    }
+
+    /* Données de l'offre */
+    div.offre_donnees {
+        margin: 5px 0 0 12px;
+    }
+
+    div.offre_donnees > p {
+        margin: 0 6px 0 0;
+        padding: 0 6px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    /* Bouton de l'offre */
+    div.offre_bouton {
+        bottom: 7px;
+        right: 17px;
+    }
+
+    div.offre_bouton > p {
+        margin: 0 8px 0 0;
+        font-size: 14px;
+    }
+
+    div.offre_bouton > :last-child {
+        font-size: 14px;
+    }
+}
