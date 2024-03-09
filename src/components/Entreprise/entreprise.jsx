@@ -18,7 +18,7 @@ function Entreprise({ entreprise }) {
       <div className="entreprise_banniere">
         <div className="banniere_bloc_1" />
         <div className="banniere_bloc_2" />
-        <img src={entreprise.logo} alt={`Logo de ${entreprise.nom_ent}`} />
+        <img src={`${entreprise.logo}`} alt={`Logo de ${entreprise.nom_ent}`} />
       </div>
       <div className="entreprise_informations">
         <h1>{entreprise.nom_ent}</h1>
