@@ -37,3 +37,42 @@ div.offres_number > p {
     font-weight: 400;
     font-size: 11px;
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Titre */
+    div.offres_title > h1 {
+        font-size: 28px;
+    }
+
+    /* Nombre d'offres affichées */
+    div.offres_number > p {
+        font-size: 13px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Titre */
+    div.offres_title > h1 {
+        font-size: 31px;
+    }
+
+    /* Nombre d'offres affichées */
+    div.offres_number > p {
+        font-size: 15px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Titre */
+    div.offres_title > h1 {
+        font-size: 33px;
+    }
+
+    /* Nombre d'offres affichées */
+    div.offres_number > p {
+        font-size: 17px;
+    }
+}
