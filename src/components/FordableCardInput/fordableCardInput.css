@@ -1,0 +1,18 @@
+@import url("/public/index.css");
+
+/* Input */
+div.fordableCard_input {
+    margin-top: 10px;
+    border-left: 4px solid var(--color-red);
+}
+
+div.fordableCard_input > input {
+    padding-left: 5px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-light-grey-B);
+    background-color: var(--color-light-grey-D);
+}
