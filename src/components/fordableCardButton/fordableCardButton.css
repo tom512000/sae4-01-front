@@ -13,3 +13,26 @@ form > input.button {
     color: var(--color-white);
     background-color: var(--color-red);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Bouton du formulaire */
+    form > input.button {
+        width: 110px;
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Bouton du formulaire */
+    form > input.button {
+        width: 130px;
+        font-size: 12px;
+    }
+}
