@@ -16,3 +16,36 @@ div.fordableCard_input > input {
     color: var(--color-light-grey-B);
     background-color: var(--color-light-grey-D);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Input */
+    div.fordableCard_input {
+        margin-top: 12px;
+    }
+
+    div.fordableCard_input > input {
+        width: 220px;
+        padding-left: 8px;
+        font-size: 15px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Input */
+    div.fordableCard_input {
+        margin-top: 12px;
+    }
+
+    div.fordableCard_input > input {
+        width: 220px;
+        padding-left: 8px;
+        font-size: 15px;
+    }
+}
