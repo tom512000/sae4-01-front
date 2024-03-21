@@ -70,3 +70,101 @@ div.fordableCard_content > h2 {
     font-size: 28px;
     color: var(--color-black);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Textes */
+    div.fordableCard_text {
+        height: 400px;
+    }
+
+    div.fordableCard_text > p:first-child {
+        font-size: 20px;
+    }
+
+    div.fordableCard_text > h1 {
+        font-size: 52px;
+    }
+
+    div.fordableCard_ligne {
+        width: 50px;
+        height: 5px;
+        margin-bottom: 18px;
+    }
+
+    div.fordableCard_text > p:last-child {
+        margin: 0 15%;
+        font-size: 11px;
+    }
+
+    /* Contenu */
+    div.fordableCard_content {
+        height: 400px;
+    }
+
+    div.fordableCard_content > h2 {
+        font-size: 32px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Fordable Card */
+    div.fordableCard {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    /* Textes */
+    div.fordableCard_text {
+        width: 50%;
+        min-height: 415px;
+    }
+
+    /* Contenu */
+    div.fordableCard_content {
+        width: 50%;
+        min-height: 415px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Fordable Card */
+    div.fordableCard {
+        flex-direction: row;
+    }
+
+    /* Textes */
+    div.fordableCard_text {
+        height: 450px;
+    }
+
+    div.fordableCard_text > p:first-child {
+        font-size: 20px;
+    }
+
+    div.fordableCard_text > h1 {
+        font-size: 56px;
+    }
+
+    div.fordableCard_ligne {
+        width: 50px;
+        height: 5px;
+        margin-bottom: 18px;
+    }
+
+    div.fordableCard_text > p:last-child {
+        margin: 0 15%;
+        font-size: 11px;
+    }
+
+    /* Contenu */
+    div.fordableCard_content {
+        height: 450px;
+    }
+
+    div.fordableCard_content > h2 {
+        font-size: 32px;
+    }
+}
