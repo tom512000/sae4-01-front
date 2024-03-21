@@ -1,0 +1,9 @@
+@import url("/public/index.css");
+
+/* Formulaire */
+div.fordableCard_content > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
