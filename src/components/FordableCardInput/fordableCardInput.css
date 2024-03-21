@@ -7,6 +7,7 @@ div.fordableCard_input {
 }
 
 div.fordableCard_input > input {
+    width: 180px;
     padding-left: 5px;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -15,6 +16,14 @@ div.fordableCard_input > input {
     font-size: 12px;
     color: var(--color-light-grey-B);
     background-color: var(--color-light-grey-D);
+}
+
+div.fordableCard_input > input::-webkit-input-placeholder{
+    color: var(--color-light-grey-B);
+}
+
+div.fordableCard_input > input:-moz-placeholder {
+    color: var(--color-light-grey-B);
 }
 
 /* Media queries - Tablet */
