@@ -1,0 +1,60 @@
+@import url("/public/index.css");
+
+/* Input */
+div.fordableCard_input {
+    margin-top: 10px;
+    border-left: 4px solid var(--color-red);
+}
+
+div.fordableCard_input > input {
+    width: 180px;
+    padding-left: 5px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-light-grey-B);
+    background-color: var(--color-light-grey-D);
+}
+
+div.fordableCard_input > input::-webkit-input-placeholder{
+    color: var(--color-light-grey-B);
+}
+
+div.fordableCard_input > input:-moz-placeholder {
+    color: var(--color-light-grey-B);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Input */
+    div.fordableCard_input {
+        margin-top: 12px;
+    }
+
+    div.fordableCard_input > input {
+        width: 220px;
+        padding-left: 8px;
+        font-size: 15px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Input */
+    div.fordableCard_input {
+        margin-top: 12px;
+    }
+
+    div.fordableCard_input > input {
+        width: 220px;
+        padding-left: 8px;
+        font-size: 15px;
+    }
+}

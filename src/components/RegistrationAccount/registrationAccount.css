@@ -1,0 +1,56 @@
+@import url("/public/index.css");
+
+/* Formulaire */
+div.fordableCard_content > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lien de connexion */
+div.fordableCard_member {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 154px;
+}
+
+div.fordableCard_member > p {
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+}
+
+div.fordableCard_member > p > a {
+    color: var(--color-red);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Lien de connexion */
+    div.fordableCard_member {
+        width: 234px;
+    }
+
+    div.fordableCard_member > p {
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Lien de connexion */
+    div.fordableCard_member {
+        width: 234px;
+    }
+
+    div.fordableCard_member > p {
+        font-size: 11px;
+    }
+}

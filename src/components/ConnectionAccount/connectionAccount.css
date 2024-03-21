@@ -1,0 +1,95 @@
+@import url("/public/index.css");
+
+/* Formulaire */
+div.fordableCard_content > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkbox du formulaire */
+div.fordableCard_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 191px;
+}
+
+div.fordableCard_link > div {
+    display: flex;
+    align-items: center;
+}
+
+div.fordableCard_link > div > input {
+    width: 8px;
+    height: 8px;
+    margin: 0 5px 0 0;
+}
+
+div.fordableCard_link > div > label {
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-black);
+}
+
+/* Lien de création */
+div.fordableCard_link > p {
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+}
+
+div.fordableCard_link > p > a {
+    color: var(--color-red);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Checkbox du formulaire */
+    div.fordableCard_link {
+        width: 234px;
+    }
+
+    div.fordableCard_link > div > input {
+        width: 11px;
+        height: 11px;
+    }
+
+    div.fordableCard_link > div > label {
+        font-size: 11px;
+    }
+
+    /* Création d'un compte */
+    div.fordableCard_link > p {
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Checkbox du formulaire */
+    div.fordableCard_link {
+        width: 234px;
+    }
+
+    div.fordableCard_link > div > input {
+        width: 11px;
+        height: 11px;
+    }
+
+    div.fordableCard_link > div > label {
+        font-size: 11px;
+    }
+
+    /* Création d'un compte */
+    div.fordableCard_link > p {
+        font-size: 11px;
+    }
+}

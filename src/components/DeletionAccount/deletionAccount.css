@@ -1,0 +1,24 @@
+@import url("/public/index.css");
+
+/* Formulaire */
+div.fordableCard_content > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Aucun changement */
+}

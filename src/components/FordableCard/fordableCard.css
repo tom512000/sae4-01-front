@@ -1,0 +1,170 @@
+@import url("/public/index.css");
+
+/* Fordable Card */
+div.fordableCard {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Textes */
+div.fordableCard_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 370px;
+    background-color: var(--color-red);
+}
+
+div.fordableCard_text > p:first-child {
+    margin: 0 0 -20px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-white);
+}
+
+div.fordableCard_text > h1 {
+    margin: 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+    color: var(--color-white);
+}
+
+div.fordableCard_ligne {
+    width: 40px;
+    height: 4px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+}
+
+div.fordableCard_text > p:last-child {
+    margin: 0 30px;
+    text-align: justify;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-white);
+}
+
+/* Contenu */
+div.fordableCard_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 370px;
+    background-color: var(--color-white);
+}
+
+div.fordableCard_content > h2 {
+    margin: 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--color-black);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Textes */
+    div.fordableCard_text {
+        height: 400px;
+    }
+
+    div.fordableCard_text > p:first-child {
+        font-size: 20px;
+    }
+
+    div.fordableCard_text > h1 {
+        font-size: 52px;
+    }
+
+    div.fordableCard_ligne {
+        width: 50px;
+        height: 5px;
+        margin-bottom: 18px;
+    }
+
+    div.fordableCard_text > p:last-child {
+        margin: 0 15%;
+        font-size: 11px;
+    }
+
+    /* Contenu */
+    div.fordableCard_content {
+        height: 400px;
+    }
+
+    div.fordableCard_content > h2 {
+        font-size: 32px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Fordable Card */
+    div.fordableCard {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    /* Textes */
+    div.fordableCard_text {
+        width: 50%;
+        min-height: 415px;
+    }
+
+    /* Contenu */
+    div.fordableCard_content {
+        width: 50%;
+        min-height: 415px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Fordable Card */
+    div.fordableCard {
+        flex-direction: row;
+    }
+
+    /* Textes */
+    div.fordableCard_text {
+        height: 450px;
+    }
+
+    div.fordableCard_text > p:first-child {
+        font-size: 20px;
+    }
+
+    div.fordableCard_text > h1 {
+        font-size: 56px;
+    }
+
+    div.fordableCard_ligne {
+        width: 50px;
+        height: 5px;
+        margin-bottom: 18px;
+    }
+
+    div.fordableCard_text > p:last-child {
+        margin: 0 15%;
+        font-size: 11px;
+    }
+
+    /* Contenu */
+    div.fordableCard_content {
+        height: 450px;
+    }
+
+    div.fordableCard_content > h2 {
+        font-size: 32px;
+    }
+}
