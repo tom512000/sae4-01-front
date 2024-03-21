@@ -1,11 +1,8 @@
 import React from "react";
 import "./editAccount.css";
-// eslint-disable-next-line import/extensions
-import FordableCard from "../FordableCard/fordableCard.jsx";
-// eslint-disable-next-line import/extensions
-import FordableCardInput from "../FordableCardInput/fordableCardInput.jsx";
-// eslint-disable-next-line import/extensions
-import FordableCardButton from "../fordableCardButton/fordableCardButton.jsx";
+import FordableCard from "../FordableCard/fordableCard";
+import FordableCardInput from "../FordableCardInput/fordableCardInput";
+import FordableCardButton from "../fordableCardButton/fordableCardButton";
 
 function EditAccount() {
   const multiText = (

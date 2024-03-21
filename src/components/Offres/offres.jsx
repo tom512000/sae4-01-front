@@ -1,9 +1,7 @@
 import React from "react";
 import "./offres.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
-// eslint-disable-next-line import/extensions
-import Offre from "../Offre/offre.jsx";
+import Offre from "../Offre/offre";
 
 function Offres({ offres, title }) {
   // Manque le nombre d'offres

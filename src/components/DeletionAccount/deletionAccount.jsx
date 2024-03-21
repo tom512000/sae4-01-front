@@ -1,9 +1,7 @@
 import React from "react";
 import "./deletionAccount.css";
-// eslint-disable-next-line import/extensions
-import FordableCard from "../FordableCard/fordableCard.jsx";
-// eslint-disable-next-line import/extensions
-import FordableCardButton from "../fordableCardButton/fordableCardButton.jsx";
+import FordableCard from "../FordableCard/fordableCard";
+import FordableCardButton from "../fordableCardButton/fordableCardButton";
 
 function DeletionAccount() {
   const multiText = (
