@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./offre.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
@@ -6,22 +6,23 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
+import {getEntrepriseDetail} from "../../services/api/enteprise.js";
 
 function Offre({ offre }) {
   // Manque une requête pour le nom et le logo de l'entreprise à partir de idEntreprise
-
+  console.log(offre)
   return (
     <div className="offre">
       <div className="offre_bloc">
         <div className="offre_logo">
           <img
-            src={`${offre /* Logo de l'entreprise */}`}
-            alt={`Logo de ${offre /* Nom de l'entreprise */}`}
+            src={`${offre.entreprise.logo}`}
+            alt={`Logo de ${offre.entreprise.nomEnt}`}
           />
         </div>
         <div className="offre_informations">
           <h1>{offre.nom_offre}</h1>
-          <p>nom_ent</p>
+          <p>{offre.entreprise.nomEnt}</p>
           <div className="offre_donnees">
             <p>{offre.lieux}</p>
             <p>{offre.level}</p>
