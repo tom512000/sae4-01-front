@@ -4,6 +4,7 @@ import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
+import Header from "../Header.jsx";
 
 function Navbar() {
   return (
@@ -18,11 +19,7 @@ function Navbar() {
             <a href="/">Inscription</a>
           </p>
         </button>
-        <button type="button" className="log_in">
-          <p>
-            <a href="/">Se connecter</a>
-          </p>
-        </button>
+          <Header />
         <button
           type="button"
           className="profile_menu"
