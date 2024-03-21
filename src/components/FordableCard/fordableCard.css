@@ -1,0 +1,72 @@
+@import url("/public/index.css");
+
+/* Fordable Card */
+div.fordableCard {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Textes */
+div.fordableCard_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 370px;
+    background-color: var(--color-red);
+}
+
+div.fordableCard_text > p:first-child {
+    margin: 0 0 -20px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-white);
+}
+
+div.fordableCard_text > h1 {
+    margin: 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+    color: var(--color-white);
+}
+
+div.fordableCard_ligne {
+    width: 40px;
+    height: 4px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+}
+
+div.fordableCard_text > p:last-child {
+    margin: 0 30px;
+    text-align: justify;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-white);
+}
+
+/* Contenu */
+div.fordableCard_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 370px;
+    background-color: var(--color-white);
+}
+
+div.fordableCard_content > h2 {
+    margin: 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--color-black);
+}
