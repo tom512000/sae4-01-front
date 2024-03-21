@@ -1,0 +1,27 @@
+@import url("/public/index.css");
+
+/* Formulaire */
+div.fordableCard_content > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lien de connexion */
+div.fordableCard_member {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 154px;
+}
+
+div.fordableCard_member > p {
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+}
+
+div.fordableCard_member > p > a {
+    color: var(--color-red);
+}
