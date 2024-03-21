@@ -44,3 +44,52 @@ div.fordableCard_link > p {
 div.fordableCard_link > p > a {
     color: var(--color-red);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Checkbox du formulaire */
+    div.fordableCard_link {
+        width: 234px;
+    }
+
+    div.fordableCard_link > div > input {
+        width: 11px;
+        height: 11px;
+    }
+
+    div.fordableCard_link > div > label {
+        font-size: 11px;
+    }
+
+    /* Création d'un compte */
+    div.fordableCard_link > p {
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Checkbox du formulaire */
+    div.fordableCard_link {
+        width: 234px;
+    }
+
+    div.fordableCard_link > div > input {
+        width: 11px;
+        height: 11px;
+    }
+
+    div.fordableCard_link > div > label {
+        font-size: 11px;
+    }
+
+    /* Création d'un compte */
+    div.fordableCard_link > p {
+        font-size: 11px;
+    }
+}
