@@ -1,7 +1,5 @@
 import { createContext } from 'react';
 
-const UserContext = createContext();
-
-export default UserContext;
+export const UserContext = createContext(undefined);
 
 export const colorTitle = createContext("");

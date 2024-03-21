@@ -10,8 +10,10 @@ export function getMe() {
 }
 
 export function loginUrl() {
-    return `http://127.0.0.1:8000/login`;
+    const redirectUrl = encodeURIComponent(location);
+    return `http://127.0.0.1:8000/login?redirect=${redirectUrl}`;
 }
 export function logoutUrl() {
-    return `http://127.0.0.1:8000/logout`;
+    const redirectUrl = encodeURIComponent(location);
+    return `http://127.0.0.1:8000/logout?redirect=${redirectUrl}`;
 }

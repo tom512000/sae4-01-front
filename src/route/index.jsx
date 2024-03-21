@@ -15,10 +15,7 @@ function Router () {
         </Switch>
     );
 }
-Router.Proptype = {
-    page: PropTypes.number,
-    setpage: PropTypes.func,
-};
+
 export default Router;
 
 

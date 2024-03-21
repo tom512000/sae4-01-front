@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {getMe} from "../../services/api/user.js";
-import UserContext from "./index.js";
 import PropTypes from "prop-types";
+import {UserContext} from "./index.js";
 
 function Provider({ children }) {
   const [userData, setData] = useState();
