@@ -1,4 +1,3 @@
-// src/views/BookmarkDetail.jsx
 import React, { useState, useEffect } from "react";
 import { fetchAllEntrepise } from "../services/api/enteprise";
 import Entreprises from "../components/Entreprises/entreprises";
