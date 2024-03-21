@@ -6,7 +6,7 @@ function Menu() {
   return (
     <div className="menu">
       <p>
-        <a href="/">Offres</a>
+        <a href="/offres">Offres</a>
       </p>
       <p>
           <Link to="/entreprises">Entreprises</Link>

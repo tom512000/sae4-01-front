@@ -10,9 +10,7 @@ function EntrepriseListeView()  {
 
 
     useEffect(() => {
-        setEntrepriseData(null);
         fetchAllEntrepise().then(data => {
-            console.log(data)
             setEntrepriseData(data);
         });
     });
