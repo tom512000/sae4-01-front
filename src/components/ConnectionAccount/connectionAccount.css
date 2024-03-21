@@ -1,0 +1,46 @@
+@import url("/public/index.css");
+
+/* Formulaire */
+div.fordableCard_content > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkbox du formulaire */
+div.fordableCard_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 191px;
+}
+
+div.fordableCard_link > div {
+    display: flex;
+    align-items: center;
+}
+
+div.fordableCard_link > div > input {
+    width: 8px;
+    height: 8px;
+    margin: 0 5px 0 0;
+}
+
+div.fordableCard_link > div > label {
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-black);
+}
+
+/* Lien de création */
+div.fordableCard_link > p {
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+}
+
+div.fordableCard_link > p > a {
+    color: var(--color-red);
+}
