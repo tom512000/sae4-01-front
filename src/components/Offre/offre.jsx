@@ -3,9 +3,10 @@ import "./offre.css";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
+import { format } from 'date-fns';
 
 function Offre({ offre }) {
-  // Manque une requête pour le nom et le logo de l'entreprise à partir de idEntreprise
+  // Manque une requête pour le nom et le logo de l'entreprise à partir d'idEntreprise
   return (
     <div className="offre">
       <div className="offre_bloc">
@@ -16,14 +17,14 @@ function Offre({ offre }) {
           />
         </div>
         <div className="offre_informations">
-          <h1>{offre.nom_offre}</h1>
+          <h1>{offre.nomOffre}</h1>
           <p>{offre.entreprise.nomEnt}</p>
           <div className="offre_donnees">
             <p>{offre.lieux}</p>
             <p>{offre.level}</p>
-            <p>{offre.duree}</p>
-            <p>{offre.jour_deb}</p>
-            <p>{offre.nb_place}</p>
+            <p>Durée : {offre.duree} jours</p>
+            <p>Début : {format(offre.jourDeb,'d/MM/yyyy')}</p>
+            <p>Nombre de places : {offre.nbPlace}</p>
           </div>
           <div className="offre_bouton">
             <p>En savoir plus</p>

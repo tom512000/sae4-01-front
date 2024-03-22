@@ -12,13 +12,13 @@ function Footer() {
         <div>
           <h1>Liens utiles</h1>
           <p>
-            <a href="/">À propos d&apos;Edutech</a>
+            <a href="/a-propos">À propos d&apos;Edutech</a>
           </p>
           <p>
-            <a href="/">Conditions générales</a>
+            <a href="/conditions">Conditions générales</a>
           </p>
           <p>
-            <a href="/">Mentions légales</a>
+            <a href="/mentions">Mentions légales</a>
           </p>
         </div>
       </div>

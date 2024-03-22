@@ -4,24 +4,13 @@ import { getEntrepriseDetail } from "../services/api/enteprise";
 import { getOffresDetail } from "../services/api/offre";
 
 function OffreDetailView({ id }) {
-  const [entrepriseData, setEntrepriseData] = useState([]);
   const [offreData, setOffreData] = useState([]);
-
-  // choppe l'offre
 
   useEffect(() => {
     getOffresDetail(id).then((data) => {
       setOffreData(data);
     });
-  });
-
-  // choppe l'entreprise qui a posté l'offre, d'ici on peut accéder au logo par ex
-
-  useEffect(() => {
-    getEntrepriseDetail(offreData.entreprise.id).then((data) => {
-      setEntrepriseData(data);
-    });
-  }, [offreData]);
+  },[id]);
 
   return (
     <section>

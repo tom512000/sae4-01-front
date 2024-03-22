@@ -14,7 +14,7 @@ function Navbar() {
       <div className="navbar_buttons">
         <button type="button" className="sign_in">
           <p>
-            <a href="/">Inscription</a>
+            <a href="/inscription">Inscription</a>
           </p>
         </button>
         <Header />
