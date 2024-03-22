@@ -1,6 +1,6 @@
 import React from "react";
 import "./menu.css";
-import {Link} from "wouter";
+import { Link } from "wouter";
 
 function Menu() {
   return (
@@ -9,7 +9,7 @@ function Menu() {
         <a href="/offres">Offres</a>
       </p>
       <p>
-          <Link to="/entreprises">Entreprises</Link>
+        <Link to="/entreprises">Entreprises</Link>
       </p>
     </div>
   );

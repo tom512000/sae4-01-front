@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { colorTitle } from "../user/index.js";
+import { colorTitle } from "../user/index";
 
 function ColorProvider({ children }) {
   const [color, setColor] = useState(Math.random().toString(16).substr(-6));
@@ -11,7 +11,11 @@ function ColorProvider({ children }) {
   );
 }
 
-export default ColorProvider;
-ColorProvider.PropTypes = {
+ColorProvider.propTypes = {
   children: PropTypes.node,
 };
+ColorProvider.defaultProps = {
+  children: null,
+};
+
+export default ColorProvider;

@@ -1,6 +1,5 @@
 import React from "react";
 import "./fordableCard.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
 
 function FordableCard({ pTitle, h1Title, pText, h2Title, children }) {

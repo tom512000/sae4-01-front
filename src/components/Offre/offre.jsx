@@ -1,16 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import "./offre.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from "prop-types";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
-import {getEntrepriseDetail} from "../../services/api/enteprise.js";
 
 function Offre({ offre }) {
   // Manque une requête pour le nom et le logo de l'entreprise à partir de idEntreprise
-  console.log(offre)
   return (
     <div className="offre">
       <div className="offre_bloc">
@@ -42,17 +37,25 @@ function Offre({ offre }) {
 
 Offre.propTypes = {
   offre: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    type_id: PropTypes.number.isRequired,
-    idEntreprise: PropTypes.number.isRequired,
-    nom_offre: PropTypes.string.isRequired,
-    duree: PropTypes.number.isRequired,
-    lieux: PropTypes.string.isRequired,
-    jour_deb: PropTypes.string.isRequired,
-    nb_place: PropTypes.number.isRequired,
-    descrip: PropTypes.string.isRequired,
-    level: PropTypes.string.isRequired,
-  }).isRequired,
+    id: PropTypes.number,
+    type_id: PropTypes.number,
+    idEntreprise: PropTypes.number,
+    nom_offre: PropTypes.string,
+    duree: PropTypes.number,
+    lieux: PropTypes.string,
+    jour_deb: PropTypes.string,
+    nb_place: PropTypes.number,
+    descrip: PropTypes.string,
+    level: PropTypes.string,
+    entreprise: PropTypes.shape({
+      logo: PropTypes.string,
+      nomEnt: PropTypes.string,
+    }),
+  }),
+};
+
+Offre.defaultProps = {
+  offre: {},
 };
 
 export default Offre;

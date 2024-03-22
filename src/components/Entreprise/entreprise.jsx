@@ -1,10 +1,7 @@
 import React from "react";
 import "./entreprise.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from "prop-types";
-// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes, { any } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 import { faAt } from "@fortawesome/free-solid-svg-icons/faAt";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons/faLocationDot";
@@ -51,14 +48,10 @@ function Entreprise({ entreprise }) {
 }
 
 Entreprise.propTypes = {
-  entreprise: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    nom_ent: PropTypes.string.isRequired,
-    adresse: PropTypes.string.isRequired,
-    mail: PropTypes.string.isRequired,
-    site_web: PropTypes.string.isRequired,
-    logo: PropTypes.string.isRequired,
-  }).isRequired,
+  entreprise: PropTypes.arrayOf(any),
+};
+Entreprise.defaultProps = {
+  entreprise: null,
 };
 
 export default Entreprise;

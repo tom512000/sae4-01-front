@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Pagination({ pagination, setPage, ...props }) {
+function Pagination({ pagination, setPage }) {
   return (
     <>
       <button
+        type="button"
         onClick={() => {
           setPage(pagination.first);
         }}
@@ -13,6 +14,7 @@ function Pagination({ pagination, setPage, ...props }) {
         {pagination.first}
       </button>
       <button
+        type="button"
         onClick={() => {
           setPage(pagination.previous);
         }}
@@ -21,6 +23,7 @@ function Pagination({ pagination, setPage, ...props }) {
         {pagination.previous}
       </button>
       <button
+        type="button"
         onClick={() => {
           setPage(pagination.next);
         }}
@@ -29,6 +32,7 @@ function Pagination({ pagination, setPage, ...props }) {
         {pagination.next}
       </button>
       <button
+        type="button"
         onClick={() => {
           setPage(pagination.last);
         }}
@@ -40,8 +44,12 @@ function Pagination({ pagination, setPage, ...props }) {
   );
 }
 
-Pagination.PropTypes = {
+Pagination.propTypes = {
   pagination: PropTypes.object,
   setPage: PropTypes.func,
+};
+Pagination.defaultProps = {
+  pagination: {},
+  setPage: null,
 };
 export default Pagination;

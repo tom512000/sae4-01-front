@@ -1,24 +1,20 @@
-// src/views/BookmarkDetail.jsx
-import React, { useState, useEffect } from 'react';
-import {fetchAllEntrepise} from "../services/api/enteprise.js";
-import Entreprises from "../components/Entreprises/entreprises.jsx";
+import React, { useState, useEffect } from "react";
+import { fetchAllEntrepise } from "../services/api/enteprise";
+import Entreprises from "../components/Entreprises/entreprises";
 
+function EntrepriseListeView() {
+  const [entrepriseData, setEntrepriseData] = useState([]);
 
-
-function EntrepriseListeView()  {
-    const [entrepriseData, setEntrepriseData] = useState([]);
-
-
-    useEffect(() => {
-        fetchAllEntrepise().then(data => {
-            setEntrepriseData(data);
-        });
+  useEffect(() => {
+    fetchAllEntrepise().then((data) => {
+      setEntrepriseData(data);
     });
+  });
 
-    return (
+  return (
     <section>
-        <Entreprises entreprises={entrepriseData}/>
-    </section>)
-    ;
+      <Entreprises entreprises={entrepriseData} />
+    </section>
+  );
 }
 export default EntrepriseListeView;
