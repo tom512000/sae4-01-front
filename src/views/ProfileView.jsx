@@ -14,7 +14,7 @@ function ProfileView() {
 
   return (
     <section>
-      COMPOSANT PROFIL ICI
+      CODER LE PROFIL ICI
     </section>
   );
 }

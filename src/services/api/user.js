@@ -1,4 +1,4 @@
-export const BASE_URL = "http://127.0.0.1:8000/api";
+export const BASE_URL = "http://10.31.33.97:8080/api";
 
 export function getMe() {
   return fetch(`${BASE_URL}/me`, {

@@ -8,6 +8,11 @@ import EntrepriseDetailView from "../views/EntrepriseDetailView";
 import OffreDetailView from "../views/OffreDetailView";
 import ProfileView from "../views/ProfileView";
 import ProfileModifView from "../views/ProfileModifView";
+import AboutView from "../views/AboutView";
+import MentionsView from "../views/MentionsView";
+import ConditionsView from "../views/ConditionsView";
+import InscriptionView from "../views/InscriptionView";
+import CandidaturesView from "../views/CandidaturesView";
 
 function Router() {
   return (
@@ -39,6 +44,26 @@ function Router() {
       <Route path="/profile/modif">
         <ProfileModifView />
       </Route>
+
+        <Route path="/candidatures">
+            <CandidaturesView />
+        </Route>
+
+        <Route path="/inscription">
+            <InscriptionView />
+        </Route>
+
+        <Route path="/a-propos">
+            <AboutView />
+        </Route>
+
+        <Route path="/mentions">
+            <MentionsView />
+        </Route>
+
+        <Route path="/conditions">
+            <ConditionsView />
+        </Route>
 
       <Route component={NotFound} />
     </Switch>
