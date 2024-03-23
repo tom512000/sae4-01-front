@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
   getEntrepriseDetail,
   getOffreEntrepriseId,
-} from "../services/api/enteprise";
+} from '../services/api/enteprise';
 
 function EntrepriseDetailView({ id }) {
   const [entrepriseData, setEntrepriseData] = useState([]);
@@ -16,7 +16,7 @@ function EntrepriseDetailView({ id }) {
     getOffreEntrepriseId(id).then((data) => {
       setOffreData(data);
     });
-  });
+  }, [id]);
 
   return (
     <section>

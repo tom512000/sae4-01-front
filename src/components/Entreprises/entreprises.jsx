@@ -1,9 +1,9 @@
-import React from "react";
-import "./entreprises.css";
+import React from 'react';
+import './entreprises.css';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 // eslint-disable-next-line import/extensions
-import Entreprise from "../Entreprise/entreprise.jsx";
+import Entreprise from '../Entreprise/entreprise.jsx';
 
 function Entreprises({ entreprises, title }) {
   return (
@@ -25,8 +25,8 @@ Entreprises.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       logo: PropTypes.string.isRequired,
-      nom_ent: PropTypes.string.isRequired,
-      site_web: PropTypes.string.isRequired,
+      nomEnt: PropTypes.string.isRequired,
+      siteWeb: PropTypes.string.isRequired,
       mail: PropTypes.string.isRequired,
       adresse: PropTypes.string.isRequired,
     }),
@@ -35,7 +35,7 @@ Entreprises.propTypes = {
 };
 
 Entreprises.defaultProps = {
-  title: "",
+  title: '',
 };
 
 export default Entreprises;

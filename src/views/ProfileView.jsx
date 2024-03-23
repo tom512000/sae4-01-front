@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { getMe } from "../services/api/user";
+import React, { useState, useEffect } from 'react';
+import { getMe } from '../services/api/user';
 
 function ProfileView() {
   const [meData, setMeData] = useState([]);
@@ -10,7 +10,7 @@ function ProfileView() {
     getMe().then((data) => {
       setMeData(data);
     });
-  });
+  }, []);
 
   return (
     <section>

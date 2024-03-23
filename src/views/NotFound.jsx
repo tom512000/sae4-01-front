@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "wouter";
+import React from 'react';
+import { Link } from 'wouter';
 
 function NotFound() {
   return (

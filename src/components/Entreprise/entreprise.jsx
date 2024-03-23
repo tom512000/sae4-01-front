@@ -1,11 +1,11 @@
-import React from "react";
-import "./entreprise.css";
-import PropTypes, { any } from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
-import { faAt } from "@fortawesome/free-solid-svg-icons/faAt";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons/faLocationDot";
-import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons/faArrowRightToBracket";
+import React from 'react';
+import './entreprise.css';
+import PropTypes, { any } from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
+import { faAt } from '@fortawesome/free-solid-svg-icons/faAt';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightToBracket';
 
 function Entreprise({ entreprise }) {
   // Manque le nombre d'offres
@@ -15,13 +15,13 @@ function Entreprise({ entreprise }) {
       <div className="entreprise_banniere">
         <div className="banniere_bloc_1" />
         <div className="banniere_bloc_2" />
-        <img src={`${entreprise.logo}`} alt={`Logo de ${entreprise.nom_ent}`} />
+        <img src={`${entreprise.logo}`} alt={`Logo de ${entreprise.nomEnt}`} />
       </div>
       <div className="entreprise_informations">
-        <h1>{entreprise.nom_ent}</h1>
+        <h1>{entreprise.nomEnt}</h1>
         <div>
           <FontAwesomeIcon icon={faGlobe} />
-          <p>{entreprise.site_web}</p>
+          <p>{entreprise.siteWeb}</p>
         </div>
         <div>
           <FontAwesomeIcon icon={faAt} />
@@ -37,7 +37,7 @@ function Entreprise({ entreprise }) {
         <div>
           <a
             href={`/entreprise/${entreprise.id}`}
-            aria-label={`Détails de ${entreprise.nom_ent}`}
+            aria-label={`Détails de ${entreprise.nomEnt}`}
           >
             <FontAwesomeIcon icon={faArrowRightToBracket} />
           </a>
@@ -48,10 +48,10 @@ function Entreprise({ entreprise }) {
 }
 
 Entreprise.propTypes = {
-  entreprise: PropTypes.arrayOf(any),
+  entreprise: PropTypes.object,
 };
 Entreprise.defaultProps = {
-  entreprise: null,
+  entreprise: {},
 };
 
 export default Entreprise;

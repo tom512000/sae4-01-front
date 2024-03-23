@@ -1,4 +1,4 @@
-import { BASE_URL } from "./user";
+import { BASE_URL } from './user';
 
 export function fetchAllOffre() {
   return fetch(`${BASE_URL}/offres`).then((response) => response.json());
@@ -9,7 +9,5 @@ export function getOffresDetail(id) {
 }
 
 export function getOffreTypeId(id) {
-  return fetch(`${BASE_URL}/Type/${id}/offres`).then((response) =>
-    response.json(),
-  );
+  return fetch(`${BASE_URL}/Type/${id}/offres`).then((response) => response.json());
 }
