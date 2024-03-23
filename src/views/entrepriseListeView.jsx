@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { fetchAllEntrepise } from "../services/api/enteprise";
-import Entreprises from "../components/Entreprises/entreprises";
+import React, { useState, useEffect } from 'react';
+import { fetchAllEntrepise } from '../services/api/enteprise';
+import Entreprises from '../components/Entreprises/entreprises';
 
 function EntrepriseListeView() {
   const [entrepriseData, setEntrepriseData] = useState([]);
@@ -9,7 +9,7 @@ function EntrepriseListeView() {
     fetchAllEntrepise().then((data) => {
       setEntrepriseData(data);
     });
-  });
+  }, []);
 
   return (
     <section>

@@ -1,7 +1,7 @@
-import React from "react";
-import "./offres.css";
-import PropTypes from "prop-types";
-import Offre from "../Offre/offre";
+import React from 'react';
+import './offres.css';
+import PropTypes from 'prop-types';
+import Offre from '../Offre/offre';
 
 function Offres({ offres, title }) {
   // Manque le nombre d'offres
@@ -25,13 +25,11 @@ Offres.propTypes = {
   offres: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      type_id: PropTypes.number.isRequired,
-      idEntreprise: PropTypes.number.isRequired,
-      nom_offre: PropTypes.string.isRequired,
+      nomOffre: PropTypes.string.isRequired,
       duree: PropTypes.number.isRequired,
       lieux: PropTypes.string.isRequired,
-      jour_deb: PropTypes.string.isRequired,
-      nb_place: PropTypes.number.isRequired,
+      jourDeb: PropTypes.string.isRequired,
+      nbPlace: PropTypes.number.isRequired,
       descrip: PropTypes.string.isRequired,
       level: PropTypes.string.isRequired,
     }),
@@ -40,7 +38,7 @@ Offres.propTypes = {
 };
 
 Offres.defaultProps = {
-  title: "",
+  title: '',
 };
 
 export default Offres;

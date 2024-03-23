@@ -1,7 +1,7 @@
 // src/views/BookmarkDetail.jsx
-import React, { useState, useEffect } from "react";
-import { fetchAllOffre } from "../services/api/offre";
-import Offres from "../components/Offres/offres";
+import React, { useState, useEffect } from 'react';
+import { fetchAllOffre } from '../services/api/offre';
+import Offres from '../components/Offres/offres';
 
 function OffresListeView() {
   const [offreData, setOffreData] = useState([]);
@@ -10,7 +10,7 @@ function OffresListeView() {
     fetchAllOffre().then((data) => {
       setOffreData(data);
     });
-  });
+  }, []);
 
   return (
     <section>

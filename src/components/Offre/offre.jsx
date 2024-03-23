@@ -1,8 +1,8 @@
-import React from "react";
-import "./offre.css";
-import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
+import React from 'react';
+import './offre.css';
+import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 import { format } from 'date-fns';
 
 function Offre({ offre }) {
@@ -22,9 +22,20 @@ function Offre({ offre }) {
           <div className="offre_donnees">
             <p>{offre.lieux}</p>
             <p>{offre.level}</p>
-            <p>Durée : {offre.duree} jours</p>
-            <p>Début : {format(offre.jourDeb,'d/MM/yyyy')}</p>
-            <p>Nombre de places : {offre.nbPlace}</p>
+            <p>
+              Durée :
+              {offre.duree}
+              {' '}
+              jours
+            </p>
+            <p>
+              Début :
+              {format(offre.jourDeb, 'd/MM/yyyy')}
+            </p>
+            <p>
+              Nombre de places :
+              {offre.nbPlace}
+            </p>
           </div>
           <div className="offre_bouton">
             <p>En savoir plus</p>
@@ -39,13 +50,12 @@ function Offre({ offre }) {
 Offre.propTypes = {
   offre: PropTypes.shape({
     id: PropTypes.number,
-    type_id: PropTypes.number,
     idEntreprise: PropTypes.number,
-    nom_offre: PropTypes.string,
+    nomOffre: PropTypes.string,
     duree: PropTypes.number,
     lieux: PropTypes.string,
-    jour_deb: PropTypes.string,
-    nb_place: PropTypes.number,
+    jourDeb: PropTypes.string,
+    nbPlace: PropTypes.number,
     descrip: PropTypes.string,
     level: PropTypes.string,
     entreprise: PropTypes.shape({
