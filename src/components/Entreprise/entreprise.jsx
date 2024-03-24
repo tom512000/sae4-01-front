@@ -1,27 +1,32 @@
-import React from "react";
-import "./entreprise.css";
-import PropTypes, { any } from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
-import { faAt } from "@fortawesome/free-solid-svg-icons/faAt";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons/faLocationDot";
-import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons/faArrowRightToBracket";
+import React, { useEffect, useState } from 'react';
+import './entreprise.css';
+import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
+import { faAt } from '@fortawesome/free-solid-svg-icons/faAt';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightToBracket';
+import { getOffreEntrepriseId } from '../../services/api/enteprise';
 
 function Entreprise({ entreprise }) {
-  // Manque le nombre d'offres
+  const [nbOffres, setNbOffres] = useState(0);
+  useEffect(() => {
+    getOffreEntrepriseId(entreprise.id)
+      .then((offres) => setNbOffres(offres.length));
+  }, [entreprise.id]);
 
   return (
     <div className="entreprise">
       <div className="entreprise_banniere">
         <div className="banniere_bloc_1" />
         <div className="banniere_bloc_2" />
-        <img src={`${entreprise.logo}`} alt={`Logo de ${entreprise.nom_ent}`} />
+        <img src={`${entreprise.logo}`} alt={`Logo de ${entreprise.nomEnt}`} />
       </div>
       <div className="entreprise_informations">
-        <h1>{entreprise.nom_ent}</h1>
+        <h1>{entreprise.nomEnt}</h1>
         <div>
           <FontAwesomeIcon icon={faGlobe} />
-          <p>{entreprise.site_web}</p>
+          <p>{entreprise.siteWeb}</p>
         </div>
         <div>
           <FontAwesomeIcon icon={faAt} />
@@ -33,11 +38,14 @@ function Entreprise({ entreprise }) {
         </div>
       </div>
       <div className="entreprise_autres">
-        <p>x offre(s) d&apos;emploi</p>
+        <p>
+          {nbOffres}
+          &ensp;offre(s) d&apos;emploi
+        </p>
         <div>
           <a
             href={`/entreprise/${entreprise.id}`}
-            aria-label={`Détails de ${entreprise.nom_ent}`}
+            aria-label={`Détails de ${entreprise.nomEnt}`}
           >
             <FontAwesomeIcon icon={faArrowRightToBracket} />
           </a>
@@ -48,10 +56,14 @@ function Entreprise({ entreprise }) {
 }
 
 Entreprise.propTypes = {
-  entreprise: PropTypes.arrayOf(any),
-};
-Entreprise.defaultProps = {
-  entreprise: null,
+  entreprise: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    nomEnt: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    siteWeb: PropTypes.string.isRequired,
+    mail: PropTypes.string.isRequired,
+    adresse: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Entreprise;
