@@ -1,9 +1,7 @@
-import React from "react";
-import "./entreprises.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from "prop-types";
-// eslint-disable-next-line import/extensions
-import Entreprise from "../Entreprise/entreprise.jsx";
+import React from 'react';
+import './entreprises.css';
+import PropTypes from 'prop-types';
+import Entreprise from '../Entreprise/entreprise';
 
 function Entreprises({ entreprises, title }) {
   return (
@@ -35,7 +33,7 @@ Entreprises.propTypes = {
 };
 
 Entreprises.defaultProps = {
-  title: "",
+  title: '',
 };
 
 export default Entreprises;
