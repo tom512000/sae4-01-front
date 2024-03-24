@@ -5,6 +5,7 @@
 /*
   font-family: 'Palanquin Dark', sans-serif;
   font-family: 'Niramit', sans-serif;
+  font-family: 'Racing Sans One', sans-serif;
 */
 
 /* CSS global */
@@ -25,6 +26,8 @@
   --color-white: #FFFFFF;
   /* Rouge RGB(228, 55, 25) */
   --color-red: #E43719;
+  /* Rouge foncé RGB(183, 31, 30) */
+  --color-dark-red : #B71F1E;
 }
 
 img {
