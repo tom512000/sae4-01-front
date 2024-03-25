@@ -35,7 +35,7 @@ function Offres({ offres, title , onClick}) {
           </div>
         </div>
         <div>
-            <Pagination onClick={onClick}/>
+            <Pagination onClick={onClick} max={15}/>
         </div>
       </>
   );

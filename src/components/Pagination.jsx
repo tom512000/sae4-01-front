@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Pagination({ onClick }) {
+function Pagination({ onClick , max}) {
     const url = new URL(window.location.href);
     const [page, setPage] = useState(1);
 
@@ -23,14 +23,14 @@ function Pagination({ onClick }) {
                 {"<"}
             </button>
             <p>{page}</p>
-            <button type="button" disabled={page >= 8}
+            <button type="button" disabled={page >= max}
                     onClick={() =>
                         handleClick(page + 1)}>
                 {">"}
             </button>
-            <button type="button" disabled={page >= 8}
+            <button type="button" disabled={page >= max}
                     onClick={() =>
-                        handleClick(8)}> {">>"}
+                        handleClick(max)}> {">>"}
             </button>
         </div>
     );
