@@ -1,0 +1,121 @@
+@import url("/public/index.css");
+
+/* Menu du profil */
+div.menu_profil {
+    width: 150px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px var(--color-black);
+    background-color: var(--color-white);
+    z-index: 9999;
+}
+
+div.menu_profil > hr {
+    width: 80%;
+}
+
+/* Informations de l'utilisateur */
+div.profile_user {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+div.profile_user > img {
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    background-color: #E43719;
+}
+
+div.profile_infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+div.profile_infos > p:first-child {
+    margin-bottom: -8px;
+}
+
+div.profile_infos > p:nth-child(2) {
+    margin-bottom: -7px;
+}
+
+div.profile_infos > p {
+    margin: 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+div.profile_infos > p > a {
+    color: var(--color-light-grey-9);
+    text-decoration: underline;
+}
+
+/* Liens du profil */
+div.profile_links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90px;
+}
+
+div.profile_links > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% / 3);
+}
+
+div.profile_links > a > :first-child {
+    font-size: 10px;
+    color: var(--color-dark-grey);
+}
+
+div.profile_links > a > p {
+    margin: 0 0 0 10px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-dark-grey);
+}
+
+/* Lien de connexion */
+div.profile_disc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+div.profile_disc > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+div.profile_disc > a > :first-child {
+    font-size: 10px;
+    color: var(--color-dark-grey);
+}
+
+div.profile_disc > a > p {
+    margin: 0 0 0 10px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-dark-grey);
+}
