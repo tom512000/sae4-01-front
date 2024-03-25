@@ -119,3 +119,116 @@ div.profile_disc > a > p {
     font-size: 10px;
     color: var(--color-dark-grey);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Aucun changement */
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Menu du profil */
+    div.menu_profil {
+        width: 170px;
+        top: 60px;
+    }
+
+    /* Informations de l'utilisateur */
+    div.profile_user {
+        height: 80px;
+    }
+
+    div.profile_user > img {
+        width: 58px;
+        height: 58px;
+    }
+
+    div.profile_infos > p {
+        font-size: 13px;
+    }
+
+    /* Liens du profil */
+    div.profile_links {
+        height: 90px;
+    }
+
+    div.profile_links > a > :first-child {
+        font-size: 12px;
+    }
+
+    div.profile_links > a > p {
+        margin: 0 0 0 10px;
+        font-size: 12px;
+    }
+
+    /* Lien de connexion */
+    div.profile_disc {
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    div.profile_disc > a > :first-child {
+        font-size: 12px;
+    }
+
+    div.profile_disc > a > p {
+        margin: 0 0 0 10px;
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Menu du profil */
+    div.menu_profil {
+        width: 180px;
+        top: 60px;
+    }
+
+    /* Informations de l'utilisateur */
+    div.profile_user {
+        height: 80px;
+    }
+
+    div.profile_user > img {
+        width: 60px;
+        height: 60px;
+    }
+
+    div.profile_infos > p {
+        font-size: 14px;
+    }
+
+    div.profile_infos > p:first-child {
+        margin-bottom: -10px;
+    }
+
+    /* Liens du profil */
+    div.profile_links {
+        height: 90px;
+    }
+
+    div.profile_links > a > :first-child {
+        font-size: 13px;
+    }
+
+    div.profile_links > a > p {
+        margin: 0 0 0 10px;
+        font-size: 13px;
+    }
+
+    /* Lien de connexion */
+    div.profile_disc {
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    div.profile_disc > a > :first-child {
+        font-size: 13px;
+    }
+
+    div.profile_disc > a > p {
+        margin: 0 0 0 10px;
+        font-size: 13px;
+    }
+}
