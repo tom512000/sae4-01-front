@@ -1,35 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function Pagination({ onClick}) {
-    let url = window.location;
-    let page = new URLSearchParams(url).values().next().value;
+function Pagination({ onClick }) {
+    const url = new URL(window.location.href);
+    const [page, setPage] = useState(1);
+
+    function handleClick (newPage) {
+        url.searchParams.set('page', newPage);
+        onClick(url.toString());
+        setPage(parseInt(new URLSearchParams(url.search).get('page')));
+    }
+
     return (
         <div>
-            <button type="button" disabled={page <= 2}
-                    onClick={() => onClick(()=> {
-                        new URLSearchParams(url).set("page", "1")
-                        return url;
-                    })}> {"<<"} </button>
-
-            <button type="button" disabled={page === 1}
-                    onClick={() => onClick(()=> {
-                        new URLSearchParams(url).set("page", "1")
-                        return url;
-                    })}>{"<"} </button>
-
+            <button type="button" disabled={page <= 1}
+                    onClick={() =>
+                        handleClick(1)}>
+                {"<<"}
+            </button>
+            <button type="button" disabled={page <= 1}
+                    onClick={() =>
+                        handleClick(page - 1)}>
+                {"<"}
+            </button>
             <p>{page}</p>
-
-            <button type="button" disabled={page === 8}
-                    onClick={() => onClick(()=> {
-                        new URLSearchParams(url).set("page", "1")
-                        return url;
-                    })}>{">"} </button>
-
-            <button type="button" disabled={page >= 7}
-                    onClick={() => onClick(()=> {
-                        new URLSearchParams(url).set("page", "8")
-                        return url;
-                    })}>{">>"} </button>
+            <button type="button" disabled={page >= 8}
+                    onClick={() =>
+                        handleClick(page + 1)}>
+                {">"}
+            </button>
+            <button type="button" disabled={page >= 8}
+                    onClick={() =>
+                        handleClick(8)}> {">>"}
+            </button>
         </div>
     );
 }

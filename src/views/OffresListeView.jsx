@@ -5,7 +5,6 @@ import Offres from '../components/Offres/offres';
 
 function OffresListeView() {
   const [offreData, setOffreData] = useState([]);
-  const [paginationData, setPagination] = useState([]);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
