@@ -1,10 +1,15 @@
 import React from 'react';
 import './entreprises.css';
+<<<<<<< HEAD
+import PropTypes from 'prop-types';
+import Entreprise from '../Entreprise/entreprise';
+=======
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/extensions
 import Entreprise from '../Entreprise/entreprise.jsx';
 import Pagination from "../Pagination.jsx";
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
 
 function Entreprises({ entreprises, title , onClick}) {
     if (onClick === undefined) {

@@ -1,14 +1,28 @@
+<<<<<<< HEAD
+import React, { useEffect, useState } from 'react';
+import './entreprise.css';
+import PropTypes from 'prop-types';
+=======
 import React from 'react';
 import './entreprise.css';
 import PropTypes, { any } from 'prop-types';
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
 import { faAt } from '@fortawesome/free-solid-svg-icons/faAt';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightToBracket';
+<<<<<<< HEAD
+import { getOffreEntrepriseId } from '../../services/api/enteprise';
+=======
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
 
 function Entreprise({ entreprise }) {
-  // Manque le nombre d'offres
+  const [nbOffres, setNbOffres] = useState(0);
+  useEffect(() => {
+    getOffreEntrepriseId(entreprise.id)
+      .then((offres) => setNbOffres(offres.length));
+  }, [entreprise.id]);
 
   return (
     <div className="entreprise">
@@ -33,7 +47,10 @@ function Entreprise({ entreprise }) {
         </div>
       </div>
       <div className="entreprise_autres">
-        <p>x offre(s) d&apos;emploi</p>
+        <p>
+          {nbOffres}
+          &ensp;offre(s) d&apos;emploi
+        </p>
         <div>
           <a
             href={`/entreprise/${entreprise.id}`}
@@ -48,10 +65,21 @@ function Entreprise({ entreprise }) {
 }
 
 Entreprise.propTypes = {
+<<<<<<< HEAD
+  entreprise: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    nomEnt: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    siteWeb: PropTypes.string.isRequired,
+    mail: PropTypes.string.isRequired,
+    adresse: PropTypes.string.isRequired,
+  }).isRequired,
+=======
   entreprise: PropTypes.object,
 };
 Entreprise.defaultProps = {
   entreprise: {},
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
 };
 
 export default Entreprise;

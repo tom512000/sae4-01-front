@@ -2,8 +2,9 @@
 
 /* Entreprise */
 div.entreprise {
-    width: 190px;
-    height: 270px;
+    width: 220px;
+    height: 290px;
+    min-width: 220px;
     border: 1px solid var(--color-light-grey-D);
     background-color: var(--color-white);
 }
@@ -42,10 +43,10 @@ div.entreprise_informations {
 }
 
 div.entreprise_informations > h1 {
-    margin-left: 15px;
+    margin: 0 0 0 15px;
     font-family: 'Palanquin Dark', sans-serif;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 18px;
 }
 
 div.entreprise_informations > div {
@@ -55,15 +56,16 @@ div.entreprise_informations > div {
 }
 
 div.entreprise_informations > div > :first-child {
-    margin-left: 15px;
+    margin-left: 13px;
+    font-size: 10px;
     color: var(--color-black);
 }
 
 div.entreprise_informations > div > p {
-    margin-left: 10px;
+    margin: 6px 0 6px 6px;
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 10px;
     color: var(--color-dark-grey);
 }
 
@@ -77,14 +79,14 @@ div.entreprise_autres {
 }
 
 div.entreprise_autres > p {
-    margin-left: 15px;
+    margin: 0 0 0 15px;
     font-family: 'Palanquin Dark', sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 div.entreprise_autres > div {
-    width: 41px;
+    width: 44px;
     height: 100%;
     position: absolute;
     right: 0;
@@ -108,8 +110,9 @@ div.entreprise_autres > div > a > :first-child {
 @media (min-width: 426px) and (max-width: 768px) {
     /* Entreprise */
     div.entreprise {
-        width: 200px;
-        height: 285px;
+        width: 230px;
+        height: 290px;
+        min-width: 230px;
     }
 
     /* Bannière de l'entreprise */
@@ -120,20 +123,16 @@ div.entreprise_autres > div > a > :first-child {
 
     /* Informations de l'entreprise */
     div.entreprise_informations > h1 {
-        font-size: 27px;
+        font-size: 19px;
     }
 
     div.entreprise_informations > div > p {
-        font-size: 15px;
+        font-size: 10px;
     }
 
     /* Autres informations de l'entreprise */
     div.entreprise_autres > p {
-        font-size: 15px;
-    }
-
-    div.entreprise_autres > div {
-        width: 43px;
+        font-size: 14px;
     }
 }
 
@@ -141,8 +140,9 @@ div.entreprise_autres > div > a > :first-child {
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Entreprise */
     div.entreprise {
-        width: 205px;
-        height: 292px;
+        width: 240px;
+        height: 300px;
+        min-width: 230px;
     }
 
     /* Bannière de l'entreprise */
@@ -153,16 +153,16 @@ div.entreprise_autres > div > a > :first-child {
 
     /* Informations de l'entreprise */
     div.entreprise_informations > h1 {
-        font-size: 29px;
+        font-size: 20px;
     }
 
     div.entreprise_informations > div > p {
-        font-size: 16px;
+        font-size: 10px;
     }
 
     /* Autres informations de l'entreprise */
     div.entreprise_autres > p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     div.entreprise_autres > div {
@@ -174,8 +174,9 @@ div.entreprise_autres > div > a > :first-child {
 @media (min-width: 1025px) {
     /* Entreprise */
     div.entreprise {
-        width: 210px;
-        height: 299px;
+        width: 250px;
+        height: 310px;
+        min-width: 230px;
     }
 
     /* Bannière de l'entreprise */
@@ -186,16 +187,16 @@ div.entreprise_autres > div > a > :first-child {
 
     /* Informations de l'entreprise */
     div.entreprise_informations > h1 {
-        font-size: 29px;
+        font-size: 21px;
     }
 
     div.entreprise_informations > div > p {
-        font-size: 16px;
+        font-size: 11px;
     }
 
     /* Autres informations de l'entreprise */
     div.entreprise_autres > p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     div.entreprise_autres > div {

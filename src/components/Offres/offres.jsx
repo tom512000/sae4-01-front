@@ -2,6 +2,25 @@ import React from 'react';
 import './offres.css';
 import PropTypes from 'prop-types';
 import Offre from '../Offre/offre';
+<<<<<<< HEAD
+
+function Offres({ offres, title }) {
+  return (
+    <div className="offres">
+      <div className="offres_title">
+        <h1>{title}</h1>
+      </div>
+      {offres.map((x) => (
+        <Offre offre={x} />
+      ))}
+      <div className="offres_number">
+        <p>
+          {offres.length}
+          &ensp;offre(s) d&apos;emploi
+        </p>
+      </div>
+    </div>
+=======
 import Pagination from "../Pagination.jsx";
 
 function Offres({ offres, title , onClick}) {
@@ -38,6 +57,7 @@ function Offres({ offres, title , onClick}) {
             <Pagination onClick={onClick} max={15}/>
         </div>
       </>
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
   );
 }
 

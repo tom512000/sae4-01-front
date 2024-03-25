@@ -16,11 +16,11 @@ export function getMe() {
 
 export function loginUrl() {
   const redirectUrl = encodeURIComponent(location);
-  console.log(redirectUrl)
+  console.log(redirectUrl);
   return `http://127.0.0.1:8000/login?redirect=${redirectUrl}`;
 }
 export function logoutUrl() {
   const redirectUrl = encodeURIComponent(location);
-  console.log(redirectUrl)
+  console.log(redirectUrl);
   return `http://127.0.0.1:8000/logout?redirect=${redirectUrl}`;
 }

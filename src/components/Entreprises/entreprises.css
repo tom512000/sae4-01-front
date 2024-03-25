@@ -18,16 +18,17 @@ div.entreprises_title {
 }
 
 div.entreprises_title > h1 {
-    margin: 5px 0;
+    margin: 7px 0;
     font-family: 'Palanquin Dark', sans-serif;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 /* Liste des entreprises */
 div.entreprises_list {
     display: flex;
     width: 80%;
+    margin-bottom: 10px;
     overflow-x: scroll;
 }
 
