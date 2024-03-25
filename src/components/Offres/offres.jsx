@@ -1,11 +1,9 @@
-import React from "react";
-import "./offres.css";
-import PropTypes from "prop-types";
-import Offre from "../Offre/offre";
+import React from 'react';
+import './offres.css';
+import PropTypes from 'prop-types';
+import Offre from '../Offre/offre';
 
 function Offres({ offres, title }) {
-  // Manque le nombre d'offres
-
   return (
     <div className="offres">
       <div className="offres_title">
@@ -15,7 +13,10 @@ function Offres({ offres, title }) {
         <Offre offre={x} />
       ))}
       <div className="offres_number">
-        <p>x offre(s) d&apos;emploi</p>
+        <p>
+          {offres.length}
+          &ensp;offre(s) d&apos;emploi
+        </p>
       </div>
     </div>
   );
@@ -40,7 +41,7 @@ Offres.propTypes = {
 };
 
 Offres.defaultProps = {
-  title: "",
+  title: '',
 };
 
 export default Offres;
