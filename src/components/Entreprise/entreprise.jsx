@@ -1,12 +1,21 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import './entreprise.css';
 import PropTypes from 'prop-types';
+=======
+import React from 'react';
+import './entreprise.css';
+import PropTypes, { any } from 'prop-types';
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
 import { faAt } from '@fortawesome/free-solid-svg-icons/faAt';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightToBracket';
+<<<<<<< HEAD
 import { getOffreEntrepriseId } from '../../services/api/enteprise';
+=======
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
 
 function Entreprise({ entreprise }) {
   const [nbOffres, setNbOffres] = useState(0);
@@ -56,6 +65,7 @@ function Entreprise({ entreprise }) {
 }
 
 Entreprise.propTypes = {
+<<<<<<< HEAD
   entreprise: PropTypes.shape({
     id: PropTypes.number.isRequired,
     nomEnt: PropTypes.string.isRequired,
@@ -64,6 +74,12 @@ Entreprise.propTypes = {
     mail: PropTypes.string.isRequired,
     adresse: PropTypes.string.isRequired,
   }).isRequired,
+=======
+  entreprise: PropTypes.object,
+};
+Entreprise.defaultProps = {
+  entreprise: {},
+>>>>>>> 0894959bbd07a6f6d354cb46737eb95afd198edd
 };
 
 export default Entreprise;
