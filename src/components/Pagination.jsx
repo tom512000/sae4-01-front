@@ -1,55 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
 
-function Pagination({ pagination, setPage }) {
-  return (
-    <>
-      <button
-        type="button"
-        onClick={() => {
-          setPage(pagination.first);
-        }}
-        disabled={pagination.first == null}
-      >
-        {pagination.first}
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          setPage(pagination.previous);
-        }}
-        disabled={pagination.previous == null}
-      >
-        {pagination.previous}
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          setPage(pagination.next);
-        }}
-        disabled={pagination.next == null}
-      >
-        {pagination.next}
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          setPage(pagination.last);
-        }}
-        disabled={pagination.last == null}
-      >
-        {pagination.last}
-      </button>
-    </>
-  );
+function Pagination({ onClick}) {
+    let url = window.location;
+    let page = new URLSearchParams(url).values().next().value;
+    return (
+        <div>
+            <button type="button" disabled={page <= 2}
+                    onClick={() => onClick(()=> {
+                        new URLSearchParams(url).set("page", "1")
+                        return url;
+                    })}> {"<<"} </button>
+
+            <button type="button" disabled={page === 1}
+                    onClick={() => onClick(()=> {
+                        new URLSearchParams(url).set("page", "1")
+                        return url;
+                    })}>{"<"} </button>
+
+            <p>{page}</p>
+
+            <button type="button" disabled={page === 8}
+                    onClick={() => onClick(()=> {
+                        new URLSearchParams(url).set("page", "1")
+                        return url;
+                    })}>{">"} </button>
+
+            <button type="button" disabled={page >= 7}
+                    onClick={() => onClick(()=> {
+                        new URLSearchParams(url).set("page", "8")
+                        return url;
+                    })}>{">>"} </button>
+        </div>
+    );
 }
-
-Pagination.propTypes = {
-  pagination: PropTypes.object,
-  setPage: PropTypes.func,
-};
-Pagination.defaultProps = {
-  pagination: {},
-  setPage: null,
-};
 export default Pagination;

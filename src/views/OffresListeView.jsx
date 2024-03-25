@@ -5,16 +5,22 @@ import Offres from '../components/Offres/offres';
 
 function OffresListeView() {
   const [offreData, setOffreData] = useState([]);
+  const [paginationData, setPagination] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetchAllOffre().then((data) => {
+    fetchAllOffre(page).then((data) => {
       setOffreData(data);
     });
-  }, []);
+  }, [page]);
+
+  function onClick(p){
+    setPage(parseInt(new URLSearchParams(p).values().next().value));
+  }
 
   return (
     <section>
-      <Offres offres={offreData} title="Liste des offres" />
+      <Offres offres={offreData} title="Liste des offres" onClick={onClick}/>
     </section>
   );
 }
