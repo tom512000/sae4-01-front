@@ -3,8 +3,9 @@ import './offres.css';
 import PropTypes from 'prop-types';
 import Offre from '../Offre/offre';
 import Pagination from "../Pagination.jsx";
+import FiltreOffre from "./filtreOffre.jsx";
 
-function Offres({ offres, title , onClick}) {
+function Offres({ offres, title , onClick, onSubmit, skillData}) {
     if (onClick === undefined){
         return (
             <div className="offres">
@@ -23,6 +24,9 @@ function Offres({ offres, title , onClick}) {
 
   return (
       <>
+          <div>
+              <FiltreOffre submiteText="Submit" onSubmit={onSubmit} skillData={skillData}/>
+          </div>
         <div className="offres">
           <div className="offres_title">
             <h1>{title}</h1>
