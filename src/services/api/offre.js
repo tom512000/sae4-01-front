@@ -1,10 +1,51 @@
 import { BASE_URL } from './user';
 
-export function fetchAllOffre(urlParams) {
+export function fetchAllOffre(urlParams, filtre) {
   let url = `${BASE_URL}/offres`;
+
+  // Construire les paramètres de requête en fonction des filtres
+  const queryParams = [];
   if (urlParams) {
-    url = `${BASE_URL}/offres?page=` + urlParams
+    queryParams.push(`page=${urlParams}`);
   }
+  if (filtre){
+    if (filtre.date) {
+      if (filtre.avantDate) {
+        queryParams.push(`jourDeb[before]=${filtre.date}&order%5BjourDeb%5D=asc`);
+      }
+      if (filtre.apresDate) {
+        queryParams.push(`jourDeb[after]=${filtre.apresDate}&order%5BjourDeb%5D=desc`);
+      }
+    }
+    if (filtre.text && filtre.text !== "") {
+      queryParams.push(`nomOffre=${filtre.text}`);
+    }
+    if (filtre.isCheckedStage) {
+      queryParams.push(`Type.id=1`);
+    }
+    if (filtre.isCheckedAlternance) {
+      queryParams.push(`Type.id=2`);
+    }
+    if (filtre.niveau !== undefined && filtre.niveau !== "") {
+      queryParams.push(`level=${filtre.niveau}`);
+    }
+    if (filtre.duree !== undefined && filtre.duree !== "") {
+      queryParams.push(`duree=${filtre.duree}`);
+    }
+
+    if (filtre.selectedSkills === []) {
+      filtre.selectedSkills.forEach((skill) => {
+        queryParams.push(`skillDemanders.skill.id=${skill}`);
+      })
+    }
+
+  }
+
+  // Si des paramètres de requête sont présents, les ajouter à l'URL
+  if (queryParams.length > 0) {
+    url += `?${queryParams.join('&')}`;
+  }
+  console.log(queryParams)
   return fetch(url).then((response) => response.json());
 }
 
