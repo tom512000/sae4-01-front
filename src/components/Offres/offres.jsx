@@ -31,7 +31,10 @@ function Offres({ offres, title , onClick}) {
             <Offre offre={x} />
           ))}
           <div className="offres_number">
-            <p>x offre(s) d&apos;emploi</p>
+              <p>
+                  {offres.length}
+                  &ensp;offre(s) d&apos;emploi
+              </p>
           </div>
         </div>
         <div>
