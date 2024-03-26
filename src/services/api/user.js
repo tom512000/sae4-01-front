@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://127.0.0.1:8000/api';
+export const BASE_URL = 'http://10.31.33.97:8080/api';
 
 export function getMe() {
   return fetch(`${BASE_URL}/me`, {
@@ -17,10 +17,10 @@ export function getMe() {
 export function loginUrl() {
   const redirectUrl = encodeURIComponent(location);
   console.log(redirectUrl);
-  return `http://127.0.0.1:8000/login?redirect=${redirectUrl}`;
+  return `http://10.31.33.97:8080/login?redirect=${redirectUrl}`;
 }
 export function logoutUrl() {
   const redirectUrl = encodeURIComponent(location);
   console.log(redirectUrl);
-  return `http://127.0.0.1:8000/logout?redirect=${redirectUrl}`;
+  return `http://10.31.33.97:8080/logout?redirect=${redirectUrl}`;
 }
