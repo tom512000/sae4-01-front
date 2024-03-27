@@ -1,4 +1,4 @@
-import { BASE_URL } from './user';
+import { BASE_URL } from "./user";
 
 export function fetchAllOffre(urlParams, filtre) {
   let url = `${BASE_URL}/offres`;
@@ -8,13 +8,17 @@ export function fetchAllOffre(urlParams, filtre) {
   if (urlParams) {
     queryParams.push(`page=${urlParams}`);
   }
-  if (filtre){
+  if (filtre) {
     if (filtre.date) {
       if (filtre.avantDate) {
-        queryParams.push(`jourDeb[before]=${filtre.date}&order%5BjourDeb%5D=asc`);
+        queryParams.push(
+          `jourDeb[before]=${filtre.date}&order%5BjourDeb%5D=asc`,
+        );
       }
       if (filtre.apresDate) {
-        queryParams.push(`jourDeb[after]=${filtre.apresDate}&order%5BjourDeb%5D=desc`);
+        queryParams.push(
+          `jourDeb[after]=${filtre.apresDate}&order%5BjourDeb%5D=desc`,
+        );
       }
     }
     if (filtre.text && filtre.text !== "") {
@@ -36,16 +40,14 @@ export function fetchAllOffre(urlParams, filtre) {
     if (filtre.selectedSkills === []) {
       filtre.selectedSkills.forEach((skill) => {
         queryParams.push(`skillDemanders.skill.id=${skill}`);
-      })
+      });
     }
-
   }
 
   // Si des paramètres de requête sont présents, les ajouter à l'URL
   if (queryParams.length > 0) {
-    url += `?${queryParams.join('&')}`;
+    url += `?${queryParams.join("&")}`;
   }
-  console.log(queryParams)
   return fetch(url).then((response) => response.json());
 }
 
@@ -54,5 +56,7 @@ export function getOffresDetail(id) {
 }
 
 export function getOffreTypeId(id) {
-  return fetch(`${BASE_URL}/Type/${id}/offres`).then((response) => response.json());
+  return fetch(`${BASE_URL}/Type/${id}/offres`).then((response) =>
+    response.json(),
+  );
 }
