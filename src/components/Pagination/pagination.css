@@ -37,3 +37,78 @@ div.pagination > p {
     font-size: 12px;
     color: var(--color-white);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Boutons */
+    div.pagination > button {
+        height: 35px;
+    }
+
+    div.pagination > button > * {
+        font-size: 12px;
+    }
+
+    div.pagination > button:first-child {
+        margin-right: 10px;
+    }
+
+    div.pagination > button:last-child {
+        margin-left: 10px;
+    }
+
+    /* Numéro de page */
+    div.pagination > p {
+        font-size: 13px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Boutons */
+    div.pagination > button {
+        height: 40px;
+    }
+
+    div.pagination > button > * {
+        font-size: 13px;
+    }
+
+    div.pagination > button:first-child {
+        margin-right: 10px;
+    }
+
+    div.pagination > button:last-child {
+        margin-left: 10px;
+    }
+
+    /* Numéro de page */
+    div.pagination > p {
+        font-size: 14px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Boutons */
+    div.pagination > button {
+        height: 45px;
+    }
+
+    div.pagination > button > * {
+        font-size: 14px;
+    }
+
+    div.pagination > button:first-child {
+        margin-right: 15px;
+    }
+
+    div.pagination > button:last-child {
+        margin-left: 15px;
+    }
+
+    /* Numéro de page */
+    div.pagination > p {
+        font-size: 15px;
+    }
+}
