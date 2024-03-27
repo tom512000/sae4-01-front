@@ -2,6 +2,7 @@ import { BASE_URL } from "./user";
 
 export function fetchAllOffre(urlParams, filtre) {
   let url = `${BASE_URL}/offres`;
+  console.log(filtre);
 
   // Construire les paramètres de requête en fonction des filtres
   const queryParams = [];
@@ -36,11 +37,12 @@ export function fetchAllOffre(urlParams, filtre) {
     if (filtre.duree !== undefined && filtre.duree !== "") {
       queryParams.push(`duree=${filtre.duree}`);
     }
-
-    if (filtre.selectedSkills === []) {
-      filtre.selectedSkills.forEach((skill) => {
-        queryParams.push(`skillDemanders.skill.id=${skill}`);
-      });
+    if (filtre.selectedSkills !== undefined) {
+      if (filtre.selectedSkills.length > 0) {
+        filtre.selectedSkills.forEach((skill) => {
+          queryParams.push(`skillDemanders.skill.id=${skill}`);
+        });
+      }
     }
   }
 
