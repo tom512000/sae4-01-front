@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './profileMenu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons/faTrashCan';
 import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
 import { faDoorOpen } from '@fortawesome/free-solid-svg-icons/faDoorOpen';
-import { getMe, logoutUrl } from '../../services/api/user';
+import { logoutUrl } from '../../services/api/user';
+import {UserContext} from "../../contexts/user/index";
 
 function ProfileMenu() {
-  const [userData, setUserData] = useState(null);
-  useEffect(() => {
-    getMe()
-      .then((me) => {
-        setUserData(me);
-      });
-  }, []);
+  const userData = useContext(UserContext);
 
   return (
     <div className="menu_profil">

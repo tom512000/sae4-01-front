@@ -18,7 +18,7 @@ function Provider({ children }) {
       </UserContext.Provider>
   );
 }
-Provider.PropTypes = {
+Provider.propTypes = {
   children: PropTypes.node,
 };
 export default Provider;

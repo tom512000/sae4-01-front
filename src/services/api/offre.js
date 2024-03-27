@@ -2,7 +2,6 @@ import { BASE_URL } from "./user";
 
 export function fetchAllOffre(urlParams, filtre) {
   let url = `${BASE_URL}/offres`;
-  console.log(filtre);
 
   // Construire les paramètres de requête en fonction des filtres
   const queryParams = [];

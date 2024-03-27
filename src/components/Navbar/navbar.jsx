@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
-import { useLocation } from 'wouter';
 import { loginUrl, logoutUrl } from '../../services/api/user';
 import { UserContext } from '../../contexts/user/index';
 import ProfileMenu from '../ProfileMenu/profileMenu';
@@ -10,12 +9,6 @@ import ProfileMenu from '../ProfileMenu/profileMenu';
 function Navbar() {
   /* Gestion Header */
   const userData = useContext(UserContext);
-  const navigate = useLocation()[1];
-  useEffect(() => {
-    if (userData) {
-      navigate('/');
-    }
-  }, [userData, navigate]);
 
   /* Gestion Menu du profil */
   const [isVisible, setIsVisible] = useState(false);

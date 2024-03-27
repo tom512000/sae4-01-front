@@ -13,6 +13,7 @@ import MentionsView from "../views/MentionsView";
 import ConditionsView from "../views/ConditionsView";
 import InscriptionView from "../views/InscriptionView";
 import CandidaturesView from "../views/CandidaturesView";
+import ProfileDeleteView from "../views/ProfileDeleteView";
 
 function Router() {
   return (
@@ -44,6 +45,10 @@ function Router() {
       <Route path="/profile/modif">
         <ProfileModifView />
       </Route>
+
+        <Route path="/profile/delete">
+            <ProfileDeleteView />
+        </Route>
 
         <Route path="/candidatures">
             <CandidaturesView />
