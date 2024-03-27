@@ -3,10 +3,16 @@ import "./entreprises.css";
 import PropTypes from "prop-types";
 import Entreprise from "../Entreprise/entreprise";
 import Pagination from "../Pagination/pagination";
+import FiltreEntreprise from "./filtreEntreprise";
 
-function Entreprises({ entreprises, title, onClick }) {
+function Entreprises({ entreprises, title, onClick, onSubmit }) {
   return (
     <>
+      {onSubmit && (
+        <div>
+          <FiltreEntreprise submiteText="Submit" onSubmit={onSubmit} />
+        </div>
+      )}
       <div className="entreprises">
         <div className="entreprises_title">
           <h1>{title}</h1>
@@ -39,11 +45,13 @@ Entreprises.propTypes = {
   ).isRequired,
   title: PropTypes.string,
   onClick: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 Entreprises.defaultProps = {
   title: "",
   onClick: null,
+  onSubmit: null,
 };
 
 export default Entreprises;
