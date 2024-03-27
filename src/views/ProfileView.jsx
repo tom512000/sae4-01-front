@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { getMe } from '../services/api/user';
+import React, { useState, useEffect } from "react";
+import { getMe } from "../services/api/user";
+import Profile from "../components/Profile/profile";
 
 function ProfileView() {
   const [meData, setMeData] = useState([]);
-
-  // choppe l'utilisateur
-
   useEffect(() => {
     getMe().then((data) => {
       setMeData(data);
     });
   }, []);
 
-  return (
-    <section>
-      CODER LE PROFIL ICI
-    </section>
-  );
+  return <Profile user={meData} />;
 }
 
 export default ProfileView;
