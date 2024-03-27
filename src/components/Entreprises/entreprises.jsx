@@ -1,40 +1,41 @@
-import React from 'react';
-import './entreprises.css';
+import React from "react";
+import "./entreprises.css";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
-// eslint-disable-next-line import/extensions
-import Entreprise from '../Entreprise/entreprise.jsx';
-import Pagination from "../Pagination.jsx";
+import PropTypes from "prop-types";
+import Entreprise from "../Entreprise/entreprise";
+import Pagination from "../Pagination/pagination";
 
-function Entreprises({ entreprises, title , onClick}) {
-    if (onClick === undefined) {
-        return <div className="entreprises">
-            <div className="entreprises_title">
-                <h1>{title}</h1>
-            </div>
-            <div className="entreprises_list">
-                {entreprises.map((x) => (
-                    <Entreprise entreprise={x}/>
-                ))}
-            </div>
-        </div>
-    }
+function Entreprises({ entreprises, title, onClick }) {
+  if (onClick === undefined) {
     return (
-        <>
-            <div className="entreprises">
-                <div className="entreprises_title">
-                    <h1>{title}</h1>
-                </div>
-                <div className="entreprises_list">
-                    {entreprises.map((x) => (
-                        <Entreprise entreprise={x}/>
-                    ))}
-                </div>
-          </div>
-        <div>
-            <Pagination onClick={onClick} max={4}/>
+      <div className="entreprises">
+        <div className="entreprises_title">
+          <h1>{title}</h1>
         </div>
-      </>
+        <div className="entreprises_list">
+          {entreprises.map((x) => (
+            <Entreprise entreprise={x} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+  return (
+    <>
+      <div className="entreprises">
+        <div className="entreprises_title">
+          <h1>{title}</h1>
+        </div>
+        <div className="entreprises_list">
+          {entreprises.map((x) => (
+            <Entreprise entreprise={x} />
+          ))}
+        </div>
+      </div>
+      <div>
+        <Pagination onClick={onClick} maxPage={4} />
+      </div>
+    </>
   );
 }
 
@@ -53,7 +54,7 @@ Entreprises.propTypes = {
 };
 
 Entreprises.defaultProps = {
-  title: '',
+  title: "",
 };
 
 export default Entreprises;

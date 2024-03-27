@@ -1,0 +1,39 @@
+@import url("/public/index.css");
+
+/* Pagination */
+div.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-red);
+}
+
+/* Boutons */
+div.pagination > button {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border: none;
+    background: none;
+}
+
+div.pagination > button > * {
+    font-size: 11px;
+    color: var(--color-white);
+}
+
+div.pagination > button > p {
+    margin: 0 8px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+}
+
+/* Numéro de page */
+div.pagination > p {
+    margin: 0 15px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--color-white);
+}
