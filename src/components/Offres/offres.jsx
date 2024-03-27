@@ -34,7 +34,7 @@ function Offres({ offres, title, onClick, onSubmit, skillData }) {
       </div>
       {onClick && (
         <div>
-          <Pagination onClick={onClick} max={15} />
+          <Pagination onClick={onClick} dataLength={offres.length} />
         </div>
       )}
     </>
