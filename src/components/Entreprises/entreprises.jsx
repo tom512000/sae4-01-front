@@ -1,40 +1,28 @@
-import React from 'react';
-import './entreprises.css';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
-// eslint-disable-next-line import/extensions
-import Entreprise from '../Entreprise/entreprise.jsx';
-import Pagination from "../Pagination.jsx";
+import React from "react";
+import "./entreprises.css";
+import PropTypes from "prop-types";
+import Entreprise from "../Entreprise/entreprise";
+import Pagination from "../Pagination/pagination";
 
-function Entreprises({ entreprises, title , onClick}) {
-    if (onClick === undefined) {
-        return <div className="entreprises">
-            <div className="entreprises_title">
-                <h1>{title}</h1>
-            </div>
-            <div className="entreprises_list">
-                {entreprises.map((x) => (
-                    <Entreprise entreprise={x}/>
-                ))}
-            </div>
+function Entreprises({ entreprises, title, onClick }) {
+  return (
+    <>
+      <div className="entreprises">
+        <div className="entreprises_title">
+          <h1>{title}</h1>
         </div>
-    }
-    return (
-        <>
-            <div className="entreprises">
-                <div className="entreprises_title">
-                    <h1>{title}</h1>
-                </div>
-                <div className="entreprises_list">
-                    {entreprises.map((x) => (
-                        <Entreprise entreprise={x}/>
-                    ))}
-                </div>
-          </div>
+        <div className="entreprises_list">
+          {entreprises.map((x) => (
+            <Entreprise entreprise={x} />
+          ))}
+        </div>
+      </div>
+      {onClick && (
         <div>
-            <Pagination onClick={onClick} max={4}/>
+          <Pagination onClick={onClick} max={4} />
         </div>
-      </>
+      )}
+    </>
   );
 }
 
@@ -50,10 +38,12 @@ Entreprises.propTypes = {
     }),
   ).isRequired,
   title: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 Entreprises.defaultProps = {
-  title: '',
+  title: "",
+  onClick: null,
 };
 
 export default Entreprises;

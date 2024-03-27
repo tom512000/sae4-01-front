@@ -2,7 +2,7 @@ import React from "react";
 import "./offres.css";
 import PropTypes from "prop-types";
 import Offre from "../Offre/offre";
-import Pagination from "../Pagination";
+import Pagination from "../Pagination/pagination";
 import FiltreOffre from "./filtreOffre";
 
 function Offres({ offres, title, onClick, onSubmit, skillData }) {
