@@ -174,3 +174,190 @@ div.profile_fichier > div > embed {
     width: 100%;
     height: 100%;
 }
+
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Profile de l'utilisateur */
+    div.profile_user > img {
+        width: 110px;
+        height: 110px;
+        min-width: 110px;
+    }
+
+    div.profile_user > div > p {
+        margin: 0 0 0 6px;
+        font-size: 14px;
+    }
+
+    /* Clés des informations */
+    div.profile_keys > div > :first-child {
+        margin: 0 0 0 6px;
+        font-size: 10px;
+    }
+
+    div.profile_keys > div > p {
+        margin: 0 0 0 6px;
+        font-size: 10px;
+    }
+
+    /* Valeurs des informations */
+    div.profile_values > p {
+        margin: 0 0 0 12px;
+        font-size: 10px;
+    }
+
+    /* Biographie de l'utilisateur */
+    div.profile_bio > p:first-child {
+        font-size: 10px;
+    }
+
+    div.profile_bio > p:last-child {
+        font-size: 10px;
+    }
+
+    /* CV et Lettre de motivation */
+    div.profile_fichier > p {
+        font-size: 10px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Profile */
+    div.profile > div:first-child {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Profile de l'utilisateur */
+    div.profile_user {
+        width: calc(70% - 30px);
+        margin: 15px;
+    }
+
+    div.profile_user > img {
+        width: 130px;
+        height: 130px;
+        min-width: 130px;
+    }
+
+    div.profile_user > div > p {
+        margin: 0 0 0 6px;
+        font-size: 16px;
+    }
+
+    /* Clés des informations */
+    div.profile_keys > div > :first-child {
+        margin: 0 0 0 6px;
+        font-size: 12px;
+    }
+
+    div.profile_keys > div > p {
+        margin: 0 0 0 6px;
+        font-size: 12px;
+    }
+
+    /* Valeurs des informations */
+    div.profile_values > p {
+        margin: 0 0 0 12px;
+        font-size: 12px;
+    }
+
+    /* Biographie de l'utilisateur */
+    div.profile_bio {
+        width: calc(30% - 30px);
+    }
+
+    div.profile_bio > p:first-child {
+        font-size: 12px;
+    }
+
+    div.profile_bio > p:last-child {
+        font-size: 10px;
+    }
+
+    /* CV et Lettre de motivation */
+    div.profile > div:last-child {
+        display: flex;
+        flex-direction: row;
+    }
+
+    div.profile_fichier {
+        margin: 10px 15px;
+    }
+
+    div.profile_fichier > p {
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Profile */
+    div.profile > div:first-child {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Profile de l'utilisateur */
+    div.profile_user {
+        width: calc(70% - 30px);
+        margin: 15px;
+    }
+
+    div.profile_user > img {
+        width: 150px;
+        height: 150px;
+        min-width: 150px;
+    }
+
+    div.profile_user > div > p {
+        margin: 0 0 0 6px;
+        font-size: 18px;
+    }
+
+    /* Clés des informations */
+    div.profile_keys > div > :first-child {
+        margin: 0 0 0 6px;
+        font-size: 14px;
+    }
+
+    div.profile_keys > div > p {
+        margin: 0 0 0 6px;
+        font-size: 14px;
+    }
+
+    /* Valeurs des informations */
+    div.profile_values > p {
+        margin: 0 0 0 12px;
+        font-size: 14px;
+    }
+
+    /* Biographie de l'utilisateur */
+    div.profile_bio {
+        width: calc(30% - 30px);
+    }
+
+    div.profile_bio > p:first-child {
+        font-size: 14px;
+    }
+
+    div.profile_bio > p:last-child {
+        font-size: 12px;
+    }
+
+    /* CV et Lettre de motivation */
+    div.profile > div:last-child {
+        display: flex;
+        flex-direction: row;
+    }
+
+    div.profile_fichier {
+        margin: 10px 15px;
+    }
+
+    div.profile_fichier > p {
+        font-size: 14px;
+    }
+}
