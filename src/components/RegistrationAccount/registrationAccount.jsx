@@ -3,8 +3,19 @@ import "./registrationAccount.css";
 import FordableCard from "../FordableCard/fordableCard";
 import FordableCardInput from "../FordableCardInput/fordableCardInput";
 import FordableCardButton from "../fordableCardButton/fordableCardButton";
+import {postUser} from "../../services/api/user.js";
+import {Redirect} from "wouter";
 
 function RegistrationAccount() {
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const formJson = Object.fromEntries(formData.entries());
+        postUser(formJson);
+        return <Redirect to="/"/>
+    }
+
   const multiText = (
     <>
       Sur cette page, Créez facilement votre compte en utilisant une adresse
@@ -29,19 +40,17 @@ function RegistrationAccount() {
       pText={multiText}
       h2Title="Inscription"
     >
-      <form action="/">
-        <FordableCardInput type="email" placeholder="Email" />
-        <FordableCardInput type="password" placeholder="Mot de passe" />
-        <FordableCardInput type="text" placeholder="Nom" />
-        <FordableCardInput type="text" placeholder="Prénom" />
-        <FordableCardInput type="tel" placeholder="Numéro de téléphone" />
-        <FordableCardInput type="date" placeholder="Date de naissance" />
-        <FordableCardInput type="file" placeholder="CV (PDF)">
-          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      <form method="post" onSubmit={handleSubmit}>
+        <FordableCardInput name="email" type="email" placeholder="Email" required={true}/>
+        <FordableCardInput name="password" type="password" placeholder="Mot de passe" required={true}/>
+        <FordableCardInput name="firstName" type="text" placeholder="Nom" required={true}/>
+        <FordableCardInput name="lastName" type="text" placeholder="Prénom" required={true}/>
+        <FordableCardInput name="phone" type="tel" placeholder="Numéro de téléphone" required={true}/>
+        <FordableCardInput name="dateNais" type="date" placeholder="Date de naissance" required={true}/>
+        <FordableCardInput name="cv" type="file" placeholder="CV (PDF)">
           <label htmlFor="uploadFile">Choose file</label>
         </FordableCardInput>
-        <FordableCardInput type="file" placeholder="Lettre de motivation (PDF)">
-          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <FordableCardInput name="lettreMotiv" type="file" placeholder="Lettre de motivation (PDF)">
           <label htmlFor="uploadFile">Choose file</label>
         </FordableCardInput>
         <div className="fordableCard_member">

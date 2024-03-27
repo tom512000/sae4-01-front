@@ -1,17 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { getMe } from '../services/api/user';
+import React from 'react';
 import EditAccount from '../components/EditAccount/editAccount';
 
-function ProfileView() {
-  const [meData, setMeData] = useState([]);
-
-  // choppe l'utilisateur
-
-  useEffect(() => {
-    getMe().then((data) => {
-      setMeData(data);
-    });
-  }, []);
+function ProfileModifView() {
 
   return (
     <section>
@@ -20,4 +10,4 @@ function ProfileView() {
   );
 }
 
-export default ProfileView;
+export default ProfileModifView;

@@ -70,20 +70,25 @@ function Profile({ user }) {
 }
 
 Profile.propTypes = {
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
+  user: PropTypes.shape({
       id: PropTypes.number.isRequired,
       firstName: PropTypes.string.isRequired,
       lastName: PropTypes.string.isRequired,
       phone: PropTypes.string.isRequired,
       dateNais: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
-      cv: PropTypes.string.isRequired,
-      lettreMotiv: PropTypes.string.isRequired,
-      aboutMe: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+      cv: PropTypes.string,
+      lettreMotiv: PropTypes.string,
+      aboutMe: PropTypes.string,
+      avatar: PropTypes.string,
+    })
 };
+
+Profile.defaultProps = {
+    cv: "No CV",
+    lettreMotiv: "No Letter",
+    aboutMe: "Undefined",
+    avatar: "Undefined",
+}
 
 export default Profile;
