@@ -1,12 +1,11 @@
-import React from 'react';
-import './offre.css';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
-import { format } from 'date-fns';
+import React from "react";
+import "./offre.css";
+import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
+import { format } from "date-fns";
 
 function Offre({ offre }) {
-  // Manque une requête pour le nom et le logo de l'entreprise à partir d'idEntreprise
   return (
     <div className="offre">
       <div className="offre_bloc">
@@ -23,18 +22,13 @@ function Offre({ offre }) {
             <p>{offre.lieux}</p>
             <p>{offre.level}</p>
             <p>
-              Durée :
               {offre.duree}
-              {' '}
-              jours
+              &ensp;jours
             </p>
+            <p>{format(offre.jourDeb, "d/MM/yyyy")}</p>
             <p>
-              Début :
-              {format(offre.jourDeb, 'd/MM/yyyy')}
-            </p>
-            <p>
-              Nombre de places :
               {offre.nbPlace}
+              &ensp;places
             </p>
           </div>
           <div className="offre_bouton">
@@ -49,24 +43,20 @@ function Offre({ offre }) {
 
 Offre.propTypes = {
   offre: PropTypes.shape({
-    id: PropTypes.number,
-    idEntreprise: PropTypes.number,
-    nomOffre: PropTypes.string,
-    duree: PropTypes.number,
-    lieux: PropTypes.string,
-    jourDeb: PropTypes.string,
-    nbPlace: PropTypes.number,
-    descrip: PropTypes.string,
-    level: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    idEntreprise: PropTypes.number.isRequired,
+    nomOffre: PropTypes.string.isRequired,
+    duree: PropTypes.number.isRequired,
+    lieux: PropTypes.string.isRequired,
+    jourDeb: PropTypes.string.isRequired,
+    nbPlace: PropTypes.number.isRequired,
+    descrip: PropTypes.string.isRequired,
+    level: PropTypes.string.isRequired,
     entreprise: PropTypes.shape({
-      logo: PropTypes.string,
-      nomEnt: PropTypes.string,
-    }),
-  }),
-};
-
-Offre.defaultProps = {
-  offre: {},
+      logo: PropTypes.string.isRequired,
+      nomEnt: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Offre;
