@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-// eslint-disable-next-line import/no-unresolved
-import "./pagination.css";
-import PropTypes from "prop-types";
+import { useState } from "react";
+import {
+  faAnglesLeft,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons/faAnglesLeft";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
-import { faAnglesRight } from "@fortawesome/free-solid-svg-icons/faAnglesRight";
+import PropTypes from "prop-types";
+import "./pagination.css";
 
-function Pagination({ onClick, maxPage }) {
+function Pagination({ onClick, dataLength }) {
   const url = new URL(window.location.href);
   const [page, setPage] = useState(1);
 
@@ -19,41 +19,43 @@ function Pagination({ onClick, maxPage }) {
   }
 
   return (
+    // eslint-disable-next-line react/react-in-jsx-scope
     <div className="pagination">
+      {/* eslint-disable-next-line react/react-in-jsx-scope */}
       <button
         type="button"
         aria-label="button"
         disabled={page <= 1}
         onClick={() => handleClick(1)}
       >
+        {/* eslint-disable-next-line react/react-in-jsx-scope */}
         <FontAwesomeIcon icon={faAnglesLeft} />
       </button>
+      {/* eslint-disable-next-line react/react-in-jsx-scope */}
       <button
         type="button"
         aria-label="button"
         disabled={page <= 1}
         onClick={() => handleClick(page - 1)}
       >
+        {/* eslint-disable-next-line react/react-in-jsx-scope */}
         <FontAwesomeIcon icon={faChevronLeft} />
+        {/* eslint-disable-next-line react/react-in-jsx-scope */}
         <p>Page précédente</p>
       </button>
+      {/* eslint-disable-next-line react/react-in-jsx-scope */}
       <p>{page}</p>
+      {/* eslint-disable-next-line react/react-in-jsx-scope */}
       <button
         type="button"
         aria-label="button"
-        disabled={page >= maxPage}
+        disabled={dataLength < 15}
         onClick={() => handleClick(page + 1)}
       >
-        <p>Page précédente</p>
+        {/* eslint-disable-next-line react/react-in-jsx-scope */}
+        <p>Page suivante</p>
+        {/* eslint-disable-next-line react/react-in-jsx-scope */}
         <FontAwesomeIcon icon={faChevronRight} />
-      </button>
-      <button
-        type="button"
-        aria-label="button"
-        disabled={page >= maxPage}
-        onClick={() => handleClick(maxPage)}
-      >
-        <FontAwesomeIcon icon={faAnglesRight} />
       </button>
     </div>
   );
@@ -61,7 +63,7 @@ function Pagination({ onClick, maxPage }) {
 
 Pagination.propTypes = {
   onClick: PropTypes.func.isRequired,
-  maxPage: PropTypes.number.isRequired,
+  dataLength: PropTypes.number.isRequired,
 };
 
 export default Pagination;

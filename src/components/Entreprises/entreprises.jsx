@@ -19,7 +19,7 @@ function Entreprises({ entreprises, title, onClick }) {
       </div>
       {onClick && (
         <div>
-          <Pagination onClick={onClick} max={4} />
+          <Pagination onClick={onClick} dataLength={entreprises.length} />
         </div>
       )}
     </>
