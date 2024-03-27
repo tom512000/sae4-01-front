@@ -6,31 +6,18 @@ import Pagination from "../Pagination";
 import FiltreOffre from "./filtreOffre";
 
 function Offres({ offres, title, onClick, onSubmit, skillData }) {
-  if (onClick === null || onClick === undefined) {
-    return (
-      <div className="offres">
-        <div className="offres_title">
-          <h1>{title}</h1>
-        </div>
-        {offres.map((x) => (
-          <Offre offre={x} />
-        ))}
-        <div className="offres_number">
-          <p>x offre(s) d&apos;emploi</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <>
-      <div>
-        <FiltreOffre
-          submiteText="Submit"
-          onSubmit={onSubmit}
-          skillData={skillData}
-        />
-      </div>
+      {onSubmit && (
+        <div>
+          <FiltreOffre
+            submiteText="Submit"
+            onSubmit={onSubmit}
+            skillData={skillData}
+          />
+        </div>
+      )}
+
       <div className="offres">
         <div className="offres_title">
           <h1>{title}</h1>
@@ -45,9 +32,11 @@ function Offres({ offres, title, onClick, onSubmit, skillData }) {
           </p>
         </div>
       </div>
-      <div>
-        <Pagination onClick={onClick} max={15} />
-      </div>
+      {onClick && (
+        <div>
+          <Pagination onClick={onClick} max={15} />
+        </div>
+      )}
     </>
   );
 }
