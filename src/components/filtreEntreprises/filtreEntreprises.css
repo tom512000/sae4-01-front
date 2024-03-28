@@ -1,0 +1,60 @@
+@import url("/public/index.css");
+
+/* Filtre des entreprises */
+form.filtreEntreprise {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 15px 0;
+}
+
+/* Input du formulaire */
+form.filtreEntreprise > div {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    border-radius: 8px;
+    background-color: var(--color-light-grey-E);
+}
+
+div.filtreEntreprise_input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+div.filtreEntreprise_input > :first-child {
+    margin: 0 10px;
+    font-size: 10px;
+    color: var(--color-dark-grey);
+}
+
+div.filtreEntreprise_input > input {
+    width: 50px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-dark-grey);
+    border: none;
+    background-color: var(--color-light-grey-E);
+}
+
+/* Boutons du formulaire */
+div.filtreEntreprise_buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+div.filtreEntreprise_buttons > button {
+    margin: 5px 5px 5px 2px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-white);
+    background-color: var(--color-red);
+}
