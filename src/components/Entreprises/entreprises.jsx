@@ -3,14 +3,14 @@ import "./entreprises.css";
 import PropTypes from "prop-types";
 import Entreprise from "../Entreprise/entreprise";
 import Pagination from "../Pagination/pagination";
-import FiltreEntreprise from "./filtreEntreprise";
+import FiltreEntreprises from "../filtreEntreprises/filtreEntreprises";
 
 function Entreprises({ entreprises, title, onClick, onSubmit }) {
   return (
     <>
       {onSubmit && (
         <div>
-          <FiltreEntreprise submiteText="Submit" onSubmit={onSubmit} />
+          <FiltreEntreprises submiteText="Rechercher" onSubmit={onSubmit} />
         </div>
       )}
       <div className="entreprises">
