@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllEntrepise } from "../services/api/enteprise";
 import Entreprises from "../components/Entreprises/entreprises";
-import { fetchAllOffre } from "../services/api/offre.js";
 
 function EntrepriseListeView() {
   const [entrepriseData, setEntrepriseData] = useState([]);
@@ -23,13 +22,11 @@ function EntrepriseListeView() {
   }
 
   return (
-    <section>
-      <Entreprises
-        entreprises={entrepriseData}
-        onClick={onClick}
-        onSubmit={onSubmit}
-      />
-    </section>
+    <Entreprises
+      entreprises={entrepriseData}
+      onClick={onClick}
+      onSubmit={onSubmit}
+    />
   );
 }
 export default EntrepriseListeView;
