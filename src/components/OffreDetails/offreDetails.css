@@ -174,3 +174,125 @@ div.offreDetails_competences > p {
         font-size: 10px;
     }
 }
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Détails de l'offre */
+    div.offreDetails {
+        width: calc(100% - 80px);
+    }
+
+    /* Premier bloc */
+    div.offreDetails > div:first-child {
+        padding: 0 40px;
+    }
+
+    div.offreDetails_entreprise > img {
+        width: 95px;
+        height: 95px;
+    }
+
+    div.offreDetails_entreprise > p {
+        margin: 0 0 0 15px;
+        font-size: 16px;
+    }
+
+    div.offreDetails > div:first-child > h1 {
+        margin: 10px 0;
+        font-size: 19px;
+    }
+
+    div.offreDetails_informations > p {
+        margin: 0 6px 5px 0;
+        font-size: 12px;
+    }
+
+    /* Boutons */
+    div.offreDetails_buttons > button {
+        padding: 5px 9px;
+        font-size: 12px;
+    }
+
+    /* Deuxième bloc */
+    div.offreDetails > div:last-child {
+        margin-top: 15px;
+        padding: 0 40px 10px 40px;
+    }
+
+    div.offreDetails > div:last-child > h2 {
+        margin: 7px 0;
+        font-size: 18px;
+    }
+
+    div.offreDetails > div:last-child > p {
+        line-height: 18px;
+        font-size: 12px;
+    }
+
+    div.offreDetails_competences > p {
+        margin: 0 6px 5px 0;
+        padding: 3px 7px;
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Détails de l'offre */
+    div.offreDetails {
+        width: calc(100% - 90px);
+    }
+
+    /* Premier bloc */
+    div.offreDetails > div:first-child {
+        padding: 0 45px;
+    }
+
+    div.offreDetails_entreprise > img {
+        width: 100px;
+        height: 100px;
+    }
+
+    div.offreDetails_entreprise > p {
+        margin: 0 0 0 15px;
+        font-size: 17px;
+    }
+
+    div.offreDetails > div:first-child > h1 {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    div.offreDetails_informations > p {
+        margin: 0 6px 5px 0;
+        font-size: 14px;
+    }
+
+    /* Boutons */
+    div.offreDetails_buttons > button {
+        padding: 5px 9px;
+        font-size: 14px;
+    }
+
+    /* Deuxième bloc */
+    div.offreDetails > div:last-child {
+        margin-top: 15px;
+        padding: 0 45px 10px 45px;
+    }
+
+    div.offreDetails > div:last-child > h2 {
+        margin: 7px 0;
+        font-size: 20px;
+    }
+
+    div.offreDetails > div:last-child > p {
+        line-height: 18px;
+        font-size: 14px;
+    }
+
+    div.offreDetails_competences > p {
+        margin: 0 6px 5px 0;
+        padding: 3px 7px;
+        font-size: 14px;
+    }
+}
