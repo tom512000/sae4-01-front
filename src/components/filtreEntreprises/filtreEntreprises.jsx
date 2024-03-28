@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import "./filtreEntreprises.css";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons/faMagnifyingGlass";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons/faTrashCan";
 
-function FiltreEntreprise({ submiteText, onSubmit }) {
+function FiltreEntreprises({ submiteText, onSubmit }) {
   const [text, setText] = useState("");
 
   const handleSubmit = (event) => {
@@ -19,36 +23,42 @@ function FiltreEntreprise({ submiteText, onSubmit }) {
   };
 
   return (
-    <form>
+    <form className="filtreEntreprise">
       <div>
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label htmlFor="nomOffre">Nom :</label>
-        <input
-          type="text"
-          id="nomOffre"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
+        <div className="filtreEntreprise_input">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <input
+            type="text"
+            value={text}
+            placeholder="Ex: Google"
+            onChange={(e) => setText(e.target.value)}
+          />
+        </div>
+        <div className="filtreEntreprise_buttons">
+          <button onClick={handleSubmit} type="submit" disabled={!text}>
+            {submiteText}
+          </button>
+          <button
+            onClick={handleSubmitEffaceFiltre}
+            aria-label="Bouton de suppression"
+            type="submit"
+          >
+            <FontAwesomeIcon icon={faTrashCan} />
+          </button>
+        </div>
       </div>
-
-      <button onClick={handleSubmit} type="submit" disabled={!text}>
-        {submiteText}
-      </button>
-      <button onClick={handleSubmitEffaceFiltre} type="submit">
-        efface filtre
-      </button>
     </form>
   );
 }
 
-FiltreEntreprise.propTypes = {
+FiltreEntreprises.propTypes = {
   submiteText: PropTypes.string,
   onSubmit: PropTypes.func,
 };
 
-FiltreEntreprise.defaultProps = {
+FiltreEntreprises.defaultProps = {
   submiteText: "",
   onSubmit: null,
 };
 
-export default FiltreEntreprise;
+export default FiltreEntreprises;
