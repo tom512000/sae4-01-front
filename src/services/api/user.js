@@ -1,4 +1,4 @@
-export const BASE_URL = "http://127.0.0.1:8000/api";
+export const BASE_URL = "https://127.0.0.1:8000/api";
 
 export function getMe() {
   return fetch(`${BASE_URL}/me`, {
@@ -16,18 +16,24 @@ export function getMe() {
 
 export function loginUrl() {
   const redirectUrl = encodeURIComponent(window.location);
-  return `http://127.0.0.1:8000/login?redirect=${redirectUrl}`;
+  return `https://127.0.0.1:8000/login?redirect=${redirectUrl}`;
 }
 export function logoutUrl() {
   const redirectUrl = encodeURIComponent(window.location);
-  return `http://127.0.0.1:8000/logout?redirect=${redirectUrl}`;
+  return `https://127.0.0.1:8000/logout?redirect=${redirectUrl}`;
 }
 
 export function postUser(data) {
   const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/ld+json' },
-    body: JSON.stringify(data)
+    method: "POST",
+    headers: {
+      "Content-Type": "application/ld+json",
+      Accept: "application/ld+json",
+    },
+    credentials: "include",
+    body: JSON.stringify(data),
   };
-  return fetch(`${BASE_URL}/users`, requestOptions).then(response => response.json());
+  fetch(`${BASE_URL}/users`, requestOptions).then((donnees) =>
+    console.log(donnees),
+  );
 }

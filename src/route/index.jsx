@@ -46,29 +46,29 @@ function Router() {
         <ProfileModifView />
       </Route>
 
-        <Route path="/profile/delete">
-            <ProfileDeleteView />
-        </Route>
+      <Route path="/profile/delete">
+        <ProfileDeleteView />
+      </Route>
 
-        <Route path="/candidatures">
-            <CandidaturesView />
-        </Route>
+      <Route path="/candidatures">
+        <CandidaturesView />
+      </Route>
 
-        <Route path="/inscription">
-            <InscriptionView />
-        </Route>
+      <Route path="/inscription">
+        <InscriptionView />
+      </Route>
 
-        <Route path="/a-propos">
-            <AboutView />
-        </Route>
+      <Route path="/a-propos">
+        <AboutView />
+      </Route>
 
-        <Route path="/mentions">
-            <MentionsView />
-        </Route>
+      <Route path="/mentions">
+        <MentionsView />
+      </Route>
 
-        <Route path="/conditions">
-            <ConditionsView />
-        </Route>
+      <Route path="/conditions">
+        <ConditionsView />
+      </Route>
 
       <Route component={NotFound} />
     </Switch>

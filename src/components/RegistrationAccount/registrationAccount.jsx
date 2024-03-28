@@ -1,20 +1,23 @@
 import React from "react";
 import "./registrationAccount.css";
+import { Redirect } from "wouter";
 import FordableCard from "../FordableCard/fordableCard";
 import FordableCardInput from "../FordableCardInput/fordableCardInput";
 import FordableCardButton from "../fordableCardButton/fordableCardButton";
-import {postUser} from "../../services/api/user.js";
-import {Redirect} from "wouter";
+import { postUser } from "../../services/api/user";
 
 function RegistrationAccount() {
-    function handleSubmit(e) {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const formJson = Object.fromEntries(formData.entries());
-        postUser(formJson);
-        return <Redirect to="/"/>
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
+    formJson.aboutMe = "";
+    formJson.cv = formJson.cv.name;
+    formJson.lettreMotiv = formJson.lettreMotiv.name;
+    postUser(formJson);
+    return <Redirect to="/" />;
+  }
 
   const multiText = (
     <>
@@ -41,16 +44,50 @@ function RegistrationAccount() {
       h2Title="Inscription"
     >
       <form method="post" onSubmit={handleSubmit}>
-        <FordableCardInput name="email" type="email" placeholder="Email" required={true}/>
-        <FordableCardInput name="password" type="password" placeholder="Mot de passe" required={true}/>
-        <FordableCardInput name="firstName" type="text" placeholder="Nom" required={true}/>
-        <FordableCardInput name="lastName" type="text" placeholder="Prénom" required={true}/>
-        <FordableCardInput name="phone" type="tel" placeholder="Numéro de téléphone" required={true}/>
-        <FordableCardInput name="dateNais" type="date" placeholder="Date de naissance" required={true}/>
+        <FordableCardInput
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <FordableCardInput
+          name="password"
+          type="password"
+          placeholder="Mot de passe"
+          required
+        />
+        <FordableCardInput
+          name="firstName"
+          type="text"
+          placeholder="Nom"
+          required
+        />
+        <FordableCardInput
+          name="lastName"
+          type="text"
+          placeholder="Prénom"
+          required
+        />
+        <FordableCardInput
+          name="phone"
+          type="tel"
+          placeholder="Numéro de téléphone"
+          required
+        />
+        <FordableCardInput
+          name="dateNais"
+          type="date"
+          placeholder="Date de naissance"
+          required
+        />
         <FordableCardInput name="cv" type="file" placeholder="CV (PDF)">
           <label htmlFor="uploadFile">Choose file</label>
         </FordableCardInput>
-        <FordableCardInput name="lettreMotiv" type="file" placeholder="Lettre de motivation (PDF)">
+        <FordableCardInput
+          name="lettreMotiv"
+          type="file"
+          placeholder="Lettre de motivation (PDF)"
+        >
           <label htmlFor="uploadFile">Choose file</label>
         </FordableCardInput>
         <div className="fordableCard_member">
