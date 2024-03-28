@@ -1,5 +1,5 @@
-import React from 'react';
-import RegistrationAccount from '../components/RegistrationAccount/registrationAccount';
+import React from "react";
+import RegistrationAccount from "../components/RegistrationAccount/registrationAccount";
 
 function InscriptionView() {
   return (
