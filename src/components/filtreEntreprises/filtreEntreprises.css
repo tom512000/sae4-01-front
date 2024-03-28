@@ -58,3 +58,72 @@ div.filtreEntreprise_buttons > button {
     color: var(--color-white);
     background-color: var(--color-red);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Input du formulaire */
+    form.filtreEntreprise > div {
+        width: 55%;
+    }
+
+    div.filtreEntreprise_input > :first-child {
+        font-size: 12px;
+    }
+
+    div.filtreEntreprise_input > input {
+        width: 60px;
+        font-size: 12px;
+    }
+
+    /* Boutons du formulaire */
+    div.filtreEntreprise_buttons > button {
+        margin: 5px 5px 5px 2px;
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Input du formulaire */
+    form.filtreEntreprise > div {
+        width: 50%;
+    }
+
+    div.filtreEntreprise_input > :first-child {
+        font-size: 13px;
+    }
+
+    div.filtreEntreprise_input > input {
+        width: 60px;
+        font-size: 13px;
+    }
+
+    /* Boutons du formulaire */
+    div.filtreEntreprise_buttons > button {
+        margin: 5px 5px 5px 2px;
+        font-size: 13px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Input du formulaire */
+    form.filtreEntreprise > div {
+        width: 45%;
+    }
+
+    div.filtreEntreprise_input > :first-child {
+        font-size: 14px;
+    }
+
+    div.filtreEntreprise_input > input {
+        width: 70px;
+        font-size: 14px;
+    }
+
+    /* Boutons du formulaire */
+    div.filtreEntreprise_buttons > button {
+        margin: 5px 5px 5px 2px;
+        font-size: 14px;
+    }
+}
