@@ -73,23 +73,27 @@ div.offre_donnees > p {
 }
 
 /* Bouton de l'offre */
-div.offre_bouton {
+a.offre_bouton {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 2px;
     right: 10px;
+    color: var(--color-red);
 }
 
-div.offre_bouton > p {
+a.offre_bouton:hover > * {
+    color: var(--color-dark-red);
+}
+
+a.offre_bouton > p {
     margin: 0 5px 0 0;
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
     font-size: 8px;
-    color: var(--color-red);
 }
 
-div.offre_bouton > :last-child {
+a.offre_bouton > :last-child {
     font-size: 8px;
     color: var(--color-red);
 }
@@ -134,16 +138,16 @@ div.offre_bouton > :last-child {
     }
 
     /* Bouton de l'offre */
-    div.offre_bouton {
+    a.offre_bouton {
         bottom: 1px;
         right: 11px;
     }
 
-    div.offre_bouton > p {
+    a.offre_bouton > p {
         font-size: 10px;
     }
 
-    div.offre_bouton > :last-child {
+    a.offre_bouton > :last-child {
         font-size: 10px;
     }
 }
@@ -189,17 +193,17 @@ div.offre_bouton > :last-child {
     }
 
     /* Bouton de l'offre */
-    div.offre_bouton {
+    a.offre_bouton {
         bottom: 5px;
         right: 15px;
     }
 
-    div.offre_bouton > p {
+    a.offre_bouton > p {
         margin: 0 7px 0 0;
         font-size: 12px;
     }
 
-    div.offre_bouton > :last-child {
+    a.offre_bouton > :last-child {
         font-size: 12px;
     }
 }
@@ -245,17 +249,17 @@ div.offre_bouton > :last-child {
     }
 
     /* Bouton de l'offre */
-    div.offre_bouton {
+    a.offre_bouton {
         bottom: 7px;
         right: 17px;
     }
 
-    div.offre_bouton > p {
+    a.offre_bouton > p {
         margin: 0 8px 0 0;
         font-size: 14px;
     }
 
-    div.offre_bouton > :last-child {
+    a.offre_bouton > :last-child {
         font-size: 14px;
     }
 }

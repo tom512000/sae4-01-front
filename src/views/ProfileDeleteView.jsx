@@ -1,13 +1,8 @@
-import React from 'react';
-import DeletionAccount from "../components/DeletionAccount/deletionAccount.jsx";
+import React from "react";
+import DeletionAccount from "../components/DeletionAccount/deletionAccount";
 
 function ProfileDeleteView() {
-
-    return (
-        <section>
-            <DeletionAccount />
-        </section>
-    );
+  return <DeletionAccount />;
 }
 
 export default ProfileDeleteView;

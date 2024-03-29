@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import './entreprise.css';
-import './entreprise.css';
-import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
-import { faAt } from '@fortawesome/free-solid-svg-icons/faAt';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
-import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightToBracket';
-import { getOffreEntrepriseId } from '../../services/api/enteprise';
-
+import React, { useEffect, useState } from "react";
+import "./entreprise.css";
+import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
+import { faAt } from "@fortawesome/free-solid-svg-icons/faAt";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons/faLocationDot";
+import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons/faArrowRightToBracket";
+import { getOffreEntrepriseId } from "../../services/api/enteprise";
 
 function Entreprise({ entreprise }) {
   const [nbOffres, setNbOffres] = useState(0);
   useEffect(() => {
-    getOffreEntrepriseId(entreprise.id)
-      .then((offres) => setNbOffres(offres.length));
+    getOffreEntrepriseId(entreprise.id).then((offres) =>
+      setNbOffres(offres.length),
+    );
   }, [entreprise.id]);
 
   return (
@@ -58,10 +57,16 @@ function Entreprise({ entreprise }) {
 }
 
 Entreprise.propTypes = {
-  entreprise: PropTypes.object,
-};
-Entreprise.defaultProps = {
-  entreprise: {},
+  entreprise: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      logo: PropTypes.string.isRequired,
+      nomEnt: PropTypes.string.isRequired,
+      siteWeb: PropTypes.string.isRequired,
+      mail: PropTypes.string.isRequired,
+      adresse: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default Entreprise;

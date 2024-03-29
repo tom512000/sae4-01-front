@@ -2,11 +2,7 @@ import React from "react";
 import RegistrationAccount from "../components/RegistrationAccount/registrationAccount";
 
 function InscriptionView() {
-  return (
-    <section>
-      <RegistrationAccount />
-    </section>
-  );
+  return <RegistrationAccount />;
 }
 
 export default InscriptionView;

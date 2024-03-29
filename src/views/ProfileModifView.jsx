@@ -1,13 +1,8 @@
-import React from 'react';
-import EditAccount from '../components/EditAccount/editAccount';
+import React from "react";
+import EditAccount from "../components/EditAccount/editAccount";
 
 function ProfileModifView() {
-
-  return (
-    <section>
-      <EditAccount />
-    </section>
-  );
+  return <EditAccount />;
 }
 
 export default ProfileModifView;

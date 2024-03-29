@@ -31,10 +31,10 @@ function Offre({ offre }) {
               &ensp;places
             </p>
           </div>
-          <div className="offre_bouton">
+          <a className="offre_bouton" href={`/offres/${offre.id}`}>
             <p>En savoir plus</p>
             <FontAwesomeIcon icon={faAngleRight} />
-          </div>
+          </a>
         </div>
       </div>
     </div>
