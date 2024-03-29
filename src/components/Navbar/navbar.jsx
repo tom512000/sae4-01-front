@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
-import './navbar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
-import { loginUrl, logoutUrl } from '../../services/api/user';
-import { UserContext } from '../../contexts/user/index';
-import ProfileMenu from '../ProfileMenu/profileMenu';
+import React, { useContext, useState } from "react";
+import "./navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
+import { loginUrl, logoutUrl } from "../../services/api/user";
+import { UserContext } from "../../contexts/user/index";
+import ProfileMenu from "../ProfileMenu/profileMenu";
 
 function Navbar() {
   /* Gestion Header */
@@ -27,11 +27,6 @@ function Navbar() {
         </a>
       </div>
       <div className="navbar_buttons">
-        <button type="button" className="sign_in">
-          <p>
-            <a href="/inscription">Inscription</a>
-          </p>
-        </button>
         {userData ? (
           <>
             <button type="button" className="log_in_out">
@@ -50,11 +45,18 @@ function Navbar() {
             {isVisible && <ProfileMenu />}
           </>
         ) : (
-          <button type="button" className="log_in_out">
-            <p>
-              <a href={loginUrl()}>Se connecter</a>
-            </p>
-          </button>
+          <>
+            <button type="button" className="sign_in">
+              <p>
+                <a href="/inscription">Inscription</a>
+              </p>
+            </button>
+            <button type="button" className="log_in_out">
+              <p>
+                <a href={loginUrl()}>Se connecter</a>
+              </p>
+            </button>
+          </>
         )}
       </div>
     </div>

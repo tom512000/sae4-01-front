@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { getEntrepriseDetail } from '../services/api/enteprise';
-import { getOffresDetail } from '../services/api/offre';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { getOffresDetail } from "../services/api/offre";
+import OffreDetails from "../components/OffreDetails/offreDetails";
 
 function OffreDetailView({ id }) {
-  const [offreData, setOffreData] = useState([]);
+  const [offreData, setOffreData] = useState(null);
 
   useEffect(() => {
     getOffresDetail(id).then((data) => {
@@ -12,18 +12,11 @@ function OffreDetailView({ id }) {
     });
   }, [id]);
 
-  return (
-    <section>
-      CODER DETAIL OFFRE ICI
-    </section>
-  );
+  return <OffreDetails offre={offreData} />;
 }
 
 OffreDetailView.propTypes = {
-  id: PropTypes.string,
-};
-OffreDetailView.defaultProps = {
-  id: 1,
+  id: PropTypes.string.isRequired,
 };
 
 export default OffreDetailView;
