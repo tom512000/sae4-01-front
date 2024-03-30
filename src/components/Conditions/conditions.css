@@ -1,0 +1,97 @@
+@import url("/public/index.css");
+
+/* Conditions d'utilisation */
+div.conditions {
+    width: calc(100% - 40px);
+    padding: 20px;
+    border-bottom: 1px solid var(--color-light-grey-B);
+    background-color: var(--color-white);
+}
+
+div.conditions > h1 {
+    margin: 5px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--color-black);
+}
+
+div.conditions > h2 {
+    margin: 3px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-black);
+}
+
+div.conditions > p {
+    margin: 2px 0;
+    text-align: justify;
+    line-height: 15px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-black);
+}
+
+div.conditions > p:nth-child(2) {
+    margin-bottom: 15px;
+}
+
+div.conditions > p:last-child {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+div.conditions > p > span {
+    text-decoration: underline;
+    color: var(--color-red);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Conditions d'utilisation */
+    div.conditions > h1 {
+        font-size: 20px;
+    }
+
+    div.conditions > h2 {
+        font-size: 15px;
+    }
+
+    div.conditions > p {
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Conditions d'utilisation */
+    div.conditions > h1 {
+        font-size: 22px;
+    }
+
+    div.conditions > h2 {
+        font-size: 17px;
+    }
+
+    div.conditions > p {
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Conditions d'utilisation */
+    div.conditions > h1 {
+        font-size: 24px;
+    }
+
+    div.conditions > h2 {
+        font-size: 19px;
+    }
+
+    div.conditions > p {
+        font-size: 13px;
+    }
+}
