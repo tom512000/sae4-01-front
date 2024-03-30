@@ -44,7 +44,6 @@ function Offre({ offre }) {
 Offre.propTypes = {
   offre: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    idEntreprise: PropTypes.number.isRequired,
     nomOffre: PropTypes.string.isRequired,
     duree: PropTypes.number.isRequired,
     lieux: PropTypes.string.isRequired,
