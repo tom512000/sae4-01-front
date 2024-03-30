@@ -109,3 +109,158 @@ div.aboutUs_photo > div > p:last-child {
     font-size: 10px;
     color: var(--color-light-grey-9);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* A propos de nous */
+    div.aboutUs h1 {
+        font-size: 20px;
+    }
+
+    /* Texte */
+    div.aboutUs_text {
+        height: 670px;
+    }
+
+    div.aboutUs_text > div > p {
+        line-height: 16px;
+        font-size: 12px;
+    }
+
+    div.aboutUs_text > div > img {
+        width: 270px;
+    }
+
+    /* Photos */
+    div.aboutUs_photo {
+        width: 130px;
+    }
+
+    div.aboutUs_photo > img {
+        height: 130px;
+    }
+
+    div.aboutUs_photo > div {
+        height: 90px;
+    }
+
+    div.aboutUs_photo > div > h2 {
+        font-size: 14px;
+    }
+
+    div.aboutUs_photo > div > p:nth-child(2) {
+        font-size: 10px;
+    }
+
+    div.aboutUs_photo > div > p:last-child {
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* A propos de nous */
+    div.aboutUs h1 {
+        font-size: 25px;
+    }
+
+    /* Texte */
+    div.aboutUs_text {
+        height: 750px;
+    }
+
+    div.aboutUs_text > div > p {
+        line-height: 18px;
+        font-size: 15px;
+    }
+
+    div.aboutUs_text > div > img {
+        width: 400px;
+    }
+
+    /* Photos */
+    div.aboutUs_photos {
+        flex-direction: row;
+    }
+
+    div.aboutUs_photo {
+        width: 150px;
+    }
+
+    div.aboutUs_photo > img {
+        height: 150px;
+    }
+
+    div.aboutUs_photo > div {
+        height: 95px;
+    }
+
+    div.aboutUs_photo > div > h2 {
+        font-size: 16px;
+    }
+
+    div.aboutUs_photo > div > p:nth-child(2) {
+        font-size: 12px;
+    }
+
+    div.aboutUs_photo > div > p:last-child {
+        font-size: 13px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* A propos de nous */
+    div.aboutUs h1 {
+        font-size: 27px;
+    }
+
+    /* Texte */
+    div.aboutUs_text {
+        flex-direction: row;
+        height: 470px;
+    }
+
+    div.aboutUs_text > div {
+        width: 50%;
+        height: 100%;
+    }
+
+    div.aboutUs_text > div > p {
+        line-height: 20px;
+        font-size: 15px;
+    }
+
+    div.aboutUs_text > div > img {
+        width: 370px;
+    }
+
+    /* Photos */
+    div.aboutUs_photos {
+        flex-direction: row;
+    }
+
+    div.aboutUs_photo {
+        width: 170px;
+    }
+
+    div.aboutUs_photo > img {
+        height: 170px;
+    }
+
+    div.aboutUs_photo > div {
+        height: 100px;
+    }
+
+    div.aboutUs_photo > div > h2 {
+        font-size: 18px;
+    }
+
+    div.aboutUs_photo > div > p:nth-child(2) {
+        font-size: 14px;
+    }
+
+    div.aboutUs_photo > div > p:last-child {
+        font-size: 15px;
+    }
+}
