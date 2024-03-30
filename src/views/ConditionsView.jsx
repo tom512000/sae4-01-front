@@ -1,7 +1,8 @@
 import React from "react";
+import Conditions from "../components/Conditions/conditions";
 
 function ConditionsView() {
-  return <section>CODER LES CONDITIONS D'UTILISATION ICI</section>;
+  return <Conditions />;
 }
 
 export default ConditionsView;
