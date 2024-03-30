@@ -1,0 +1,62 @@
+@import url("/public/index.css");
+
+/* Détails de l'entreprise */
+div.entrepriseDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Informations de l'entreprise */
+div.entrepriseDetails > div:first-child {
+    display: flex;
+    width: 80%;
+    height: 100px;
+}
+
+div.entrepriseDetails > div:last-child {
+    width: 100%;
+}
+
+div.entrepriseDetails_image {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+div.entrepriseDetails_image > img {
+    height: 80%;
+}
+
+div.entrepriseDetails_informations {
+    display: flex;
+    flex-direction: column;
+}
+
+div.entrepriseDetails_informations > h1 {
+    margin: 0 0 0 13px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+div.entrepriseDetails_informations > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+div.entrepriseDetails_informations > div > :first-child {
+    margin-left: 15px;
+    font-size: 8px;
+    color: var(--color-black);
+}
+
+div.entrepriseDetails_informations > div > p {
+    margin: 3px 0 3px 6px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-dark-grey);
+}
