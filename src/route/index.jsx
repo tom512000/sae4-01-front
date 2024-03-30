@@ -50,7 +50,7 @@ function Router() {
         <ProfileDeleteView />
       </Route>
 
-      <Route path="/candidatures">
+      <Route path="/inscriptions">
         <CandidaturesView />
       </Route>
 

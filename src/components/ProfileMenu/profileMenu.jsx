@@ -33,7 +33,7 @@ function ProfileMenu() {
           <FontAwesomeIcon icon={faTrashCan} />
           <p>Supprimer profil</p>
         </a>
-        <a href="/inscription">
+        <a href="/inscriptions">
           <FontAwesomeIcon icon={faBoxArchive} />
           <p>Mes inscriptions</p>
         </a>

@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Candidatures from "../components/Candidatures/candidatures";
+import fetchUserInscriptions from "../services/api/candidatures";
 
 function CandidaturesView() {
-  return <section>COMPONENT DES INSCRIPTIONS ICI</section>;
+  const [candidaturesData, setCandidaturesData] = useState([]);
+
+  useEffect(() => {
+    fetchUserInscriptions().then((data) => {
+      setCandidaturesData(data);
+    });
+  }, []);
+
+  return <Candidatures candidatures={candidaturesData} />;
 }
 
 export default CandidaturesView;
