@@ -47,3 +47,51 @@ div.conditions > p > span {
     text-decoration: underline;
     color: var(--color-red);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Conditions d'utilisation */
+    div.conditions > h1 {
+        font-size: 20px;
+    }
+
+    div.conditions > h2 {
+        font-size: 15px;
+    }
+
+    div.conditions > p {
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Conditions d'utilisation */
+    div.conditions > h1 {
+        font-size: 22px;
+    }
+
+    div.conditions > h2 {
+        font-size: 17px;
+    }
+
+    div.conditions > p {
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Conditions d'utilisation */
+    div.conditions > h1 {
+        font-size: 24px;
+    }
+
+    div.conditions > h2 {
+        font-size: 19px;
+    }
+
+    div.conditions > p {
+        font-size: 13px;
+    }
+}
