@@ -60,3 +60,63 @@ div.entrepriseDetails_informations > div > p {
     font-size: 8px;
     color: var(--color-dark-grey);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Informations de l'entreprise */
+    div.entrepriseDetails > div:first-child {
+        height: 110px;
+    }
+
+    div.entrepriseDetails_informations > h1 {
+        font-size: 16px;
+    }
+
+    div.entrepriseDetails_informations > div > :first-child {
+        font-size: 10px;
+    }
+
+    div.entrepriseDetails_informations > div > p {
+        font-size: 10px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Informations de l'entreprise */
+    div.entrepriseDetails > div:first-child {
+        height: 120px;
+    }
+
+    div.entrepriseDetails_informations > h1 {
+        font-size: 18px;
+    }
+
+    div.entrepriseDetails_informations > div > :first-child {
+        font-size: 11px;
+    }
+
+    div.entrepriseDetails_informations > div > p {
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Informations de l'entreprise */
+    div.entrepriseDetails > div:first-child {
+        height: 130px;
+    }
+
+    div.entrepriseDetails_informations > h1 {
+        font-size: 20px;
+    }
+
+    div.entrepriseDetails_informations > div > :first-child {
+        font-size: 12px;
+    }
+
+    div.entrepriseDetails_informations > div > p {
+        font-size: 12px;
+    }
+}
