@@ -38,3 +38,51 @@ div.mentions > p > span {
     text-decoration: underline;
     color: var(--color-red);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Mentions légales */
+    div.mentions > h1 {
+        font-size: 20px;
+    }
+
+    div.mentions > h2 {
+        font-size: 15px;
+    }
+
+    div.mentions > p {
+        font-size: 11px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Mentions légales */
+    div.mentions > h1 {
+        font-size: 22px;
+    }
+
+    div.mentions > h2 {
+        font-size: 17px;
+    }
+
+    div.mentions > p {
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Mentions légales */
+    div.mentions > h1 {
+        font-size: 24px;
+    }
+
+    div.mentions > h2 {
+        font-size: 19px;
+    }
+
+    div.mentions > p {
+        font-size: 13px;
+    }
+}
