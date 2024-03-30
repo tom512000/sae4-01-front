@@ -1,7 +1,8 @@
 import React from "react";
+import Mentions from "../components/Mentions/mentions";
 
 function MentionsView() {
-  return <section>CODER LES MENTIONS LEGALES ICI</section>;
+  return <Mentions />;
 }
 
 export default MentionsView;
