@@ -1,21 +1,21 @@
-import React, {useContext, useEffect, useState} from 'react';
-import './profileMenu.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons/faTrashCan';
-import { faBoxArchive } from '@fortawesome/free-solid-svg-icons/faBoxArchive';
-import { faDoorOpen } from '@fortawesome/free-solid-svg-icons/faDoorOpen';
-import { logoutUrl } from '../../services/api/user';
-import {UserContext} from "../../contexts/user/index";
+import React, { useContext } from "react";
+import "./profileMenu.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons/faTrashCan";
+import { faBoxArchive } from "@fortawesome/free-solid-svg-icons/faBoxArchive";
+import { faDoorOpen } from "@fortawesome/free-solid-svg-icons/faDoorOpen";
+import { logoutUrl } from "../../services/api/user";
+import { UserContext } from "../../contexts/user/index";
 
 function ProfileMenu() {
   const userData = useContext(UserContext);
 
   return (
     <div className="menu_profil">
-      <div className="profile_user">
+      <div className="profileMenu_user">
         <img src={`${userData.avatar}`} alt="Profil" />
-        <div className="profile_infos">
+        <div className="profileMenu_infos">
           <p>{userData.firstName}</p>
           <p>{userData.lastName}</p>
           <p>
@@ -24,7 +24,7 @@ function ProfileMenu() {
         </div>
       </div>
       <hr />
-      <div className="profile_links">
+      <div className="profileMenu_links">
         <a href="/profile/modif">
           <FontAwesomeIcon icon={faUser} />
           <p>Modifier profil</p>

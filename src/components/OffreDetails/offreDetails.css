@@ -4,6 +4,7 @@
 div.offreDetails {
     display: flex;
     flex-direction: column;
+    flex: 1;
     width: calc(100% - 50px);
 }
 

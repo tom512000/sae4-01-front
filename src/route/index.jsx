@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "wouter";
 import EntrepriseListeView from "../views/entrepriseListeView";
-import NotFound from "../views/NotFound";
+import NotFoundView from "../views/NotFoundView";
 import OffresListeView from "../views/OffresListeView";
 import HomeView from "../views/HomeView";
 import EntrepriseDetailView from "../views/EntrepriseDetailView";
@@ -70,7 +70,7 @@ function Router() {
         <ConditionsView />
       </Route>
 
-      <Route component={NotFound} />
+      <Route component={NotFoundView} />
     </Switch>
   );
 }
