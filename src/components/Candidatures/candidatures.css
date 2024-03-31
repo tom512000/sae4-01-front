@@ -1,1 +1,46 @@
-/* a remplir */
+@import url("/public/index.css");
+
+/* Légende des candidatures */
+div.candidatures_legende {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-white);
+}
+
+div.candidature_legende {
+    margin: 10px 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background-color: var(--color-light-grey-E);
+}
+
+div.candidature_legende > div {
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    border: 1px solid var(--color-light-grey-B);
+    border-radius: 15px;
+}
+
+div.candidature_legende > div#vert {
+    background-color: #00EB18;
+}
+
+div.candidature_legende > div#jaune {
+    background-color: #F4F900;
+}
+
+div.candidature_legende > div#rouge {
+    background-color: #FF694F;
+}
+
+div.candidature_legende > p {
+    margin: 3px 5px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-light-grey-9);
+}
