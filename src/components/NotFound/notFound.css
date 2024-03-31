@@ -33,3 +33,45 @@ div.notFound > p > a {
 div.notFound > p > a:hover {
     color: var(--color-dark-red);
 }
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Page Not Found */
+    div.notFound > h1 {
+        margin: 5px 0;
+        font-size: 22px;
+    }
+
+    div.notFound > p {
+        margin: 2px 0;
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Page Not Found */
+    div.notFound > h1 {
+        margin: 5px 0;
+        font-size: 24px;
+    }
+
+    div.notFound > p {
+        margin: 2px 0;
+        font-size: 14px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Page Not Found */
+    div.notFound > h1 {
+        margin: 5px 0;
+        font-size: 26px;
+    }
+
+    div.notFound > p {
+        margin: 2px 0;
+        font-size: 16px;
+    }
+}
