@@ -11,7 +11,9 @@ function CandidaturesView() {
     });
   }, []);
 
-  return <Candidatures candidatures={candidaturesData} />;
+  return (
+    <Candidatures title="Mes inscriptions" candidatures={candidaturesData} />
+  );
 }
 
 export default CandidaturesView;
