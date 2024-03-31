@@ -1,27 +1,61 @@
 import React from "react";
 import "./candidatures.css";
+import "../Offres/offres.css";
 import PropTypes from "prop-types";
-import Candidature from "../Candidature/candidature";
+import Offre from "../Offre/offre";
 
 function Candidatures({ candidatures, title }) {
   return (
-    <div className="entreprises">
-      <div className="entreprises_title">
-        <h1>{title}</h1>
+    <>
+      <div className="candidatures_legende">
+        <div className="candidature_legende">
+          <div id="vert" />
+          <p>Candidature acceptée</p>
+        </div>
+        <div className="candidature_legende">
+          <div id="jaune" />
+          <p>Candidature en attente</p>
+        </div>
+        <div className="candidature_legende">
+          <div id="rouge" />
+          <p>Candidature refusée</p>
+        </div>
       </div>
-      <div className="entreprises_list">
+      <div className="offres">
+        <div className="offres_title">
+          <h1>{title}</h1>
+        </div>
         {candidatures.map((x) => (
-          <Candidature offre={x.Offre} status={x.Status} />
+          <Offre offre={x.Offre} status={x.Status} />
         ))}
+        <div className="offres_number">
+          <p>
+            {candidatures.length}
+            &ensp;offre(s) d&apos;emploi
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
 Candidatures.propTypes = {
   candidatures: PropTypes.arrayOf(
     PropTypes.shape({
-      Offre: PropTypes.object.isRequired,
+      Offre: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        nomOffre: PropTypes.string.isRequired,
+        duree: PropTypes.number.isRequired,
+        lieux: PropTypes.string.isRequired,
+        jourDeb: PropTypes.string.isRequired,
+        nbPlace: PropTypes.number.isRequired,
+        descrip: PropTypes.string.isRequired,
+        level: PropTypes.string.isRequired,
+        entreprise: PropTypes.shape({
+          logo: PropTypes.string.isRequired,
+          nomEnt: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
       User: PropTypes.string.isRequired,
       Status: PropTypes.number.isRequired,
       dateDemande: PropTypes.string.isRequired,
