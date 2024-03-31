@@ -45,7 +45,7 @@ function Entreprise({ entreprise }) {
         </p>
         <div>
           <a
-            href={`/entreprise/${entreprise.id}`}
+            href={`/entreprises/${entreprise.id}`}
             aria-label={`Détails de ${entreprise.nomEnt}`}
           >
             <FontAwesomeIcon icon={faArrowRightToBracket} />
