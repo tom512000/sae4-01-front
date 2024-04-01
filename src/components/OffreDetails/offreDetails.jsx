@@ -44,7 +44,7 @@ function OffreDetails({ offre }) {
         <h2>Compétences</h2>
         <div className="offreDetails_competences">
           {skills.map((skill) => (
-            <p key={skill.id}>{skill.skill.libelle}</p>
+            <p key={skill.skill.id}>{skill.skill.libelle}</p>
           ))}
         </div>
       </div>
@@ -54,8 +54,8 @@ function OffreDetails({ offre }) {
 
 OffreDetails.propTypes = {
   offre: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    idEntreprise: PropTypes.number.isRequired,
+    id: PropTypes.number,
+    idEntreprise: PropTypes.number,
     nomOffre: PropTypes.string.isRequired,
     duree: PropTypes.number.isRequired,
     lieux: PropTypes.string.isRequired,
@@ -67,7 +67,14 @@ OffreDetails.propTypes = {
       logo: PropTypes.string.isRequired,
       nomEnt: PropTypes.string.isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
+};
+
+OffreDetails.defaultProps = {
+  offre: {
+    id: 0,
+    idEntreprise: 0,
+  },
 };
 
 export default OffreDetails;
