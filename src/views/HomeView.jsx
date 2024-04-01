@@ -3,9 +3,10 @@ import { fetchAllEntrepise } from "../services/api/enteprise";
 import Entreprises from "../components/Entreprises/entreprises";
 import Offres from "../components/Offres/offres";
 import { fetchAllOffre } from "../services/api/offre";
+import Loading from "../components/Loading/loading.jsx";
 
 function HomeView() {
-  const [entrepriseData, setEntrepriseData] = useState([]);
+  const [entrepriseData, setEntrepriseData] = useState(null);
   const [offreData, setOffreData] = useState([]);
 
   useEffect(() => {
@@ -16,6 +17,10 @@ function HomeView() {
       setOffreData(data);
     });
   }, []);
+
+  if (!entrepriseData) {
+    return <Loading />;
+  }
 
   return (
     <>

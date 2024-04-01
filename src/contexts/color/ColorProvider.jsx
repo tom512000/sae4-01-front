@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
-import { colorTitle } from "../user/index";
+import { NightModeContext } from "../user/index";
 
 function ColorProvider({ children }) {
-  const [color, setColor] = useState(Math.random().toString(16).substr(-6));
+  const [active, switchActive] = useState(false);
+  const value = useMemo(() => ({ active, switchActive }), [active]);
   return (
-    <colorTitle.Provider value={{ fontColor: color, set: setColor }}>
+    <NightModeContext.Provider value={value}>
       {children}
-    </colorTitle.Provider>
+    </NightModeContext.Provider>
   );
 }
 

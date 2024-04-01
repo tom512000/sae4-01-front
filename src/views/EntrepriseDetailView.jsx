@@ -5,10 +5,11 @@ import {
   getOffreEntrepriseId,
 } from "../services/api/enteprise";
 import EntrepriseDetails from "../components/EntrepriseDetails/entrepriseDetails";
+import Loading from "../components/Loading/loading";
 
 function EntrepriseDetailView({ id }) {
-  const [entrepriseData, setEntrepriseData] = useState([]);
-  const [offresData, setOffresData] = useState([]);
+  const [entrepriseData, setEntrepriseData] = useState(null);
+  const [offresData, setOffresData] = useState(null);
 
   useEffect(() => {
     getEntrepriseDetail(id).then((data) => {
@@ -18,6 +19,10 @@ function EntrepriseDetailView({ id }) {
       setOffresData(data);
     });
   }, [id]);
+
+  if (!entrepriseData) {
+    return <Loading />;
+  }
 
   return <EntrepriseDetails entreprise={entrepriseData} offres={offresData} />;
 }
