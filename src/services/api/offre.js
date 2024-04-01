@@ -3,7 +3,6 @@ import { BASE_URL } from "./user";
 export function fetchAllOffre(urlParams, filtre) {
   let url = `${BASE_URL}/offres`;
 
-  // Construire les paramètres de requête en fonction des filtres
   const queryParams = [];
   if (urlParams) {
     queryParams.push(`page=${urlParams}`);
@@ -42,6 +41,9 @@ export function fetchAllOffre(urlParams, filtre) {
           queryParams.push(`skillDemanders.skill.id=${skill}`);
         });
       }
+    }
+    if (filtre.lieux !== undefined && filtre.lieux !== "") {
+      queryParams.push(`lieux=${filtre.lieux}`);
     }
   }
 

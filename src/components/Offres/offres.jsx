@@ -3,7 +3,7 @@ import "./offres.css";
 import PropTypes from "prop-types";
 import Offre from "../Offre/offre";
 import Pagination from "../Pagination/pagination";
-import FiltreOffre from "./filtreOffre";
+import FiltreOffre from "../filtreOffres/filtreOffres";
 
 function Offres({ offres, title, onClick, onSubmit, skillData }) {
   return (
