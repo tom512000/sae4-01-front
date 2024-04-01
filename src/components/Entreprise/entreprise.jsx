@@ -57,16 +57,14 @@ function Entreprise({ entreprise }) {
 }
 
 Entreprise.propTypes = {
-  entreprise: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      logo: PropTypes.string.isRequired,
-      nomEnt: PropTypes.string.isRequired,
-      siteWeb: PropTypes.string.isRequired,
-      mail: PropTypes.string.isRequired,
-      adresse: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
+  entreprise: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    logo: PropTypes.string.isRequired,
+    nomEnt: PropTypes.string.isRequired,
+    siteWeb: PropTypes.string.isRequired,
+    mail: PropTypes.string.isRequired,
+    adresse: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Entreprise;

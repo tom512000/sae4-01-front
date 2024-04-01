@@ -23,7 +23,7 @@ function Offres({ offres, title, onClick, onSubmit, skillData }) {
           <h1>{title}</h1>
         </div>
         {offres.map((x) => (
-          <Offre offre={x} />
+          <Offre key={x.id} offre={x} />
         ))}
         <div className="offres_number">
           <p>
