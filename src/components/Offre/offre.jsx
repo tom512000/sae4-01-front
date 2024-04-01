@@ -39,16 +39,15 @@ function Offre({ offre, status }) {
               {offre.duree}
               &ensp;jours
             </p>
-            <p>{format(offre.jourDeb, "d/MM/yyyy")}</p>
-            <p>
-              {offre.nbPlace}
-              &ensp;places
-            </p>
+            <p>{format(offre.jourDeb, "dd/MM/yyyy")}</p>
+            <p>{offre.nbPlace} places</p>
           </div>
-          <a className="offre_bouton" href={`/offres/${offre.id}`}>
-            <p>En savoir plus</p>
-            <FontAwesomeIcon icon={faAngleRight} />
-          </a>
+          <div className="offre_link">
+            <a className="offre_bouton" href={`/offres/${offre.id}`}>
+              <p>En savoir plus</p>
+              <FontAwesomeIcon icon={faAngleRight} />
+            </a>
+          </div>
         </div>
       </div>
     </div>

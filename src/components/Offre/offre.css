@@ -3,7 +3,7 @@
 /* Offre */
 div.offre {
     width: 80%;
-    height: 85px;
+    height: 105px;
     border-radius: 13px;
 }
 
@@ -33,51 +33,56 @@ div.offre_logo > img {
 
 /* Informations de l'offre */
 div.offre_informations {
-    width: calc(100% - 80px);
+    width: calc(100% - 40px);
     height: 100%;
-    position: relative;
 }
 
 div.offre_informations > h1 {
     margin: 3px 0 0 7px;
     font-family: 'Palanquin Dark', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 div.offre_informations > p {
     margin: 0 0 0 7px;
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--color-dark-grey);
 }
 
 /* Données de l'offre */
 div.offre_donnees {
     display: flex;
+    flex-wrap: wrap;
     margin: 5px 0 0 7px;
 }
 
 div.offre_donnees > p {
-    margin: 0 2px 0 0;
+    margin: 2px 2px 2px 0;
     padding: 0 2px;
     border: 1px solid var(--color-light-grey-9);
     border-radius: 10px;
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
-    font-size: 8px;
+    font-size: 7px;
     color: var(--color-dark-grey);
     background-color: var(--color-light-grey-E);
 }
 
 /* Bouton de l'offre */
+div.offre_link {
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 10px);
+    margin: 3px 10px 3px 0;
+}
+
 a.offre_bouton {
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 2px;
-    right: 10px;
     color: var(--color-red);
 }
 
@@ -99,30 +104,25 @@ a.offre_bouton > :last-child {
 
 /* Media queries - Tablet */
 @media (min-width: 426px) and (max-width: 768px) {
-    /* Offre */
-    div.offre {
-        height: 100px;
-    }
-
     /* Logo de l'entreprise */
     div.offre_logo {
-        width: 100px;
+        width: 85px;
     }
 
     div.offre_logo > img {
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
     }
 
     /* Informations de l'offre */
     div.offre_informations > h1 {
         margin: 5px 0 0 8px;
-        font-size: 16px;
+        font-size: 13px;
     }
 
     div.offre_informations > p {
         margin: 0 0 0 8px;
-        font-size: 13px;
+        font-size: 11px;
     }
 
     /* Données de l'offre */
@@ -131,17 +131,12 @@ a.offre_bouton > :last-child {
     }
 
     div.offre_donnees > p {
-        margin: 0 3px 0 0;
+        margin: 2px 2px 2px 0;
         padding: 0 4px;
-        font-size: 10px;
+        font-size: 9px;
     }
 
     /* Bouton de l'offre */
-    a.offre_bouton {
-        bottom: 1px;
-        right: 11px;
-    }
-
     a.offre_bouton > p {
         font-size: 10px;
     }
@@ -153,30 +148,25 @@ a.offre_bouton > :last-child {
 
 /* Media queries - Laptop */
 @media (min-width: 769px) and (max-width: 1024px) {
-    /* Offre */
-    div.offre {
-        height: 110px;
-    }
-
     /* Logo de l'entreprise */
     div.offre_logo {
-        width: 110px;
+        width: 90px;
     }
 
     div.offre_logo > img {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     /* Informations de l'offre */
     div.offre_informations > h1 {
         margin: 5px 0 0 10px;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     div.offre_informations > p {
         margin: 0 0 0 10px;
-        font-size: 15px;
+        font-size: 12px;
     }
 
     /* Données de l'offre */
@@ -187,16 +177,10 @@ a.offre_bouton > :last-child {
     div.offre_donnees > p {
         margin: 0 5px 0 0;
         padding: 0 6px;
-        border-radius: 20px;
-        font-size: 13px;
+        font-size: 10px;
     }
 
     /* Bouton de l'offre */
-    a.offre_bouton {
-        bottom: 5px;
-        right: 15px;
-    }
-
     a.offre_bouton > p {
         margin: 0 7px 0 0;
         font-size: 12px;
@@ -209,30 +193,25 @@ a.offre_bouton > :last-child {
 
 /* Media queries - Laptop L */
 @media (min-width: 1025px) {
-    /* Offre */
-    div.offre {
-        height: 120px;
-    }
-
     /* Logo de l'entreprise */
     div.offre_logo {
-        width: 120px;
+        width: 95px;
     }
 
     div.offre_logo > img {
-        width: 90px;
-        height: 90px;
+        width: 75px;
+        height: 75px;
     }
 
     /* Informations de l'offre */
     div.offre_informations > h1 {
         margin: 5px 0 0 12px;
-        font-size: 20px;
+        font-size: 15px;
     }
 
     div.offre_informations > p {
         margin: 0 0 0 12px;
-        font-size: 17px;
+        font-size: 13px;
     }
 
     /* Données de l'offre */
@@ -244,21 +223,16 @@ a.offre_bouton > :last-child {
         margin: 0 6px 0 0;
         padding: 0 6px;
         border-radius: 20px;
-        font-size: 14px;
+        font-size: 11px;
     }
 
     /* Bouton de l'offre */
-    a.offre_bouton {
-        bottom: 7px;
-        right: 17px;
-    }
-
     a.offre_bouton > p {
         margin: 0 8px 0 0;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     a.offre_bouton > :last-child {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
