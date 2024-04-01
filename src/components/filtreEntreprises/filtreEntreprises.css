@@ -12,7 +12,7 @@ form.filtreEntreprise {
 form.filtreEntreprise > div {
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 200px;
     border-radius: 8px;
     background-color: var(--color-light-grey-E);
 }
@@ -22,6 +22,7 @@ div.filtreEntreprise_input {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: 95%;
 }
 
 div.filtreEntreprise_input > :first-child {
@@ -31,7 +32,8 @@ div.filtreEntreprise_input > :first-child {
 }
 
 div.filtreEntreprise_input > input {
-    width: 50px;
+    width: 100%;
+    height: 100%;
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
     font-size: 10px;
@@ -45,7 +47,6 @@ div.filtreEntreprise_buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
 }
 
 div.filtreEntreprise_buttons > button {
@@ -55,6 +56,7 @@ div.filtreEntreprise_buttons > button {
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
     font-size: 10px;
+    cursor: pointer;
     color: var(--color-white);
     background-color: var(--color-red);
 }
@@ -63,7 +65,7 @@ div.filtreEntreprise_buttons > button {
 @media (min-width: 426px) and (max-width: 768px) {
     /* Input du formulaire */
     form.filtreEntreprise > div {
-        width: 55%;
+        width: 250px;
     }
 
     div.filtreEntreprise_input > :first-child {
@@ -71,13 +73,11 @@ div.filtreEntreprise_buttons > button {
     }
 
     div.filtreEntreprise_input > input {
-        width: 60px;
         font-size: 12px;
     }
 
     /* Boutons du formulaire */
     div.filtreEntreprise_buttons > button {
-        margin: 5px 5px 5px 2px;
         font-size: 12px;
     }
 }
@@ -86,7 +86,7 @@ div.filtreEntreprise_buttons > button {
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Input du formulaire */
     form.filtreEntreprise > div {
-        width: 50%;
+        width: 300px;
     }
 
     div.filtreEntreprise_input > :first-child {
@@ -94,13 +94,11 @@ div.filtreEntreprise_buttons > button {
     }
 
     div.filtreEntreprise_input > input {
-        width: 60px;
         font-size: 13px;
     }
 
     /* Boutons du formulaire */
     div.filtreEntreprise_buttons > button {
-        margin: 5px 5px 5px 2px;
         font-size: 13px;
     }
 }
@@ -109,7 +107,7 @@ div.filtreEntreprise_buttons > button {
 @media (min-width: 1025px) {
     /* Input du formulaire */
     form.filtreEntreprise > div {
-        width: 45%;
+        width: 350px;
     }
 
     div.filtreEntreprise_input > :first-child {
@@ -117,13 +115,11 @@ div.filtreEntreprise_buttons > button {
     }
 
     div.filtreEntreprise_input > input {
-        width: 70px;
         font-size: 14px;
     }
 
     /* Boutons du formulaire */
     div.filtreEntreprise_buttons > button {
-        margin: 5px 5px 5px 2px;
         font-size: 14px;
     }
 }

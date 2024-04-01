@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-function FiltreOffre({ submiteText, onSubmit, skillData }) {
+function FiltreOffres({ submiteText, onSubmit, skillData }) {
   const [date, setDate] = useState("");
   const [text, setText] = useState("");
   const [isCheckedStage, setIsCheckedStage] = useState(false);
@@ -12,6 +12,7 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
   const [isCheckedAvant, setIsCheckedAvant] = useState(false);
   const [isCheckedApres, setIsCheckedApres] = useState(false);
   const [duree, setDuree] = useState();
+  const [lieux, setLieux] = useState("");
 
   const handleSkillToggle = () => {
     setShowSkillList(!showSkillList);
@@ -39,6 +40,7 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
       niveau,
       selectedSkills,
       duree,
+      lieux,
     };
     onSubmit(filters);
   };
@@ -54,11 +56,53 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
     setIsCheckedAvant(false);
     setIsCheckedApres(false);
     setDuree("");
+    setLieux("");
     handleSubmit(event);
   };
 
   return (
-    <form>
+    <form className="filtreOffre">
+      <div>
+        <div className="filtreOffre_input">
+          <input
+            type="text"
+            id="nomOffre"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <input
+            type="text"
+            id="lieux"
+            value={lieux}
+            onChange={(e) => setLieux(e.target.value)}
+          />
+          <div className="filtreOffre_inputLigne" />
+        </div>
+        <div className="filtreOffre_buttons">
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            disabled={
+              !(
+                date ||
+                text ||
+                isCheckedStage ||
+                isCheckedAlternance ||
+                duree ||
+                niveau ||
+                lieux ||
+                selectedSkills.length > 0
+              ) ||
+              (!!date && !(isCheckedAvant || isCheckedApres))
+            }
+          >
+            {submiteText}
+          </button>
+          <button onClick={handleSubmitEffaceFiltre} type="submit">
+            efface filtre
+          </button>
+        </div>
+      </div>
       <div>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="date">Date de début:</label>
@@ -96,8 +140,6 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
         />
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="apres">apres</label>
-      </div>
-      <div>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="nomOffre">Nom :</label>
         <input
@@ -106,8 +148,6 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-      </div>
-      <div>
         <input
           type="checkbox"
           id="Stage"
@@ -118,8 +158,6 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
         />
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="Stage">Stage</label>
-      </div>
-      <div>
         <input
           type="checkbox"
           id="Alternance"
@@ -130,8 +168,6 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
         />
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="Alternance">Alternance</label>
-      </div>
-      <div>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="niveau">Niveau demandé :</label>
         <input
@@ -142,8 +178,6 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
           min="0"
           max="5"
         />
-      </div>
-      <div>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="duree">Duree :</label>
         <input
@@ -153,8 +187,6 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
           onChange={(e) => setDuree(e.target.value)}
           min="0"
         />
-      </div>
-      <div>
         <button type="button" onClick={handleSkillToggle}>
           Skill
         </button>
@@ -176,32 +208,11 @@ function FiltreOffre({ submiteText, onSubmit, skillData }) {
           </div>
         )}
       </div>
-      <button
-        onClick={handleSubmit}
-        type="submit"
-        disabled={
-          !(
-            date ||
-            text ||
-            isCheckedStage ||
-            isCheckedAlternance ||
-            duree ||
-            niveau ||
-            selectedSkills.length > 0
-          ) ||
-          (!!date && !(isCheckedAvant || isCheckedApres))
-        }
-      >
-        {submiteText}
-      </button>
-      <button onClick={handleSubmitEffaceFiltre} type="submit">
-        efface filtre
-      </button>
     </form>
   );
 }
 
-FiltreOffre.propTypes = {
+FiltreOffres.propTypes = {
   submiteText: PropTypes.string,
   onSubmit: PropTypes.func,
   skillData: PropTypes.arrayOf(
@@ -212,10 +223,10 @@ FiltreOffre.propTypes = {
   ),
 };
 
-FiltreOffre.defaultProps = {
+FiltreOffres.defaultProps = {
   submiteText: "",
   onSubmit: null,
   skillData: null,
 };
 
-export default FiltreOffre;
+export default FiltreOffres;
