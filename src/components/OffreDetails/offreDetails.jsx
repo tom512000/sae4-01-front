@@ -44,7 +44,7 @@ function OffreDetails({ offre }) {
         <h2>Compétences</h2>
         <div className="offreDetails_competences">
           {skills.map((skill) => (
-            <p key={skill.id}>{skill.libelle}</p>
+            <p key={skill.id}>{skill.skill.libelle}</p>
           ))}
         </div>
       </div>

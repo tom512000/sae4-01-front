@@ -37,3 +37,18 @@ export function postUser(data) {
     console.log(donnees),
   );
 }
+
+export function patchUser(data, userid) {
+  const requestOptions = {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/ld+json",
+      Accept: "application/ld+json",
+    },
+    credentials: "include",
+    body: JSON.stringify(data),
+  };
+  fetch(`${BASE_URL}/users/${userid}`, requestOptions).then((donnees) =>
+    console.log(donnees),
+  );
+}
