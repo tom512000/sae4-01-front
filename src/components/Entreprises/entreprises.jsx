@@ -19,7 +19,7 @@ function Entreprises({ entreprises, title, onClick, onSubmit }) {
         </div>
         <div className="entreprises_list">
           {entreprises.map((x) => (
-            <Entreprise entreprise={x} />
+            <Entreprise key={x.id} entreprise={x} />
           ))}
         </div>
       </div>
@@ -41,7 +41,7 @@ Entreprises.propTypes = {
       siteWeb: PropTypes.string.isRequired,
       mail: PropTypes.string.isRequired,
       adresse: PropTypes.string.isRequired,
-    }),
+    }).isRequired,
   ).isRequired,
   title: PropTypes.string,
   onClick: PropTypes.func,
