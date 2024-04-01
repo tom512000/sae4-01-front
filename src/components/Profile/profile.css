@@ -167,7 +167,7 @@ div.profile_fichier > div {
     height: 100%;
     border-top: 15px solid var(--color-red);
     border-radius: 15px;
-    background-color: var(--color-dark-grey);
+    background-color: var(--color-light-grey-D);
 }
 
 div.profile_fichier > div > embed {
@@ -175,6 +175,12 @@ div.profile_fichier > div > embed {
     height: 100%;
 }
 
+div.profile_fichier > div > p {
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-dark-grey);
+}
 
 /* Media queries - Tablet */
 @media (min-width: 426px) and (max-width: 768px) {
@@ -219,6 +225,10 @@ div.profile_fichier > div > embed {
     /* CV et Lettre de motivation */
     div.profile_fichier > p {
         font-size: 10px;
+    }
+
+    div.profile_fichier > div > p {
+        font-size: 14px;
     }
 }
 
@@ -290,6 +300,10 @@ div.profile_fichier > div > embed {
     div.profile_fichier > p {
         font-size: 12px;
     }
+
+    div.profile_fichier > div > p {
+        font-size: 16px;
+    }
 }
 
 /* Media queries - Laptop L */
@@ -359,5 +373,9 @@ div.profile_fichier > div > embed {
 
     div.profile_fichier > p {
         font-size: 14px;
+    }
+
+    div.profile_fichier > div > p {
+        font-size: 18px;
     }
 }
