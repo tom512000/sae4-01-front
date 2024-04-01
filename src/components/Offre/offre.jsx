@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
 import { format } from "date-fns";
+import {postInscription} from "../../services/api/user.js";
 
 function Offre({ offre, status }) {
   let backgroundColor;
@@ -18,6 +19,17 @@ function Offre({ offre, status }) {
   }
   const offreStyle = {
     backgroundColor,
+  };
+
+  const handleInscription = () => {
+    postInscription(offre.id)
+        .then(() => {
+          alert("Inscription successful");
+        })
+        .catch((error) => {
+          console.error("Error while trying to subscribe:", error);
+          alert("Failed to subscribe");
+        });
   };
 
   return (
@@ -51,6 +63,10 @@ function Offre({ offre, status }) {
           </a>
         </div>
       </div>
+      <button className="offre_bouton" onClick={handleInscription}>
+        S'inscrire
+        <FontAwesomeIcon icon={faAngleRight} />
+      </button>
     </div>
   );
 }
