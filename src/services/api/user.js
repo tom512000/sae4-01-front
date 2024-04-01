@@ -52,3 +52,34 @@ export function patchUser(data, userid) {
     console.log(donnees),
   );
 }
+
+
+export function postInscription(offreId) {
+  return getMe().then((user) => {
+    if (user) {
+      const data = {
+        Offre: `/api/offres/${offreId}`,
+        User: `/api/users/${user.id}`,
+        Status: 1,
+        dateDemande: new Date().toISOString(),
+      };
+
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/ld+json",
+          Accept: "application/ld+json",
+        },
+        credentials: "include",
+        body: JSON.stringify(data),
+      };
+
+      fetch(`${BASE_URL}/inscrires`, requestOptions).then((response) =>
+          console.log(response),
+      );
+
+    } else {
+      throw new Error("Utilisateur non indentifier");
+    }
+  });
+}
