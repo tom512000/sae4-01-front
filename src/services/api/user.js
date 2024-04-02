@@ -53,7 +53,6 @@ export function patchUser(data, userid) {
   );
 }
 
-
 export function postInscription(offreId) {
   return getMe().then((user) => {
     if (user) {
@@ -75,9 +74,27 @@ export function postInscription(offreId) {
       };
 
       fetch(`${BASE_URL}/inscrires`, requestOptions).then((response) =>
-          console.log(response),
+        console.log(response),
       );
+    } else {
+      throw new Error("Utilisateur non indentifier");
+    }
+  });
+}
 
+export function deleteInscription(id) {
+  return getMe().then((user) => {
+    if (user) {
+      console.log(id);
+      const requestOptions = {
+        method: "DELETE",
+        credentials: "include",
+      };
+
+      fetch(
+        `${BASE_URL}/inscriptions/${id}`,
+        requestOptions,
+      ).then((response) => console.log(response));
     } else {
       throw new Error("Utilisateur non indentifier");
     }
