@@ -3,17 +3,57 @@ import "./offreDetails.css";
 import PropTypes from "prop-types";
 import { format } from "date-fns";
 import { getSkillOffreId } from "../../services/api/skill";
+import { deleteInscription, postInscription } from "../../services/api/user";
+import { getInscriptionUserId } from "../../services/api/offre";
 
 function OffreDetails({ offre }) {
-  // Manque la condition sur les boutons
-
   const [skills, setSkills] = useState([]);
+  const [inscriptionData, setInscription] = useState();
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     getSkillOffreId(offre.id).then((allSkills) => {
       setSkills(allSkills);
     });
-  }, [offre.id]);
+    getInscriptionUserId().then((data) => {
+      setInscription(data);
+    });
+  }, [offre.id, update]);
+
+  const handleInscription = () => {
+    postInscription(offre.id)
+      .then(() => {
+        // eslint-disable-next-line no-alert
+        alert("Inscription réussi");
+        setUpdate(!update);
+      })
+      .catch((error) => {
+        console.error("Error :", error);
+        // eslint-disable-next-line no-alert
+        alert("Inscription échouée");
+      });
+  };
+
+  const handleUnsubscribe = () => {
+    const inscription = inscriptionData.find(
+      (data) => data.Offre.id === offre.id,
+    );
+    deleteInscription(inscription.id)
+      .then(() => {
+        // eslint-disable-next-line no-alert
+        alert("Désinscription réussi");
+        setUpdate(!update);
+      })
+      .catch((error) => {
+        console.error("Error :", error);
+        // eslint-disable-next-line no-alert
+        alert("Désinscription échouée");
+      });
+  };
+
+  const isInscrit =
+    inscriptionData &&
+    inscriptionData.some((data) => data.Offre.id === offre.id);
 
   return (
     <div className="offreDetails">
@@ -33,10 +73,22 @@ function OffreDetails({ offre }) {
           <p>{format(offre.jourDeb, "d/MM/yyyy")}</p>
           <p>{offre.nbPlace} places</p>
         </div>
-        <div className="offreDetails_buttons">
-          <button type="button">Se désinscrire</button>
-          <button type="button">Postuler</button>
-        </div>
+        {inscriptionData && (
+          <div className="offreDetails_buttons">
+            {!isInscrit && (
+              // eslint-disable-next-line react/button-has-type
+              <button type="button" onClick={handleInscription}>
+                Postuler
+              </button>
+            )}
+            {isInscrit && (
+              // eslint-disable-next-line react/button-has-type
+              <button type="button" onClick={handleUnsubscribe}>
+                Se désinscrire
+              </button>
+            )}
+          </div>
+        )}
       </div>
       <div>
         <h2>Description de l&apos;offre</h2>
