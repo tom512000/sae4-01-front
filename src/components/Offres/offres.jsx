@@ -5,14 +5,7 @@ import Offre from "../Offre/offre";
 import Pagination from "../Pagination/pagination";
 import FiltreOffre from "../filtreOffres/filtreOffres";
 
-function Offres({
-  offres,
-  title,
-  onClick,
-  onSubmit,
-  skillData,
-  inscriptionData,
-}) {
+function Offres({ offres, title, onClick, onSubmit, skillData }) {
   return (
     <>
       {onSubmit && (
@@ -30,7 +23,7 @@ function Offres({
           <h1>{title}</h1>
         </div>
         {offres.map((x) => (
-          <Offre key={x.id} offre={x} inscriptionData={inscriptionData} />
+          <Offre key={x.id} offre={x} />
         ))}
         <div className="offres_number">
           <p>
@@ -70,31 +63,6 @@ Offres.propTypes = {
       libelle: PropTypes.string.isRequired,
     }),
   ),
-  inscriptionData: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      Offre: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        entreprise: PropTypes.shape({
-          nomEnt: PropTypes.string.isRequired,
-          logo: PropTypes.string.isRequired,
-        }).isRequired,
-        nomOffre: PropTypes.string.isRequired,
-        duree: PropTypes.number.isRequired,
-        lieux: PropTypes.string.isRequired,
-        jourDeb: PropTypes.string.isRequired,
-        nbPlace: PropTypes.number.isRequired,
-        descrip: PropTypes.string.isRequired,
-        Type: PropTypes.shape({
-          libelle: PropTypes.string.isRequired,
-        }).isRequired,
-        level: PropTypes.string.isRequired,
-      }).isRequired,
-      User: PropTypes.string.isRequired,
-      Status: PropTypes.number.isRequired,
-      dateDemande: PropTypes.string.isRequired,
-    }),
-  ),
 };
 
 Offres.defaultProps = {
@@ -102,7 +70,6 @@ Offres.defaultProps = {
   onClick: null,
   onSubmit: null,
   skillData: null,
-  inscriptionData: null,
 };
 
 export default Offres;
