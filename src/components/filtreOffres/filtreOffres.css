@@ -1,40 +1,48 @@
 @import url("/public/index.css");
 
-/* Filtres des offres */
+/* Filtre des offres */
 form.filtreOffre {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     margin: 15px 0;
 }
 
 /* Input du formulaire */
-form.filtreOffre > div {
+form.filtreOffre > div:first-child {
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 300px;
     border-radius: 8px;
     background-color: var(--color-light-grey-E);
 }
 
-
-
-
-div.filtreEntreprise_input {
+div.filtreOffre_input {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: 95%;
 }
 
-div.filtreEntreprise_input > :first-child {
+div.filtreOffre_input > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+div.filtreOffre_input > div > :first-child {
     margin: 0 10px;
     font-size: 10px;
     color: var(--color-dark-grey);
 }
 
-div.filtreEntreprise_input > input {
-    width: 50px;
+div.filtreOffre_input > div > input {
+    width: 100%;
+    height: 100%;
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
     font-size: 10px;
@@ -44,21 +52,299 @@ div.filtreEntreprise_input > input {
 }
 
 /* Boutons du formulaire */
-div.filtreEntreprise_buttons {
+div.filtreOffre_buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
 }
 
-div.filtreEntreprise_buttons > button {
+div.filtreOffre_buttons > button {
     margin: 5px 5px 5px 2px;
     border: none;
     border-radius: 5px;
     font-family: 'Niramit', sans-serif;
     font-weight: 400;
     font-size: 10px;
+    cursor: pointer;
     color: var(--color-white);
     background-color: var(--color-red);
 }
 
+/* Données du formulaire */
+form.filtreOffre > div:last-child {
+    display: flex;justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--color-white);
+}
+
+div.filtreOffre_donnees {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    position: relative;
+}
+
+div.filtreOffre_donnees > p {
+    margin: 3px 0;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+div.filtreOffre_donnees > input {
+    padding: 0 10px;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-light-grey-B);
+    background-color: var(--color-light-grey-E);
+}
+
+div.filtreOffre_donnees input[type="date"] {
+    border-radius: 5px 5px 0 0;
+}
+
+div.filtreOffre_donnees input[type="checkbox"] {
+    width: 10px;
+}
+
+div.filtreOffre_donnees input[type="number"] {
+    width: 100px;
+}
+
+div.filtreOffre_donnees_plus {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border: none;
+    font-family: 'Niramit', sans-serif;
+    background-color: var(--color-light-grey-E);
+}
+
+div.filtreOffre_donnees div.filtreOffre_donnees_plus:nth-child(2) {
+    border-radius: 5px 5px 0 0;
+}
+
+div.filtreOffre_donnees div.filtreOffre_donnees_plus:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+div.filtreOffre_donnees_plus > label {
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-light-grey-B);
+}
+
+/* Compétences */
+button.filtreOffre_skills {
+    padding: 0 10px;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-light-grey-B);
+    background-color: var(--color-light-grey-E);
+}
+
+button.filtreOffre_skills > :last-child {
+    margin-left: 5px;
+    font-size: 10px;
+    color: var(--color-light-grey-B);
+}
+
+div.filtreOffre_skills {
+    position: absolute;
+    top: 46px;
+    left: 7px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--color-black);
+    background-color: var(--color-white);
+}
+
+div.filtreOffre_skills > div {
+    display: flex;
+    align-items: center;
+}
+
+div.filtreOffre_skills input {
+    margin-left: 10px;
+}
+
+div.filtreOffre_skills label {
+    margin-right: 5px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--color-light-grey-B);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Input du formulaire */
+    form.filtreOffre > div:first-child {
+        width: 350px;
+    }
+
+    div.filtreOffre_input > div > :first-child {
+        font-size: 12px;
+    }
+
+    div.filtreOffre_input > div > input {
+        font-size: 12px;
+    }
+
+    /* Boutons du formulaire */
+    div.filtreOffre_buttons > button {
+        font-size: 12px;
+    }
+
+    /* Données du formulaire */
+    div.filtreOffre_donnees > p {
+        font-size: 14px;
+    }
+
+    div.filtreOffre_donnees > input {
+        font-size: 12px;
+    }
+
+    div.filtreOffre_donnees input[type="checkbox"] {
+        width: 12px;
+    }
+
+    div.filtreOffre_donnees_plus > label {
+        font-size: 12px;
+    }
+
+    /* Compétences */
+    button.filtreOffre_skills {
+        font-size: 12px;
+    }
+
+    button.filtreOffre_skills > :last-child {
+        font-size: 12px;
+    }
+
+    div.filtreOffre_skills {
+        top: 53px;
+        left: 7px;
+    }
+
+    div.filtreOffre_skills label {
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Input du formulaire */
+    form.filtreOffre > div:first-child {
+        width: 400px;
+    }
+
+    div.filtreOffre_input > div > :first-child {
+        font-size: 14px;
+    }
+
+    div.filtreOffre_input > div > input {
+        font-size: 14px;
+    }
+
+    /* Boutons du formulaire */
+    div.filtreOffre_buttons > button {
+        font-size: 14px;
+    }
+
+    /* Données du formulaire */
+    div.filtreOffre_donnees > p {
+        font-size: 16px;
+    }
+
+    div.filtreOffre_donnees > input {
+        font-size: 14px;
+    }
+
+    div.filtreOffre_donnees input[type="checkbox"] {
+        width: 13px;
+    }
+
+    div.filtreOffre_donnees_plus > label {
+        font-size: 14px;
+    }
+
+    /* Compétences */
+    button.filtreOffre_skills {
+        font-size: 14px;
+    }
+
+    button.filtreOffre_skills > :last-child {
+        font-size: 14px;
+    }
+
+    div.filtreOffre_skills {
+        top: 60px;
+        left: 6px;
+    }
+
+    div.filtreOffre_skills label {
+        font-size: 13px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Input du formulaire */
+    form.filtreOffre > div:first-child {
+        width: 450px;
+    }
+
+    div.filtreOffre_input > div > :first-child {
+        font-size: 16px;
+    }
+
+    div.filtreOffre_input > div > input {
+        font-size: 16px;
+    }
+
+    /* Boutons du formulaire */
+    div.filtreOffre_buttons > button {
+        font-size: 16px;
+    }
+
+    /* Données du formulaire */
+    div.filtreOffre_donnees > p {
+        font-size: 18px;
+    }
+
+    div.filtreOffre_donnees > input {
+        font-size: 16px;
+    }
+
+    div.filtreOffre_donnees input[type="checkbox"] {
+        width: 15px;
+    }
+
+    div.filtreOffre_donnees_plus > label {
+        font-size: 16px;
+    }
+
+    /* Compétences */
+    button.filtreOffre_skills {
+        font-size: 16px;
+    }
+
+    button.filtreOffre_skills > :last-child {
+        font-size: 16px;
+    }
+
+    div.filtreOffre_skills {
+        top: 70px;
+        left: 6px;
+    }
+
+    div.filtreOffre_skills label {
+        font-size: 15px;
+    }
+}
