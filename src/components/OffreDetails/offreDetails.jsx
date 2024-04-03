@@ -8,28 +8,38 @@ import { getInscriptionUserId } from "../../services/api/offre";
 
 function OffreDetails({ offre }) {
   const [skills, setSkills] = useState([]);
-  const [inscriptionData, setInscription] = useState();
+  const [inscriptionData, setInscription] = useState([]);
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    getSkillOffreId(offre.id).then((allSkills) => {
+    const fetchData = async () => {
+      const allSkills = await getSkillOffreId(offre.id);
       setSkills(allSkills);
-    });
-    getInscriptionUserId().then((data) => {
-      setInscription(data);
-    });
+
+      let allInscriptions = [];
+      let page = 1;
+      let data = await getInscriptionUserId(page);
+      while (data.length > 0) {
+        allInscriptions = [...allInscriptions, ...data];
+        // eslint-disable-next-line no-plusplus
+        page++;
+        // eslint-disable-next-line no-await-in-loop
+        data = await getInscriptionUserId(page);
+      }
+      setInscription(allInscriptions);
+    };
+
+    fetchData();
   }, [offre.id, update]);
 
   const handleInscription = () => {
     postInscription(offre.id)
       .then(() => {
-        // eslint-disable-next-line no-alert
-        alert("Inscription réussi");
+        alert("Inscription réussie");
         setUpdate(!update);
       })
       .catch((error) => {
         console.error("Error :", error);
-        // eslint-disable-next-line no-alert
         alert("Inscription échouée");
       });
   };
@@ -40,13 +50,11 @@ function OffreDetails({ offre }) {
     );
     deleteInscription(inscription.id)
       .then(() => {
-        // eslint-disable-next-line no-alert
-        alert("Désinscription réussi");
+        alert("Désinscription réussie");
         setUpdate(!update);
       })
       .catch((error) => {
         console.error("Error :", error);
-        // eslint-disable-next-line no-alert
         alert("Désinscription échouée");
       });
   };
@@ -76,13 +84,11 @@ function OffreDetails({ offre }) {
         {inscriptionData && (
           <div className="offreDetails_buttons">
             {!isInscrit && (
-              // eslint-disable-next-line react/button-has-type
               <button type="button" onClick={handleInscription}>
                 Postuler
               </button>
             )}
             {isInscrit && (
-              // eslint-disable-next-line react/button-has-type
               <button type="button" onClick={handleUnsubscribe}>
                 Se désinscrire
               </button>
