@@ -107,6 +107,7 @@ button.profile_menu:hover {
 }
 
 button.profile_menu > :first-child {
+    font-size: 10px;
     color: white;
 }
 
@@ -147,6 +148,10 @@ button.profile_menu > :first-child {
         height: 30px;
         margin-right: 7px;
     }
+
+    button.profile_menu > :first-child {
+        font-size: 12px;
+    }
 }
 
 /* Media queries - Laptop */
@@ -186,6 +191,10 @@ button.profile_menu > :first-child {
         height: 35px;
         margin-right: 9px;
     }
+
+    button.profile_menu > :first-child {
+        font-size: 14px;
+    }
 }
 
 /* Media queries - Laptop L */
@@ -224,5 +233,9 @@ button.profile_menu > :first-child {
         width: 37px;
         height: 37px;
         margin-right: 11px;
+    }
+
+    button.profile_menu > :first-child {
+        font-size: 16px;
     }
 }

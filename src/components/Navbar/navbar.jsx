@@ -34,11 +34,21 @@ function Navbar() {
       </div>
       <div className="navbar_buttons">
         {nightmode.active ? (
-          <button type="button" className="sign_in" onClick={toggleNightMode}>
+          <button
+            type="button"
+            className="sign_in"
+            aria-label="Bouton Night"
+            onClick={toggleNightMode}
+          >
             <FontAwesomeIcon icon={faMoon} />
           </button>
         ) : (
-          <button type="button" className="sign_in" onClick={toggleNightMode}>
+          <button
+            type="button"
+            className="sign_in"
+            aria-label="Bouton Light"
+            onClick={toggleNightMode}
+          >
             <FontAwesomeIcon icon={faSun} />
           </button>
         )}

@@ -11,7 +11,7 @@ function Offres({ offres, title, onClick, onSubmit, skillData }) {
       {onSubmit && (
         <div>
           <FiltreOffre
-            submiteText="Submit"
+            submiteText="Rechercher"
             onSubmit={onSubmit}
             skillData={skillData}
           />
