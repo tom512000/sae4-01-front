@@ -3,7 +3,6 @@
 /* Offre */
 div.offre {
     width: 80%;
-    height: 105px;
     border-radius: 13px;
 }
 
@@ -22,7 +21,6 @@ div.offre_logo {
     justify-content: center;
     align-items: center;
     width: 80px;
-    height: 100%;
 }
 
 div.offre_logo > img {
@@ -81,8 +79,9 @@ div.offre_link {
 
 a.offre_bouton {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    margin-right: 10px;
     color: var(--color-red);
 }
 
@@ -206,7 +205,7 @@ a.offre_bouton > :last-child {
     /* Informations de l'offre */
     div.offre_informations > h1 {
         margin: 5px 0 0 12px;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     div.offre_informations > p {
@@ -223,16 +222,16 @@ a.offre_bouton > :last-child {
         margin: 0 6px 0 0;
         padding: 0 6px;
         border-radius: 20px;
-        font-size: 11px;
+        font-size: 12px;
     }
 
     /* Bouton de l'offre */
     a.offre_bouton > p {
         margin: 0 8px 0 0;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     a.offre_bouton > :last-child {
-        font-size: 12px;
+        font-size: 14px;
     }
 }

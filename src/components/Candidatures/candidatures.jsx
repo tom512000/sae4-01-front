@@ -27,13 +27,10 @@ function Candidatures({ candidatures, title, onClick}) {
           <h1>{title}</h1>
         </div>
         {candidatures.map((x) => (
-          <Offre offre={x.Offre} status={x.Status} />
+          <Offre key={x.Offre.id} offre={x.Offre} status={x.Status} />
         ))}
         <div className="offres_number">
-          <p>
-            {candidatures.length}
-            &ensp;offre(s) d&apos;emploi
-          </p>
+          <p>{candidatures.length} offre(s) d&apos;emploi</p>
         </div>
       </div>
       {onClick && (

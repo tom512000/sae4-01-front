@@ -5,11 +5,16 @@ import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons/faTrashCan";
 import { faBoxArchive } from "@fortawesome/free-solid-svg-icons/faBoxArchive";
 import { faDoorOpen } from "@fortawesome/free-solid-svg-icons/faDoorOpen";
+import { faTableColumns } from "@fortawesome/free-solid-svg-icons/faTableColumns";
 import { logoutUrl } from "../../services/api/user";
 import { UserContext } from "../../contexts/user/index";
 
 function ProfileMenu() {
+  /* Utilisateur actuel */
   const userData = useContext(UserContext);
+
+  /* Gestion du rôle ADMIN */
+  const isAdmin = userData.roles[0] === "ROLE_ADMIN";
 
   return (
     <div className="menu_profil">
@@ -25,6 +30,12 @@ function ProfileMenu() {
       </div>
       <hr />
       <div className="profileMenu_links">
+        {isAdmin && (
+          <a href="https://127.0.0.1:8000/admin">
+            <FontAwesomeIcon icon={faTableColumns} />
+            <p>Tableau de bord</p>
+          </a>
+        )}
         <a href="/profile/modif">
           <FontAwesomeIcon icon={faUser} />
           <p>Modifier profil</p>
