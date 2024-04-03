@@ -59,7 +59,7 @@ export function postInscription(offreId) {
       const data = {
         Offre: `/api/offres/${offreId}`,
         User: `/api/users/${user.id}`,
-        Status: 1,
+        Status: Math.floor(Math.random() * (3 - 1 + 1) + 1),
         dateDemande: new Date().toISOString(),
       };
 
@@ -91,10 +91,9 @@ export function deleteInscription(id) {
         credentials: "include",
       };
 
-      fetch(
-        `${BASE_URL}/inscriptions/${id}`,
-        requestOptions,
-      ).then((response) => console.log(response));
+      fetch(`${BASE_URL}/inscriptions/${id}`, requestOptions).then((response) =>
+        console.log(response),
+      );
     } else {
       throw new Error("Utilisateur non indentifier");
     }
