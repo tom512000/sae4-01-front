@@ -30,7 +30,7 @@ function EntrepriseDetails({ entreprise, offres }) {
           </div>
         </div>
       </div>
-      <Offres offres={offres} />
+      {offres && <Offres offres={offres} />}
     </div>
   );
 }
