@@ -3,8 +3,9 @@ import "./candidatures.css";
 import "../Offres/offres.css";
 import PropTypes from "prop-types";
 import Offre from "../Offre/offre";
+import Pagination from "../Pagination/pagination";
 
-function Candidatures({ candidatures, title }) {
+function Candidatures({ candidatures, title, onClick}) {
   return (
     <>
       <div className="candidatures_legende">
@@ -35,6 +36,11 @@ function Candidatures({ candidatures, title }) {
           </p>
         </div>
       </div>
+      {onClick && (
+        <div>
+          <Pagination onClick={onClick} dataLength={candidatures.length} />
+        </div>
+      )}
     </>
   );
 }
@@ -62,10 +68,12 @@ Candidatures.propTypes = {
     }),
   ).isRequired,
   title: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 Candidatures.defaultProps = {
   title: "",
+  onClick: null,
 };
 
 export default Candidatures;
