@@ -65,7 +65,7 @@ div.profileMenu_links {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90px;
+    height: 110px;
 }
 
 div.profileMenu_links > a {
@@ -149,7 +149,7 @@ div.profile_disc > a > p {
 
     /* Liens du profil */
     div.profileMenu_links {
-        height: 90px;
+        height: 120px;
     }
 
     div.profileMenu_links > a > :first-child {
@@ -205,7 +205,7 @@ div.profile_disc > a > p {
 
     /* Liens du profil */
     div.profileMenu_links {
-        height: 90px;
+        height: 130px;
     }
 
     div.profileMenu_links > a > :first-child {
