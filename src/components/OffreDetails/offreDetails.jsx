@@ -23,8 +23,12 @@ function OffreDetails({ offre }) {
         allInscriptions = [...allInscriptions, ...data];
         // eslint-disable-next-line no-plusplus
         page++;
-        // eslint-disable-next-line no-await-in-loop
-        data = await getInscriptionUserId(page);
+        if (data.length === 15) {
+          // eslint-disable-next-line no-await-in-loop
+          data = await getInscriptionUserId(page);
+        } else {
+          break;
+        }
       }
       setInscription(allInscriptions);
     };
