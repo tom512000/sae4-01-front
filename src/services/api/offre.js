@@ -64,17 +64,18 @@ export function getOffreTypeId(id) {
   );
 }
 
-export function getInscriptionUserId() {
+export function getInscriptionUserId(page) {
   return getMe().then((user) => {
     if (user) {
       const requestOptions = {
         credentials: "include",
       };
+      let url = `${BASE_URL}/users/${user.id}/inscriptions`;
+      if (page) {
+        url = `${BASE_URL}/users/${user.id}/inscriptions?page=${page}`;
+      }
 
-      return fetch(
-        `${BASE_URL}/users/${user.id}/inscriptions`,
-        requestOptions,
-      ).then((response) => {
+      return fetch(url, requestOptions).then((response) => {
         if (!response.ok) {
           throw new Error("Échec de la requête");
         }
