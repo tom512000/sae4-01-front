@@ -6,6 +6,16 @@ import Pagination from "../Pagination/pagination";
 import FiltreOffre from "../filtreOffres/filtreOffres";
 
 function Offres({ offres, title, onClick, onSubmit, skillData }) {
+  let marginTop;
+  if (title === "") {
+    marginTop = "15px";
+  } else {
+    marginTop = "0";
+  }
+  const offresStyle = {
+    marginTop,
+  };
+
   return (
     <>
       {onSubmit && (
@@ -19,7 +29,7 @@ function Offres({ offres, title, onClick, onSubmit, skillData }) {
       )}
 
       <div className="offres">
-        <div className="offres_title">
+        <div className="offres_title" style={offresStyle}>
           <h1>{title}</h1>
         </div>
         {offres.map((x) => (
