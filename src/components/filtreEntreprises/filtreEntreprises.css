@@ -107,19 +107,19 @@ div.filtreEntreprise_buttons > button {
 @media (min-width: 1025px) {
     /* Input du formulaire */
     form.filtreEntreprise > div {
-        width: 350px;
+        width: 370px;
     }
 
     div.filtreEntreprise_input > :first-child {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     div.filtreEntreprise_input > input {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     /* Boutons du formulaire */
     div.filtreEntreprise_buttons > button {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
