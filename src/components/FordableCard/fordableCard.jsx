@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./fordableCard.css";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons/faCaretDown";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons/faCaretUp";
 
 function FordableCard({ pTitle, h1Title, pText, h2Title, children }) {
-  // Manque la l'icone et la fermeture de la première div
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpansion = () => {
+    setIsExpanded((prevExpanded) => !prevExpanded);
+  };
 
   return (
     <div className="fordableCard">
-      <div className="fordableCard_text">
+      <div className={`fordableCard_text ${isExpanded ? "expanded" : ""}`}>
         <p>{pTitle}</p>
         <h1>{h1Title}</h1>
         <div className="fordableCard_ligne" />
         <p>{pText}</p>
+      </div>
+      <div className="fordableCard_action">
+        <FontAwesomeIcon
+          icon={isExpanded ? faCaretDown : faCaretUp}
+          onClick={toggleExpansion}
+        />
       </div>
       <div className="fordableCard_content">
         <h2>{h2Title}</h2>

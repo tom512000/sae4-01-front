@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { fetchAllOffre } from "../services/api/offre";
 import Offres from "../components/Offres/offres";
 import { fetchAllSkill } from "../services/api/skill";
+import Loading from "../components/Loading/loading";
 
 function OffresListeView() {
-  const [offreData, setOffreData] = useState([]);
+  const [offreData, setOffreData] = useState(null);
   const [page, setPage] = useState(1);
   const [skillData, setSkillData] = useState([]);
   const [filtre, setFiltre] = useState([]);
@@ -17,6 +18,10 @@ function OffresListeView() {
       setSkillData(data);
     });
   }, [page, filtre]);
+
+  if (!offreData) {
+    return <Loading />;
+  }
 
   function onClick(p) {
     setPage(parseInt(new URLSearchParams(p).values().next().value, 10));

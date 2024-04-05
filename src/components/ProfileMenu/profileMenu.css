@@ -17,7 +17,7 @@ div.menu_profil > hr {
 }
 
 /* Informations de l'utilisateur */
-div.profile_user {
+div.profileMenu_user {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -25,14 +25,14 @@ div.profile_user {
     height: 70px;
 }
 
-div.profile_user > img {
+div.profileMenu_user > img {
     width: 55px;
     height: 55px;
     margin: 5px;
     background-color: #E43719;
 }
 
-div.profile_infos {
+div.profileMenu_infos {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -40,35 +40,35 @@ div.profile_infos {
     height: 100%;
 }
 
-div.profile_infos > p:first-child {
+div.profileMenu_infos > p:first-child {
     margin-bottom: -8px;
 }
 
-div.profile_infos > p:nth-child(2) {
+div.profileMenu_infos > p:nth-child(2) {
     margin-bottom: -7px;
 }
 
-div.profile_infos > p {
+div.profileMenu_infos > p {
     margin: 0;
     font-family: 'Palanquin Dark', sans-serif;
     font-weight: 400;
     font-size: 11px;
 }
 
-div.profile_infos > p > a {
+div.profileMenu_infos > p > a {
     color: var(--color-light-grey-9);
     text-decoration: underline;
 }
 
 /* Liens du profil */
-div.profile_links {
+div.profileMenu_links {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90px;
+    height: 110px;
 }
 
-div.profile_links > a {
+div.profileMenu_links > a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,12 +76,12 @@ div.profile_links > a {
     height: calc(100% / 3);
 }
 
-div.profile_links > a > :first-child {
+div.profileMenu_links > a > :first-child {
     font-size: 10px;
     color: var(--color-dark-grey);
 }
 
-div.profile_links > a > p {
+div.profileMenu_links > a > p {
     margin: 0 0 0 10px;
     font-family: 'Palanquin Dark', sans-serif;
     font-weight: 400;
@@ -134,29 +134,29 @@ div.profile_disc > a > p {
     }
 
     /* Informations de l'utilisateur */
-    div.profile_user {
+    div.profileMenu_user {
         height: 80px;
     }
 
-    div.profile_user > img {
+    div.profileMenu_user > img {
         width: 58px;
         height: 58px;
     }
 
-    div.profile_infos > p {
+    div.profileMenu_infos > p {
         font-size: 13px;
     }
 
     /* Liens du profil */
-    div.profile_links {
-        height: 90px;
+    div.profileMenu_links {
+        height: 120px;
     }
 
-    div.profile_links > a > :first-child {
+    div.profileMenu_links > a > :first-child {
         font-size: 12px;
     }
 
-    div.profile_links > a > p {
+    div.profileMenu_links > a > p {
         margin: 0 0 0 10px;
         font-size: 12px;
     }
@@ -186,33 +186,33 @@ div.profile_disc > a > p {
     }
 
     /* Informations de l'utilisateur */
-    div.profile_user {
+    div.profileMenu_user {
         height: 80px;
     }
 
-    div.profile_user > img {
+    div.profileMenu_user > img {
         width: 60px;
         height: 60px;
     }
 
-    div.profile_infos > p {
+    div.profileMenu_infos > p {
         font-size: 14px;
     }
 
-    div.profile_infos > p:first-child {
+    div.profileMenu_infos > p:first-child {
         margin-bottom: -10px;
     }
 
     /* Liens du profil */
-    div.profile_links {
-        height: 90px;
+    div.profileMenu_links {
+        height: 130px;
     }
 
-    div.profile_links > a > :first-child {
+    div.profileMenu_links > a > :first-child {
         font-size: 13px;
     }
 
-    div.profile_links > a > p {
+    div.profileMenu_links > a > p {
         margin: 0 0 0 10px;
         font-size: 13px;
     }

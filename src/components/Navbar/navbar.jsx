@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { loginUrl, logoutUrl } from "../../services/api/user";
 import { UserContext } from "../../contexts/user/index";
 import ProfileMenu from "../ProfileMenu/profileMenu";

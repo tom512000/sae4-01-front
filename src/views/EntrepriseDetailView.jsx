@@ -4,28 +4,31 @@ import {
   getEntrepriseDetail,
   getOffreEntrepriseId,
 } from "../services/api/enteprise";
+import EntrepriseDetails from "../components/EntrepriseDetails/entrepriseDetails";
+import Loading from "../components/Loading/loading";
 
 function EntrepriseDetailView({ id }) {
-  const [entrepriseData, setEntrepriseData] = useState([]);
-  const [offreData, setOffreData] = useState([]);
+  const [entrepriseData, setEntrepriseData] = useState(null);
+  const [offresData, setOffresData] = useState(null);
 
   useEffect(() => {
     getEntrepriseDetail(id).then((data) => {
       setEntrepriseData(data);
     });
     getOffreEntrepriseId(id).then((data) => {
-      setOffreData(data);
+      setOffresData(data);
     });
   }, [id]);
 
-  return <section>CODER DETAIL ENTREPRISE ICI</section>;
+  if (!entrepriseData) {
+    return <Loading />;
+  }
+
+  return <EntrepriseDetails entreprise={entrepriseData} offres={offresData} />;
 }
 
 EntrepriseDetailView.propTypes = {
-  id: PropTypes.string,
-};
-EntrepriseDetailView.defaultProps = {
-  id: 1,
+  id: PropTypes.string.isRequired,
 };
 
 export default EntrepriseDetailView;

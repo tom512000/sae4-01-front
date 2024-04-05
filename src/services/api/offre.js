@@ -1,9 +1,8 @@
-import { BASE_URL } from "./user";
+import { BASE_URL, getMe } from "./user";
 
 export function fetchAllOffre(urlParams, filtre) {
   let url = `${BASE_URL}/offres`;
 
-  // Construire les paramètres de requête en fonction des filtres
   const queryParams = [];
   if (urlParams) {
     queryParams.push(`page=${urlParams}`);
@@ -43,6 +42,9 @@ export function fetchAllOffre(urlParams, filtre) {
         });
       }
     }
+    if (filtre.lieux !== undefined && filtre.lieux !== "") {
+      queryParams.push(`lieux=${filtre.lieux}`);
+    }
   }
 
   // Si des paramètres de requête sont présents, les ajouter à l'URL
@@ -60,4 +62,26 @@ export function getOffreTypeId(id) {
   return fetch(`${BASE_URL}/Type/${id}/offres`).then((response) =>
     response.json(),
   );
+}
+
+export function getInscriptionUserId(page) {
+  return getMe().then((user) => {
+    if (user) {
+      const requestOptions = {
+        credentials: "include",
+      };
+      let url = `${BASE_URL}/users/${user.id}/inscriptions`;
+      if (page) {
+        url = `${BASE_URL}/users/${user.id}/inscriptions?page=${page}`;
+      }
+
+      return fetch(url, requestOptions).then((response) => {
+        if (!response.ok) {
+          throw new Error("Échec de la requête");
+        }
+        return response.json();
+      });
+    }
+    throw new Error("Utilisateur non identifié");
+  });
 }

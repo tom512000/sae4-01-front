@@ -3,17 +3,69 @@ import "./offreDetails.css";
 import PropTypes from "prop-types";
 import { format } from "date-fns";
 import { getSkillOffreId } from "../../services/api/skill";
+import { deleteInscription, postInscription } from "../../services/api/user";
+import { getInscriptionUserId } from "../../services/api/offre";
 
 function OffreDetails({ offre }) {
-  // Manque la condition sur les boutons
-
   const [skills, setSkills] = useState([]);
+  const [inscriptionData, setInscription] = useState([]);
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    getSkillOffreId(offre.id).then((allSkills) => {
+    const fetchData = async () => {
+      const allSkills = await getSkillOffreId(offre.id);
       setSkills(allSkills);
-    });
-  }, [offre.id]);
+
+      let allInscriptions = [];
+      let page = 1;
+      let data = await getInscriptionUserId(page);
+      while (data.length > 0) {
+        allInscriptions = [...allInscriptions, ...data];
+        // eslint-disable-next-line no-plusplus
+        page++;
+        if (data.length === 15) {
+          // eslint-disable-next-line no-await-in-loop
+          data = await getInscriptionUserId(page);
+        } else {
+          break;
+        }
+      }
+      setInscription(allInscriptions);
+    };
+
+    fetchData();
+  }, [offre.id, update]);
+
+  const handleInscription = () => {
+    postInscription(offre.id)
+      .then(() => {
+        alert("Inscription réussie");
+        setUpdate(!update);
+      })
+      .catch((error) => {
+        console.error("Error :", error);
+        alert("Inscription échouée");
+      });
+  };
+
+  const handleUnsubscribe = () => {
+    const inscription = inscriptionData.find(
+      (data) => data.Offre.id === offre.id,
+    );
+    deleteInscription(inscription.id)
+      .then(() => {
+        alert("Désinscription réussie");
+        setUpdate(!update);
+      })
+      .catch((error) => {
+        console.error("Error :", error);
+        alert("Désinscription échouée");
+      });
+  };
+
+  const isInscrit =
+    inscriptionData &&
+    inscriptionData.some((data) => data.Offre.id === offre.id);
 
   return (
     <div className="offreDetails">
@@ -33,10 +85,20 @@ function OffreDetails({ offre }) {
           <p>{format(offre.jourDeb, "d/MM/yyyy")}</p>
           <p>{offre.nbPlace} places</p>
         </div>
-        <div className="offreDetails_buttons">
-          <button type="button">Se désinscrire</button>
-          <button type="button">Postuler</button>
-        </div>
+        {inscriptionData && (
+          <div className="offreDetails_buttons">
+            {!isInscrit && (
+              <button type="button" onClick={handleInscription}>
+                Postuler
+              </button>
+            )}
+            {isInscrit && (
+              <button type="button" onClick={handleUnsubscribe}>
+                Se désinscrire
+              </button>
+            )}
+          </div>
+        )}
       </div>
       <div>
         <h2>Description de l&apos;offre</h2>
@@ -44,7 +106,7 @@ function OffreDetails({ offre }) {
         <h2>Compétences</h2>
         <div className="offreDetails_competences">
           {skills.map((skill) => (
-            <p key={skill.id}>{skill.libelle}</p>
+            <p key={skill.skill.id}>{skill.skill.libelle}</p>
           ))}
         </div>
       </div>
@@ -54,8 +116,8 @@ function OffreDetails({ offre }) {
 
 OffreDetails.propTypes = {
   offre: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    idEntreprise: PropTypes.number.isRequired,
+    id: PropTypes.number,
+    idEntreprise: PropTypes.number,
     nomOffre: PropTypes.string.isRequired,
     duree: PropTypes.number.isRequired,
     lieux: PropTypes.string.isRequired,
@@ -67,7 +129,14 @@ OffreDetails.propTypes = {
       logo: PropTypes.string.isRequired,
       nomEnt: PropTypes.string.isRequired,
     }).isRequired,
-  }).isRequired,
+  }),
+};
+
+OffreDetails.defaultProps = {
+  offre: {
+    id: 0,
+    idEntreprise: 0,
+  },
 };
 
 export default OffreDetails;

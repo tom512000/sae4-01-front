@@ -1,0 +1,61 @@
+@import url("/public/index.css");
+
+/* Chargement */
+div.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+div.loading > :first-child {
+    font-size: 30px;
+}
+
+div.loading > p {
+    margin: 5px 0;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Chargement */
+    div.loading > :first-child {
+        font-size: 32px;
+    }
+
+    div.loading > p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Chargement */
+    div.loading > :first-child {
+        font-size: 34px;
+    }
+
+    div.loading > p {
+        margin: 5px 0;
+        font-size: 16px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Chargement */
+    div.loading > :first-child {
+        font-size: 36px;
+    }
+
+    div.loading > p {
+        margin: 5px 0;
+        font-size: 18px;
+    }
+}

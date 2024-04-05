@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import {getMe} from "../../services/api/user.js";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import {UserContext} from "./index.js";
+import { getMe } from "../../services/api/user";
+import { UserContext } from "./index";
 
 function Provider({ children }) {
   const [userData, setData] = useState();
@@ -13,12 +13,10 @@ function Provider({ children }) {
   }, []);
 
   return (
-      <UserContext.Provider value={userData}>
-        {children}
-      </UserContext.Provider>
+    <UserContext.Provider value={userData}>{children}</UserContext.Provider>
   );
 }
 Provider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
 export default Provider;

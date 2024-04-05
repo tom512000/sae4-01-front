@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./editAccount.css";
+import { Redirect } from "wouter";
 import FordableCard from "../FordableCard/fordableCard";
 import FordableCardInput from "../FordableCardInput/fordableCardInput";
 import FordableCardButton from "../fordableCardButton/fordableCardButton";
+import { patchUser } from "../../services/api/user";
+import { UserContext } from "../../contexts/user/index";
+import Loading from "../Loading/loading";
 
 function EditAccount() {
+  const userData = useContext(UserContext);
+  if (!userData) {
+    return <Loading />;
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
+    formJson.aboutMe = "";
+    formJson.cv = formJson.cv.name;
+    formJson.lettreMotiv = formJson.lettreMotiv.name;
+    patchUser(formJson, userData.id);
+    return <Redirect to="/" />;
+  }
+
   const multiText = (
     <>
       Sur cette page, Modifiez facilement vos informations personnel relatives à
@@ -25,18 +45,42 @@ function EditAccount() {
       pText={multiText}
       h2Title="Modification"
     >
-      <form action="/">
-        <FordableCardInput type="email" placeholder="Email" />
-        <FordableCardInput type="password" placeholder="Mot de passe" />
-        <FordableCardInput type="text" placeholder="Nom" />
-        <FordableCardInput type="text" placeholder="Prénom" />
-        <FordableCardInput type="tel" placeholder="Numéro de téléphone" />
-        <FordableCardInput type="date" placeholder="Date de naissance" />
-        <FordableCardInput type="file" placeholder="CV (PDF)" />
+      <form method="post" onSubmit={handleSubmit}>
+        <FordableCardInput name="email" type="email" value={userData.email} />
         <FordableCardInput
+          name="password"
+          type="password"
+          placeholder="Mot de passe"
+        />
+
+        <FordableCardInput
+          name="firstName"
+          type="text"
+          value={userData.firstName}
+        />
+
+        <FordableCardInput
+          name="lastName"
+          type="text"
+          value={userData.lastName}
+        />
+
+        <FordableCardInput name="phone" type="tel" value={userData.phone} />
+
+        <FordableCardInput
+          name="dateNais"
+          type="date"
+          value={userData.dateNais}
+        />
+
+        <FordableCardInput name="cv" type="file" placeholder="CV (PDF)" />
+
+        <FordableCardInput
+          name="lettreMotiv"
           type="file"
           placeholder="Lettre de motivation (PDF)"
         />
+
         <FordableCardButton value="VALIDER" />
       </form>
     </FordableCard>

@@ -1,7 +1,8 @@
 import React from "react";
+import AboutUs from "../components/AboutUs/aboutUs";
 
 function AboutView() {
-  return <section>CODER L'A PROPOS ICI</section>;
+  return <AboutUs />;
 }
 
 export default AboutView;

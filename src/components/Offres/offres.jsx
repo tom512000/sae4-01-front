@@ -3,15 +3,25 @@ import "./offres.css";
 import PropTypes from "prop-types";
 import Offre from "../Offre/offre";
 import Pagination from "../Pagination/pagination";
-import FiltreOffre from "./filtreOffre";
+import FiltreOffre from "../filtreOffres/filtreOffres";
 
 function Offres({ offres, title, onClick, onSubmit, skillData }) {
+  let marginTop;
+  if (title === "") {
+    marginTop = "15px";
+  } else {
+    marginTop = "0";
+  }
+  const offresStyle = {
+    marginTop,
+  };
+
   return (
     <>
       {onSubmit && (
         <div>
           <FiltreOffre
-            submiteText="Submit"
+            submiteText="Rechercher"
             onSubmit={onSubmit}
             skillData={skillData}
           />
@@ -19,11 +29,11 @@ function Offres({ offres, title, onClick, onSubmit, skillData }) {
       )}
 
       <div className="offres">
-        <div className="offres_title">
+        <div className="offres_title" style={offresStyle}>
           <h1>{title}</h1>
         </div>
         {offres.map((x) => (
-          <Offre offre={x} />
+          <Offre key={x.id} offre={x} />
         ))}
         <div className="offres_number">
           <p>

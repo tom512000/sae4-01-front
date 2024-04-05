@@ -1,0 +1,104 @@
+@import url("/public/index.css");
+
+/* Légende des candidatures */
+div.candidatures_legende {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    background-color: var(--color-white);
+}
+
+div.candidature_legende {
+    margin: 10px 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background-color: var(--color-light-grey-E);
+}
+
+div.candidature_legende > div {
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+    border: 1px solid var(--color-light-grey-B);
+    border-radius: 15px;
+}
+
+div.candidature_legende > div#vert {
+    background-color: #00EB18;
+}
+
+div.candidature_legende > div#jaune {
+    background-color: #F4F900;
+}
+
+div.candidature_legende > div#rouge {
+    background-color: #FF694F;
+}
+
+div.candidature_legende > p {
+    margin: 3px 5px;
+    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    color: var(--color-light-grey-9);
+}
+
+/* Media queries - Tablet */
+@media (min-width: 426px) and (max-width: 768px) {
+    /* Légende des candidatures */
+    div.candidature_legende {
+        margin: 10px 4px;
+    }
+
+    div.candidature_legende > div {
+        width: 12px;
+        height: 12px;
+        margin-left: 5px;
+    }
+
+    div.candidature_legende > p {
+        margin: 3px 5px;
+        font-size: 10px;
+    }
+}
+
+/* Media queries - Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Légende des candidatures */
+    div.candidature_legende {
+        margin: 12px 6px;
+    }
+
+    div.candidature_legende > div {
+        width: 14px;
+        height: 14px;
+        margin-left: 7px;
+    }
+
+    div.candidature_legende > p {
+        margin: 3px 7px;
+        font-size: 12px;
+    }
+}
+
+/* Media queries - Laptop L */
+@media (min-width: 1025px) {
+    /* Légende des candidatures */
+    div.candidature_legende {
+        margin: 14px 8px;
+    }
+
+    div.candidature_legende > div {
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+    }
+
+    div.candidature_legende > p {
+        margin: 3px 7px;
+        font-size: 14px;
+    }
+}
