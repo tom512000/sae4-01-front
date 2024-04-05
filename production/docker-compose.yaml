@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  web:
+    image: ${NGINX_IMAGE:?nginx image undefined}:${APP_VERSION:?version not given}
+    restart: always
+    ports:
+      - "8085:80"

@@ -1,4 +1,4 @@
-ARG NODE_VERSION=8.1
+ARG NODE_VERSION=18.20.1
 ARG NGINX_VERSION=1.25.3
 
 # Première partie : Node.js
@@ -24,4 +24,4 @@ RUN set -eux; \
 FROM nginx:${NGINX_VERSION}-alpine AS react_nginx
 COPY ./docker/nginx/default.conf /etc/nginx/conf.d
 WORKDIR /usr/src/project/build
-COPY --from=react_development /usr/src/project/build ./build
+COPY --from=react_build ./usr/src/project/dist ./
