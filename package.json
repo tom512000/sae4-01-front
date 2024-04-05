@@ -12,6 +12,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "bcryptjs": "^2.4.3",
     "cor": "^0.0.0",
     "cors": "^2.8.5",
     "date-fns": "^3.6.0",

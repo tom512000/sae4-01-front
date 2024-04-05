@@ -1,3 +1,5 @@
+import { hashPassword } from "../authentication";
+
 export const BASE_URL = "https://127.0.0.1:8000/api";
 
 export function getMe() {
@@ -24,18 +26,32 @@ export function logoutUrl() {
 }
 
 export function postUser(data) {
+  const hashedPassword = hashPassword(data.password);
+  const requestData = {
+    ...data,
+    password: hashedPassword,
+  };
+
   const requestOptions = {
     method: "POST",
     headers: {
-      "Content-Type": "application/ld+json",
-      Accept: "application/ld+json",
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
     credentials: "include",
-    body: JSON.stringify(data),
+    body: JSON.stringify(requestData),
   };
-  fetch(`${BASE_URL}/users`, requestOptions).then((donnees) =>
-    console.log(donnees),
-  );
+
+  return fetch(`${BASE_URL}/usersInscription`, requestOptions)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erreur lors de la création de l'utilisateur");
+      }
+      return response.json();
+    })
+    .then(() => {
+      alert("Utilisateur créé avec succès:");
+    });
 }
 
 export function patchUser(data, userid) {
