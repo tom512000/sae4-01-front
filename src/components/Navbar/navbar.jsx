@@ -20,10 +20,10 @@ function Navbar() {
     <div className="navbar">
       <div className="navbar_logos">
         <a href="/" className="navbar_image">
-          <img src="/public/img/logo-edutech.png" alt="Logo Edutech" />
+          <img src="/img/logo-edutech.png" alt="Logo Edutech" />
         </a>
         <a href="/" className="navbar_image">
-          <img src="/public/img/text-edutech.png" alt="Texte Edutech" />
+          <img src="/img/text-edutech.png" alt="Texte Edutech" />
         </a>
       </div>
       <div className="navbar_buttons">

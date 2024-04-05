@@ -8,6 +8,8 @@ div.loading {
     align-items: center;
     flex: 1;
     width: 100%;
+    border-bottom: 1px solid var(--color-light-grey-B);
+    background-color: var(--color-white);
 }
 
 div.loading > :first-child {
