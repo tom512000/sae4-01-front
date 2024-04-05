@@ -5,8 +5,8 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer_logos">
-        <img src="/public/img/logo-edutech.png" alt="Logo Edutech" />
-        <img src="/public/img/text-edutech.png" alt="Texte Edutech" />
+        <img src="/img/logo-edutech.png" alt="Logo Edutech" />
+        <img src="/img/text-edutech.png" alt="Texte Edutech" />
       </div>
       <div className="footer_liens">
         <div>
